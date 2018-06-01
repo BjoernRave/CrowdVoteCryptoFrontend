@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 import Main from "./Main";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
-import Popup from "react-popup";
 
 const store = configureStore();
 
@@ -26,7 +25,6 @@ const App = () => (
       <div className="onboarding">
         <Navbar />
         <p id="flash">You need to be logged in to do that!</p>
-        <Popup />
         <Main />
       </div>
     </Router>
