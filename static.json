@@ -5,7 +5,7 @@
   },
   "proxies": {
     "/api": {
-      "origin": "https://crowdvotecrypto-server.herokuapp.com"
+      "origin": "https://crowdvotecrypto-server.herokuapp.com/api"
     }
   }
 }
