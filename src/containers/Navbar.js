@@ -34,13 +34,16 @@ class Navbar extends Component {
   toggleSignin() {
     this.setState({ signin: !this.state.signin, signup: false });
   }
-  render() {
+  async componentWillUpdate() {
     if (
       this.props.currentUser.isAuthenticated &&
       (this.state.signin || this.state.signup)
     ) {
-      this.setState({ signin: false, signUp: false });
+      await this.setState({ signin: false, signUp: false });
     }
+  }
+
+  render() {
     return (
       <div>
         <nav>

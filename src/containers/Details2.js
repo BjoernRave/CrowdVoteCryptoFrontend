@@ -112,9 +112,11 @@ class Expandable extends Component {
           <li key={val._id}>
             {val.user}-
             <Moment format="HH:mm : ">{val.createdAt}</Moment> {val.text}
-            <button onClick={() => this.props.removeMessage(val._id)}>
-              X{" "}
-            </button>
+            {this.props.currentUser.user.username === val.user && [
+              <button onClick={() => this.props.removeMessage(val._id)}>
+                X{" "}
+              </button>
+            ]}
           </li>
         );
       });
@@ -149,6 +151,7 @@ class Expandable extends Component {
             VoteTag={this.props.VoteTag}
             tags={this.props.tags}
             symbol={this.props.symbol}
+            currentUser={this.props.currentUser}
           />
           <div className="DetailsCommentSection">
             <ul id="DetailsComments">

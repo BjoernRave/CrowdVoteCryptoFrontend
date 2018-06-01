@@ -86,24 +86,19 @@ class Cryptotilebox extends Component {
           <p>#</p>
           <p>Name</p>
           <p title="The total available Supply multiplied by the Price">
+            {" "}
             Market Cap
           </p>
           <p>Price</p>
-          <p>
-            Circulating <br /> Supply
-          </p>
+          <p>Circulating Supply</p>
           <p>Change(24h)</p>
           <div id="voteshow">
-            <p>
-              Estimated <br /> Change(24h)
-            </p>
-            <p>
-              Number <br /> of Votes
-            </p>
+            <p>Estimated Change(24h)</p>
+            <p>Number of Votes</p>
           </div>
-
-          <p>Price Graph(7d)</p>
           <div />
+          <p>Price Graph(7d)</p>
+
           <div />
         </div>
 
