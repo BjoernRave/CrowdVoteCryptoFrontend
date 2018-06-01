@@ -6,9 +6,7 @@ import {
   fetchCryptoVotes
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
-import ReactPaginate from "react-paginate";
-import Popup from "react-popup";
-import FlipMove from "react-flip-move";
+
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
 //   images[key] = svgs(key);
@@ -109,7 +107,7 @@ class Cryptotilebox extends Component {
           <div />
         </div>
 
-        <div className="tilebox">{result.slice(0, 100)}</div>
+        <div className="tilebox">{result.slice(0, 100)} </div>
       </div>
     );
   }
