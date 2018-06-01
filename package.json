@@ -1,0 +1,45 @@
+{
+  "name": "warbler-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "0.0.19",
+    "ajv": "^6.5.0",
+    "axios": "^0.18.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.71.0",
+    "font-awesome": "^4.7.0",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.21.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-flip-move": "^3.0.2",
+    "react-fontawesome": "^1.6.1",
+    "react-moment": "^0.7.0",
+    "react-popup": "^0.9.3",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-sticky": "^6.0.2",
+    "react-tag-input": "^5.0.2",
+    "react-tagsinput": "^3.19.0",
+    "react-transition-group": "^1.2.1",
+    "react-vis": "^1.9.3",
+    "reactjs-popup": "^1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "save-dev": "^2.0.0"
+  },
+  "proxy": "http://localhost:8081",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "svg-react-loader": "^0.4.5"
+  }
+}
