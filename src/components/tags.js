@@ -39,9 +39,10 @@ export default class Tags extends Component {
               <button
                 onClick={() => this.props.VoteTag(val._id, val.votes + 1)}
               >
-                <i className="fas fa-arrow-up" />
+                <i className="fas fa-caret-up" />
+                {val.votes}
               </button>
-              {val.votes} {val.text}
+              {val.text}
               {val.user === this.props.currentUser.user.username && [
                 <button onClick={() => this.props.RemoveTag(val._id)}>X</button>
               ]}

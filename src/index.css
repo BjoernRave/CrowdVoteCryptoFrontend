@@ -12,6 +12,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
 nav {
   display: flex;
@@ -82,7 +83,7 @@ i:focus {
   margin: 6px 50px;
   font-size: 1em;
   padding-top: 25px;
-  grid-template-columns: 4% 15% 13% 8% 10% 9% 18% 4% 16% 6%;
+  grid-template-columns: 11% 12% 13% 8% 10% 9% 14% 4% 16% 6%;
   /* grid-template-columns: 0.2fr 2fr 2fr 1fr 2fr 1fr 1fr 2fr 0.2fr 2fr 1fr; */
 
   box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.212);
@@ -93,6 +94,7 @@ i:focus {
 #uppertile a {
   margin: 0 auto;
   height: 2em;
+  text-decoration: none;
 }
 #uppertile .red {
   color: red;
@@ -109,7 +111,7 @@ i:focus {
 #namingbar {
   background-color: white;
   display: grid;
-  grid-template-columns: 4% 15% 13% 8% 10% 9% 18% 4% 15% 6%;
+  grid-template-columns: 11% 12% 13% 8% 10% 9% 14% 4% 16% 6%;
   font-size: 1em;
   margin-left: 50px;
   margin-right: 50px;
@@ -125,11 +127,14 @@ i:focus {
   text-align: center;
 }
 
-/* #uppertile:nth-child(1) {
-  color: white;
-} */
+#uppertile a {
+  margin-left: -20px;
+}
 #namingbar p:nth-child(9) {
   padding-left: 80px;
+}
+#uppertile p:nth-child(2) {
+  margin-left: -20px;
 }
 
 .sticky {
@@ -210,11 +215,15 @@ i:focus {
   background-color: rgb(248, 248, 248);
   font-size: 1em;
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 3fr 3fr 1fr;
   height: 260px;
   margin-top: -2px;
   grid-gap: 10px;
 }
+.Details .detailTags button {
+  font-size: 1.4em;
+}
+
 .Expandable .detailTags {
   grid-area: inherit;
 }
@@ -223,11 +232,27 @@ i:focus {
   float: left;
 }
 
-.Expandable .CommentSection ul button {
-  float: right;
+.detailTags button {
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+.CommentSection ul button {
   background-color: inherit;
   box-shadow: none;
   border: none;
+  color: #666b85;
+  padding-right: 3px;
+}
+
+.CommentSection .ownmessage {
+  margin-left: auto;
+  margin-right: 0;
+  width: fit-content;
+}
+.CommentSection .ownmessage .bubble {
+  background-color: rgb(163, 36, 163);
 }
 
 .CommentSection input {
@@ -235,22 +260,53 @@ i:focus {
   margin-top: 10px;
   width: 100%;
   height: 40px;
-  border: 2px solid black;
+  border: none;
   padding-left: 10px;
 }
-
-.Expandable ul {
+.CommentSection li span:last-of-type {
+  font-size: 0.7em;
+  color: #5c5f63;
+  text-align: center;
+}
+.bubble {
+  background-color: lightseagreen;
+  padding: 4px 9px;
+  border-radius: 40px;
+  padding-right: 11px;
+}
+.CommentSection ul {
   height: 206.5px;
   overflow-y: auto;
   width: 100%;
   padding-left: 10px;
+  position: relative;
+  list-style: none;
 }
+.CommentSection {
+  scrollbar-arrow-color: red;
+}
+.CommentSection li {
+  margin: 10px;
+}
+
+.Details .CommentSection {
+  grid-column: 1/3;
+}
+.Details .CommentSection ul {
+  overflow-y: unset;
+  overflow: unset;
+  height: unset;
+}
+.Details .CommentSection span:nth-child(1) {
+  font-size: 2em;
+}
+.Details .ownmessage span:nth-child(2) {
+  font-size: 2em;
+}
+
 .Expandable li {
   list-style: none;
   word-wrap: break-word;
-}
-.Expandable li:nth-child(odd) {
-  background-color: antiquewhite;
 }
 
 .votes {
@@ -386,7 +442,6 @@ i:focus {
   grid-template-rows: 100px 2fr 1fr 3fr;
 }
 .detailsname {
-  grid-area: name;
   grid-column: 1/2;
   grid-row: 1/2;
   width: fit-content;
@@ -400,33 +455,6 @@ i:focus {
   margin-left: 30px;
   grid-column: 2/3;
   grid-row: 1/4;
-}
-
-.DetailsCommentSection {
-  grid-area: comments;
-  grid-row: 4 / end;
-  grid-column: 1/3;
-}
-
-.DetailsCommentSection ul {
-  font-size: 20px;
-  margin-bottom: 20px;
-  overflow-y: auto;
-  list-style: none;
-  height: 600px;
-  background-color: white;
-}
-.DetailsCommentSection li {
-  padding: 6px;
-}
-.DetailsCommentSection li:nth-child(odd) {
-  background-color: wheat;
-}
-.DetailsCommentSection input {
-  width: 98%;
-  margin-left: 10px;
-  font-size: 20px;
-  padding: 10px;
 }
 
 .detailGraph {
@@ -456,16 +484,17 @@ i:focus {
 }
 
 .detailTags input {
-  width: 48%;
+  width: 100%;
   padding: 10px;
   font-size: 20px;
+  border: none;
 }
 .cryptoIcondetail {
   position: absolute;
-  filter: blur(1.5px);
-  top: 23%;
-  left: 22%;
-  transform: scale(4);
+
+  top: 17%;
+  right: 40%;
+  transform: scale(1.7);
   z-index: -1;
   opacity: 0.7;
 }
@@ -515,7 +544,7 @@ i:focus {
   color: rgb(20, 247, 255);
   border-radius: 15px;
   padding: 3px;
-  height: 90px;
+  height: fit-content;
   margin-top: 30px;
 }
 .crosshair span {

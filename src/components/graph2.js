@@ -90,8 +90,14 @@ export default class DynamicCrosshair extends React.Component {
         <button onClick={() => this.props.fetchstats(this.props.name, 30)}>
           30 days
         </button>
+        <button onClick={() => this.props.fetchstats(this.props.name, 90)}>
+          90 days
+        </button>
         <button onClick={() => this.props.fetchstats(this.props.name, 180)}>
           180 days
+        </button>
+        <button onClick={() => this.props.fetchstats(this.props.name, 365)}>
+          1 Year
         </button>
         <button onClick={() => this.props.fetchstats(this.props.name, "max")}>
           Since Release

@@ -109,14 +109,29 @@ class Expandable extends Component {
     if (typeof this.props.messages[this.props.symbol] !== "undefined") {
       messsageArray = this.props.messages[this.props.symbol].map(val => {
         return (
-          <li key={val._id}>
-            {val.user}-
-            <Moment format="HH:mm : ">{val.createdAt}</Moment> {val.text}
+          <li
+            className={
+              this.props.currentUser.user.username === val.user
+                ? "ownmessage"
+                : null
+            }
+            key={val._id}
+          >
             {this.props.currentUser.user.username === val.user && [
-              <button onClick={() => this.props.removeMessage(val._id)}>
-                X{" "}
+              <button
+                onClick={() =>
+                  this.props.removeMessage(val._id, this.props.symbol)
+                }
+              >
+                <i className="fas fa-trash" />
               </button>
             ]}
+            <span className="bubble"> {val.text} </span> <br />{" "}
+            <span>
+              {" "}
+              {val.user}-
+              <Moment format="HH:mm">{val.createdAt}</Moment>{" "}
+            </span>{" "}
           </li>
         );
       });
@@ -153,7 +168,7 @@ class Expandable extends Component {
             symbol={this.props.symbol}
             currentUser={this.props.currentUser}
           />
-          <div className="DetailsCommentSection">
+          <div className="CommentSection">
             <ul id="DetailsComments">
               {/* <CSSTransitionGroup
               transitionName="chatslide"
