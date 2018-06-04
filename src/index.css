@@ -235,7 +235,9 @@ i:focus {
   width: 50%;
   float: left;
 }
-
+.detailTags ul {
+  list-style: none;
+}
 .detailTags button {
   box-shadow: none;
   border: none;

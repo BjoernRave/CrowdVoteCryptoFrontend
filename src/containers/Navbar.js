@@ -53,7 +53,7 @@ class Navbar extends Component {
       <div>
         <nav>
           <div>
-            <Link to="/">CryptoSourced </Link>
+            <Link to="/">CrowdVoteCrypto </Link>
           </div>
 
           <Searchbar />
