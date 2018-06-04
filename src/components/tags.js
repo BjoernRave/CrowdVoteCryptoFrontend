@@ -44,7 +44,9 @@ export default class Tags extends Component {
               </button>
               {val.text}
               {val.user === this.props.currentUser.user.username && [
-                <button onClick={() => this.props.RemoveTag(val._id)}>X</button>
+                <button key="5" onClick={() => this.props.RemoveTag(val._id)}>
+                  X
+                </button>
               ]}
             </li>
           );
@@ -52,7 +54,7 @@ export default class Tags extends Component {
     }
     return (
       <div className="detailTags">
-        <p>Community Tags</p>
+        {/* <p>Community Tags</p> */}
         <ul>{tagsArray}</ul>
         <form onSubmit={this.handleSubmit}>
           <input

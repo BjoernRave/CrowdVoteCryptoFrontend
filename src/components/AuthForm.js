@@ -39,7 +39,7 @@ class AuthForm extends Component {
   };
 
   render() {
-    const { email, username, password, profileImageUrl } = this.state;
+    const { email, username, password } = this.state;
     const {
       signUp,
       heading,
@@ -54,7 +54,8 @@ class AuthForm extends Component {
     // });
 
     return (
-      <div className={this.props.signUp ? "signupform" : "signinform"}>
+      // <div className={this.props.signUp ? "signupform" : "signinform"}>
+      <div className="signinform">
         <form className="form" onSubmit={this.handleSubmit}>
           <h2>{heading}</h2>
           {errors.message && <div>{errors.message}</div>}
@@ -103,9 +104,7 @@ class AuthForm extends Component {
               <label>Username</label>
             </div>
           ]}
-          <button type="submit" className="btn">
-            {buttonText}
-          </button>
+          <button type="submit">{buttonText}</button>
         </form>
       </div>
     );

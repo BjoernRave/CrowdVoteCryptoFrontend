@@ -97,6 +97,7 @@ class Expandable extends PureComponent {
           >
             {this.props.currentUser.user.username === val.user && [
               <button
+                key="6"
                 onClick={() =>
                   this.props.removeMessage(val._id, this.props.symbol)
                 }
@@ -104,12 +105,11 @@ class Expandable extends PureComponent {
                 <i className="fas fa-trash" />
               </button>
             ]}
-            <span className="bubble"> {val.text} </span> <br />{" "}
+            <span className="bubble"> {val.text} </span> <br />
             <span>
-              {" "}
               {val.user}-
-              <Moment format="HH:mm">{val.createdAt}</Moment>{" "}
-            </span>{" "}
+              <Moment format="HH:mm">{val.createdAt}</Moment>
+            </span>
           </li>
         );
       });
@@ -194,12 +194,15 @@ function mapStatetoProps(reduxState) {
   };
 }
 
-export default connect(mapStatetoProps, {
-  fetchMessages,
-  postNewMessage,
-  removeMessage,
-  getTags,
-  DeleteTag,
-  CreateNewTag,
-  VoteTag
-})(Expandable);
+export default connect(
+  mapStatetoProps,
+  {
+    fetchMessages,
+    postNewMessage,
+    removeMessage,
+    getTags,
+    DeleteTag,
+    CreateNewTag,
+    VoteTag
+  }
+)(Expandable);

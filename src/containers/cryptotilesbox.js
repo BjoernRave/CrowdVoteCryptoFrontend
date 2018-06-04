@@ -6,6 +6,7 @@ import {
   fetchCryptoVotes
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
+import Footer from "../components/footer";
 
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
@@ -18,6 +19,8 @@ class Cryptotilebox extends Component {
     super(props);
 
     this.handleVote = this.handleVote.bind(this);
+    this.handlePag = this.handlePag.bind(this);
+    this.state = { PagStart: 0, PagEnd: 50 };
   }
 
   componentDidMount() {
@@ -53,6 +56,11 @@ class Cryptotilebox extends Component {
         }
       }, 3000);
     }
+  }
+  handlePag(start, end) {
+    this.setState({ PagStart: start, PagEnd: end });
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   render() {
@@ -102,7 +110,15 @@ class Cryptotilebox extends Component {
           <div />
         </div>
 
-        <div className="tilebox">{result.slice(0, 100)} </div>
+        <div className="tilebox">
+          {result.slice(this.state.PagStart, this.state.PagEnd)}
+        </div>
+        <div className="pagbtn">
+          <button onClick={() => this.handlePag(0, 50)}>1</button>
+          <button onClick={() => this.handlePag(50, 100)}>2</button>
+          <button onClick={() => this.handlePag(100, 150)}>3</button>
+        </div>
+        <Footer />
       </div>
     );
   }
@@ -116,7 +132,10 @@ function mapStatetoProps(state) {
   };
 }
 
-export default connect(mapStatetoProps, {
-  fetchCryptoStats,
-  fetchCryptoVotes
-})(Cryptotilebox);
+export default connect(
+  mapStatetoProps,
+  {
+    fetchCryptoStats,
+    fetchCryptoVotes
+  }
+)(Cryptotilebox);

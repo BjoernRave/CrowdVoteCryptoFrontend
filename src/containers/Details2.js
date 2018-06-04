@@ -119,6 +119,7 @@ class Expandable extends Component {
           >
             {this.props.currentUser.user.username === val.user && [
               <button
+                key="7"
                 onClick={() =>
                   this.props.removeMessage(val._id, this.props.symbol)
                 }
@@ -205,13 +206,16 @@ function mapStatetoProps(reduxState) {
   };
 }
 
-export default connect(mapStatetoProps, {
-  fetchMessages,
-  postNewMessage,
-  removeMessage,
-  getTags,
-  DeleteTag,
-  CreateNewTag,
-  VoteTag,
-  fetchHistCryptoData
-})(Expandable);
+export default connect(
+  mapStatetoProps,
+  {
+    fetchMessages,
+    postNewMessage,
+    removeMessage,
+    getTags,
+    DeleteTag,
+    CreateNewTag,
+    VoteTag,
+    fetchHistCryptoData
+  }
+)(Expandable);

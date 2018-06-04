@@ -17,6 +17,7 @@ class Navbar extends Component {
     };
     this.toggleSignup = this.toggleSignup.bind(this);
     this.toggleSignin = this.toggleSignin.bind(this);
+    this.goTop = this.goTop.bind(this);
   }
 
   logout = e => {
@@ -42,6 +43,10 @@ class Navbar extends Component {
       await this.setState({ signin: false, signUp: false });
     }
   }
+  goTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 
   render() {
     return (
@@ -50,6 +55,7 @@ class Navbar extends Component {
           <div>
             <Link to="/">CryptoSourced </Link>
           </div>
+
           <Searchbar />
           {this.props.currentUser.isAuthenticated ? (
             <button className="" onClick={this.logout}>
@@ -87,6 +93,9 @@ class Navbar extends Component {
               heading="Welcome Back."
             />
           )}
+        <a className="goTop" onClick={this.goTop}>
+          <i className="fas fa-chevron-circle-up" />
+        </a>
       </div>
     );
   }
@@ -99,6 +108,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { logout, authUser, removeError })(
-  Navbar
-);
+export default connect(
+  mapStateToProps,
+  { logout, authUser, removeError }
+)(Navbar);
