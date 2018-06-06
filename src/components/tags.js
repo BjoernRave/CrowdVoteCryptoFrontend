@@ -21,11 +21,9 @@ export default class Tags extends Component {
     }
   }
   handleChange(e) {
-    this.setState({ input: e.target.value });
-  }
-
-  componentWillMount() {
-    this.props.getTags();
+    if (this.state.input.length < 65) {
+      this.setState({ input: e.target.value });
+    }
   }
 
   render() {
@@ -42,10 +40,10 @@ export default class Tags extends Component {
                 <i className="fas fa-caret-up" />
                 {val.votes}
               </button>
-              {val.text}
+              <span> {val.text} </span>
               {val.user === this.props.currentUser.user.username && [
                 <button key="5" onClick={() => this.props.RemoveTag(val._id)}>
-                  X
+                  <i className="fas fa-trash" />
                 </button>
               ]}
             </li>

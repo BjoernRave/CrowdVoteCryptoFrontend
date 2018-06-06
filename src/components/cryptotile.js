@@ -34,17 +34,21 @@ export default class Cryptotile extends Component {
       rank,
       id
     } = this.props;
+    let tagsArray = this.props.tags
+      .filter(val => val.symbol === this.props.symbol)
+      .sort((a, b) => b.votes - a.votes)
+      .map(val => {
+        return <p>{val.text}</p>;
+      });
 
     return (
       <div id="tile">
         <div id="uppertile" onClick={this.expand}>
           <p>{rank}.</p>
-
           <Link to={"/" + name.toLowerCase().replace(/\s/g, "-")}>
             {name}({symbol.toUpperCase()})
           </Link>
           <img src={this.props.icon} alt="" id="cryptoIcon" />
-
           <p title="The total available Supply multiplied by the Price">
             ${Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
           </p>
@@ -56,33 +60,19 @@ export default class Cryptotile extends Component {
           <p>
             {Intl.NumberFormat().format(Number(circulatingSupply).toFixed(0))}
           </p>
-
           {Number(change24h) < 0 ? (
             <p className="red">{Number(change24h).toFixed(2)} %</p>
           ) : (
             <p className="green">{Number(change24h).toFixed(2)} %</p>
           )}
 
-          {this.props.votes[this.props.symbol] ? (
-            <div className="votes">
-              {Number(this.props.votes[this.props.symbol].voteResult) < 0 ? (
-                <p className="red">
-                  {this.props.votes[this.props.symbol].voteResult}%
-                </p>
-              ) : (
-                <p className="green">
-                  {this.props.votes[this.props.symbol].voteResult}%
-                </p>
-              )}
-
-              <p>{this.props.votes[this.props.symbol].voteCount}</p>
-            </div>
+          {Number(this.props.voteResult) < 0 ? (
+            <p className="red">{this.props.voteResult}%</p>
           ) : (
-            <div className="votes">
-              <p>0%</p>
-              <p>0</p>
-            </div>
+            <p className="green">{this.props.voteResult}%</p>
           )}
+
+          <p>{this.props.voteCount}</p>
 
           <Rating
             handleVote={this.props.handleVote}
@@ -100,8 +90,15 @@ export default class Cryptotile extends Component {
             />
           </Link>
           <button onClick={this.expand} id="expand">
-            <i className="fas fa-angle-down" />
+            <i
+              className={
+                this.state.expanded
+                  ? "fas fa-angle-down rotated"
+                  : "fas fa-angle-down"
+              }
+            />
           </button>
+          <div className="bestTags">{tagsArray.slice(0, 3)}</div>
         </div>
         <CSSTransitionGroup
           transitionName={"fade"}
