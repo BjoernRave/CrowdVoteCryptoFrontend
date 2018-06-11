@@ -6,18 +6,22 @@ import AuthForm from "../components/AuthForm";
 import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
 import Searchbar from "../components/searchBar";
+import { SetFiatCurrency } from "../store/actions/FiatCurrency";
+import Cookies from "universal-cookie";
 
+const cookies = new Cookies();
 class Navbar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       signup: false,
-      signin: false
+      signin: false,
+      fiat: cookies.get("fiat")
     };
     this.toggleSignup = this.toggleSignup.bind(this);
     this.toggleSignin = this.toggleSignin.bind(this);
-    this.goTop = this.goTop.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   logout = e => {
@@ -43,9 +47,13 @@ class Navbar extends Component {
       await this.setState({ signin: false, signUp: false });
     }
   }
-  goTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+
+  handleSelectChange(e) {
+    this.props.SetFiatCurrency(e.target.value);
+    this.setState({ fiat: e.target.value });
+
+    cookies.set("fiat", e.target.value, { path: "/" });
+    console.log(cookies.get("fiat")); // Pacman
   }
 
   render() {
@@ -55,7 +63,19 @@ class Navbar extends Component {
           <div>
             <Link to="/">CrowdVoteCrypto </Link>
           </div>
-
+          <select
+            className="select"
+            onChange={this.handleSelectChange}
+            name="FiatCurrency"
+            value={this.state.fiat}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="BTC">BTC</option>
+            <option value="RUB">RUB</option>
+            <option value="GBP">GBP</option>
+            <option value="CNY">CNY</option>
+          </select>
           <Searchbar />
           {this.props.currentUser.isAuthenticated ? (
             <button className="" onClick={this.logout}>
@@ -93,9 +113,6 @@ class Navbar extends Component {
               heading="Welcome Back."
             />
           )}
-        <a className="goTop" onClick={this.goTop}>
-          <i className="fas fa-chevron-circle-up" />
-        </a>
       </div>
     );
   }
@@ -110,5 +127,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { logout, authUser, removeError }
+  { logout, authUser, removeError, SetFiatCurrency }
 )(Navbar);

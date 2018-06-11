@@ -7,6 +7,7 @@ import cryptovotes from "./cryptovotes";
 import Tags from "./tags";
 import DetailRoutes from "./Detailroutes";
 import histData from "./histCryptodata";
+import fiatCurrency from "./fiatcurrency";
 
 const rootReducer = combineReducers({
   currentUser,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   cryptovotes,
   Tags,
   DetailRoutes,
-  histData
+  histData,
+  fiatCurrency
 });
 
 export default rootReducer;

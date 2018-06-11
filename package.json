@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/react-fontawesome": "0.0.19",
+    "@types/react": "^16.3.17",
     "ajv": "^6.5.0",
     "axios": "^0.18.0",
     "flow": "^0.2.3",
@@ -25,7 +26,8 @@
     "react-vis": "^1.9.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.3.0",
-    "save-dev": "^2.0.0"
+    "save-dev": "^2.0.0",
+    "universal-cookie": "^2.1.5"
   },
   "proxy": "http://localhost:8081",
   "scripts": {

@@ -9,7 +9,7 @@ export const rateCrypto = amount => ({
 export const sendRating = amount => {
   return dispatch => {
     let { currentUser } = getState();
-    const user = currentUser.user.username;
-    return apiCall("put", "/api/crypto/rating", amount, user);
+    const user = currentUser.user.id;
+    return apiCall("put", "/api/crypto/rating", { amount, user });
   };
 };

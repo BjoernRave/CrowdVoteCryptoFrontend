@@ -11,3 +11,4 @@ export const CREATE_TAG = "CREATE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
 export const VOTE_TAG = "VOTE_TAG";
 export const GET_HISTDATA = "GET_HISTDATA";
+export const SET_FIAT = "SET_FIAT";

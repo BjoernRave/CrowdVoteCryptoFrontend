@@ -27,21 +27,27 @@ class Expandable extends Component {
     this.handleSubmitVote = this.handleSubmitVote.bind(this);
     this.handleDeveloperExpand = this.handleDeveloperExpand.bind(this);
     this.handleRedditExpand = this.handleRedditExpand.bind(this);
+    this.toggleChat = this.toggleChat.bind(this);
 
     this.state = {
       comment: "",
       vote: "",
       developerExpand: false,
-      redditExpand: false
+      redditExpand: false,
+      chat: false
     };
   }
 
   componentWillMount() {
     this.props.fetchMessages(this.props.symbol);
+    this.props.getTags();
     this.props.fetchHistCryptoData(
       this.props.name.toLowerCase().replace(/\s/g, "-"),
       7
     );
+    setInterval(() => {
+      this.props.fetchMessages(this.props.symbol);
+    }, 10000);
   }
 
   componentDidUpdate() {
@@ -56,6 +62,11 @@ class Expandable extends Component {
   }
   handleRedditExpand() {
     this.setState({ redditExpand: !this.state.redditExpand });
+  }
+  toggleChat() {
+    this.setState({
+      chat: !this.state.chat
+    });
   }
 
   handleSubmitComment(e) {
@@ -140,55 +151,81 @@ class Expandable extends Component {
 
     const data = specificData[0];
     const marketdata = data.market_data;
+
     return (
-      <div>
+      <div className="detailpage">
         <div className="Details">
           <div>
             <img className="cryptoIcondetail" src={data.image.small} alt="" />
-            <p className="detailsname">{data.name}</p>
-          </div>
 
+            <p className="detailsname">
+              {data.name}{" "}
+              {/* <a onClick={this.toggleChat}>
+                <i className="fas fa-comment-alt" />
+              </a> */}
+            </p>
+          </div>
           <DetailStats
             data={specificData[0]}
             handleDeveloperExpand={this.handleDeveloperExpand}
             handleRedditExpand={this.handleRedditExpand}
             redditExpand={this.state.redditExpand}
             developerExpand={this.state.developerExpand}
+            currency={this.props.fiat.fiat}
           />
           <Graph2
             data={this.props.data}
             fetchstats={this.props.fetchHistCryptoData}
             name={this.props.name}
           />
-          <Tags
-            getTags={this.props.getTags}
-            RemoveTag={this.props.DeleteTag}
-            CreateTag={this.props.CreateNewTag}
-            VoteTag={this.props.VoteTag}
-            tags={this.props.tags}
-            symbol={this.props.symbol}
-            currentUser={this.props.currentUser}
-          />
+          <div className="fulltags">
+            <p>Community Tags</p>
+            <Tags
+              getTags={this.props.getTags}
+              RemoveTag={this.props.DeleteTag}
+              CreateTag={this.props.CreateNewTag}
+              VoteTag={this.props.VoteTag}
+              tags={this.props.tags}
+              symbol={this.props.symbol}
+              currentUser={this.props.currentUser}
+            />
+          </div>
+
           <div className="CommentSection">
-            <ul id="DetailsComments">
-              {/* <CSSTransitionGroup
+            <div onClick={this.toggleChat} className="header">
+              <p>{this.props.name} Chat</p>
+              <i
+                className={
+                  !this.state.chat
+                    ? "fas fa-angle-down rotated"
+                    : "fas fa-angle-down"
+                }
+              />
+            </div>
+
+            {this.state.chat && (
+              <div className="chat">
+                <ul id="DetailsComments">
+                  {/* <CSSTransitionGroup
               transitionName="chatslide"
               transitionEnterTimeout={500}
               transitionLeaveTimeout={500}
             > */}
-              {messsageArray}
-              {/* </CSSTransitionGroup> */}
-            </ul>
-            <form onSubmit={this.handleSubmitComment}>
-              <input
-                onChange={this.handleChangeComment}
-                type="text"
-                value={this.state.comment}
-                name="Comment"
-                placeholder="Share your thoughts on this Coin"
-                id="Detailscomment"
-              />
-            </form>
+                  {messsageArray}
+                  {/* </CSSTransitionGroup> */}
+                </ul>
+                <form onSubmit={this.handleSubmitComment}>
+                  <input
+                    onChange={this.handleChangeComment}
+                    type="text"
+                    value={this.state.comment}
+                    name="Comment"
+                    placeholder="Share your thoughts on this Coin"
+                    id="Detailscomment"
+                  />
+                </form>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -202,7 +239,8 @@ function mapStatetoProps(reduxState) {
     currentUser: reduxState.currentUser,
     tags: reduxState.Tags,
     cryptodata: reduxState.cryptodata,
-    data: reduxState.histData
+    data: reduxState.histData,
+    fiat: reduxState.fiatCurrency
   };
 }
 

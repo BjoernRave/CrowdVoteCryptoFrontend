@@ -14,14 +14,16 @@ import { getTags } from "../store/actions/tags";
 //   images[key] = svgs(key);
 //   return images;
 // }, {});
-
+let fiatcurr = "USD";
 class Cryptotilebox extends Component {
   constructor(props) {
     super(props);
-
     this.handleVote = this.handleVote.bind(this);
     this.handlePag = this.handlePag.bind(this);
     this.handleSorting = this.handleSorting.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.renderTiles = this.renderTiles.bind(this);
+    this.goTop = this.goTop.bind(this);
     this.state = { PagStart: 0, PagEnd: 50, tiles: [], order: false };
   }
 
@@ -46,11 +48,11 @@ class Cryptotilebox extends Component {
     // }, 8000);
   }
 
-  handleVote(amount, symbol) {
+  async handleVote(amount, symbol) {
     if (this.props.currentUser.isAuthenticated) {
       let data = { symbol, amount };
       apiCall("put", "/api/crypto/rating/edit", data);
-      this.props.fetchCryptoVotes();
+      await this.props.fetchCryptoVotes();
     } else {
       document.querySelector("#flash").classList.add("flashactive");
       setTimeout(() => {
@@ -59,6 +61,7 @@ class Cryptotilebox extends Component {
         }
       }, 3000);
     }
+    this.renderTiles();
   }
   handlePag(start, end) {
     this.setState({ PagStart: start, PagEnd: end });
@@ -66,8 +69,6 @@ class Cryptotilebox extends Component {
     document.documentElement.scrollTop = 0;
   }
   handleSorting(param) {
-    console.log("sorting");
-    console.log(this.state.tiles[0].props.children.props);
     let sorted = this.state.tiles.sort((a, b) => {
       if (this.state.order) {
         return a.props.children.props[param] - b.props.children.props[param];
@@ -75,52 +76,85 @@ class Cryptotilebox extends Component {
         return b.props.children.props[param] - a.props.children.props[param];
       }
     });
+
     this.setState({ tiles: sorted, order: !this.state.order });
   }
 
-  render() {
+  handleHover(e) {
+    console.log(e.target.offsetLeft);
+  }
+  goTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  renderTiles() {
     const { data } = this.props;
+
+    // if (
+    //   (data.length > 0 &&
+    //     this.state.tiles.length < 2 &&
+    //     Object.keys(this.props.votes).length > 1 &&
+    //     this.props.tags.length > 1) ||
+    //   fiat !== this.props.fiat
+    // ) {
+    console.log("list rendered");
+    let tiles = data.map((data, ind) => (
+      <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
+        <Cryptotile
+          id={data.coinmarketid}
+          rank={ind + 1}
+          name={data.name}
+          price={
+            data.market_data.current_price[this.props.fiat.fiat.toLowerCase()]
+          }
+          symbol={data.symbol}
+          marketCap={
+            data.market_data.market_cap[this.props.fiat.fiat.toLowerCase()]
+          }
+          change24h={data.market_data.price_change_percentage_24h}
+          circulatingSupply={data.market_data.circulating_supply}
+          handleVote={this.handleVote}
+          voteCount={
+            this.props.votes[data.symbol] === undefined
+              ? 0
+              : this.props.votes[data.symbol].voteCount
+          }
+          voteResult={
+            this.props.votes[data.symbol] === undefined
+              ? 0
+              : this.props.votes[data.symbol].voteResult
+          }
+          icon={data.image.small}
+          tags={this.props.tags}
+          currency={this.props.fiat}
+        />
+      </div>
+    ));
+    this.setState({ tiles });
+  }
+
+  render() {
     if (
-      data.length > 0 &&
+      this.props.data.length > 0 &&
       this.state.tiles.length < 2 &&
-      Object.keys(this.props.votes).length > 1 &&
-      this.props.tags.length > 1
+      Object.keys(this.props.votes).length > 0 &&
+      this.props.tags.length > 0 &&
+      this.props.fiat.fiat !== undefined
     ) {
-      let result = data.map((data, ind) => (
-        <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
-          <Cryptotile
-            id={data.coinmarketid}
-            rank={ind + 1}
-            name={data.name}
-            price={data.market_data.current_price.usd}
-            symbol={data.symbol}
-            volume={data.volume_24h}
-            marketCap={data.market_data.market_cap.usd}
-            change24h={data.market_data.price_change_percentage_24h}
-            circulatingSupply={data.market_data.circulating_supply}
-            handleVote={this.handleVote}
-            voteCount={
-              this.props.votes[data.symbol] === undefined
-                ? 0
-                : this.props.votes[data.symbol].voteCount
-            }
-            voteResult={
-              this.props.votes[data.symbol] === undefined
-                ? 0
-                : this.props.votes[data.symbol].voteResult
-            }
-            icon={data.image.small}
-            tags={this.props.tags}
-          />
-        </div>
-      ));
-      this.setState({ tiles: result });
+      this.renderTiles();
     }
 
+    if (fiatcurr !== this.props.fiat.fiat) {
+      this.renderTiles();
+    }
+    fiatcurr = this.props.fiat.fiat;
     return (
       <div className="mainpage">
         <div id="namingbar">
-          <p onClick={this.handleSorting.bind(this, "rank")}>
+          <p
+            onMouseOver={this.handleHover}
+            onClick={this.handleSorting.bind(this, "rank")}
+          >
             #<span>
               <i
                 className={
@@ -132,8 +166,12 @@ class Cryptotilebox extends Component {
             </span>
           </p>
           <p>Name</p>
-          <p onClick={this.handleSorting.bind(this, "marketCap")}>
-            Market Cap<span>
+          <p
+            onMouseOver={this.handleHover}
+            onClick={this.handleSorting.bind(this, "marketCap")}
+          >
+            Market Cap in {this.props.fiat.fiat}
+            <span>
               <i
                 className={
                   !this.state.order
@@ -145,7 +183,8 @@ class Cryptotilebox extends Component {
           </p>
 
           <p onClick={this.handleSorting.bind(this, "price")}>
-            Price<span>
+            Price in {this.props.fiat.fiat}
+            <span>
               <i
                 className={
                   !this.state.order
@@ -166,7 +205,10 @@ class Cryptotilebox extends Component {
               />
             </span>
           </p>
-          <p onClick={this.handleSorting.bind(this, "change24h")}>
+          <p
+            onMouseOver={this.handleHover}
+            onClick={this.handleSorting.bind(this, "change24h")}
+          >
             Change(24h)<span>
               <i
                 className={
@@ -205,7 +247,6 @@ class Cryptotilebox extends Component {
 
           <div />
         </div>
-
         <div className="tilebox">
           {this.state.tiles.slice(this.state.PagStart, this.state.PagEnd)}
         </div>
@@ -214,6 +255,9 @@ class Cryptotilebox extends Component {
           <button onClick={() => this.handlePag(50, 100)}>2</button>
           <button onClick={() => this.handlePag(100, 150)}>3</button>
         </div>
+        <a className="goTop" onClick={this.goTop}>
+          <i className="fas fa-chevron-circle-up" />
+        </a>
         <Footer />
       </div>
     );
@@ -225,7 +269,8 @@ function mapStatetoProps(state) {
     data: state.cryptodata,
     votes: state.cryptovotes,
     currentUser: state.currentUser,
-    tags: state.Tags
+    tags: state.Tags,
+    fiat: state.fiatCurrency
   };
 }
 

@@ -4,6 +4,7 @@ export default class DetailStats extends Component {
   render() {
     const data = this.props.data;
     const marketdata = data.market_data;
+    console.log("fromStats " + this.props.currency);
 
     return (
       <div className="detailStats">
@@ -16,21 +17,28 @@ export default class DetailStats extends Component {
           </thead> */}
           <tbody className="table-hover">
             <tr>
-              <td className="text-left">Price</td>
-              <td className="text-left">
-                ${Intl.NumberFormat().format(marketdata.current_price.usd)}
-              </td>
-            </tr>
-            <tr>
-              <td className="text-left"> Market Cap </td>
+              <td className="text-left">Price in {this.props.currency}</td>
               <td className="text-left">
                 ${Intl.NumberFormat().format(
-                  Number(marketdata.market_cap.usd).toFixed(0)
+                  marketdata.current_price[this.props.currency.toLowerCase()]
                 )}
               </td>
             </tr>
             <tr>
-              <td className="text-left"> Market Cap Change(24h) </td>
+              <td className="text-left">
+                {" "}
+                Market Cap in {this.props.currency}{" "}
+              </td>
+              <td className="text-left">
+                ${Intl.NumberFormat().format(
+                  Number(
+                    marketdata.market_cap[this.props.currency.toLowerCase()]
+                  ).toFixed(0)
+                )}
+              </td>
+            </tr>
+            <tr>
+              <td className="text-left"> Market Cap Change(24h) in USD </td>
               <td className="text-left">
                 ${Intl.NumberFormat().format(
                   Number(marketdata.market_cap_change_24h).toFixed(0)
@@ -41,10 +49,15 @@ export default class DetailStats extends Component {
               </td>
             </tr>
             <tr>
-              <td className="text-left"> Total Volume </td>
+              <td className="text-left">
+                {" "}
+                Total Volume in {this.props.currency}
+              </td>
               <td className="text-left">
                 ${Intl.NumberFormat().format(
-                  Number(marketdata.total_volume.usd).toFixed(0)
+                  Number(
+                    marketdata.total_volume[this.props.currency.toLowerCase()]
+                  ).toFixed(0)
                 )}
               </td>
             </tr>
@@ -57,7 +70,10 @@ export default class DetailStats extends Component {
               </td>
             </tr> */}
             <tr>
-              <td className="text-left"> Circulating Supply </td>
+              <td className="text-left">
+                {" "}
+                Circulating Supply in {this.props.data.symbol}{" "}
+              </td>
               <td className="text-left">
                 {Intl.NumberFormat().format(marketdata.circulating_supply)}
               </td>

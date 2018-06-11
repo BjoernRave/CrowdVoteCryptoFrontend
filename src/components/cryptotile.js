@@ -27,7 +27,6 @@ export default class Cryptotile extends Component {
       name,
       price,
       symbol,
-      volume,
       marketCap,
       change24h,
       circulatingSupply,
@@ -37,10 +36,9 @@ export default class Cryptotile extends Component {
     let tagsArray = this.props.tags
       .filter(val => val.symbol === this.props.symbol)
       .sort((a, b) => b.votes - a.votes)
-      .map(val => {
-        return <p>{val.text}</p>;
+      .map((val, ind) => {
+        return <p key={ind}>{val.text}</p>;
       });
-
     return (
       <div id="tile">
         <div id="uppertile" onClick={this.expand}>
@@ -50,10 +48,10 @@ export default class Cryptotile extends Component {
           </Link>
           <img src={this.props.icon} alt="" id="cryptoIcon" />
           <p title="The total available Supply multiplied by the Price">
-            ${Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
+            {Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
           </p>
           <p>
-            ${Intl.NumberFormat().format(
+            {Intl.NumberFormat().format(
               price < 1 ? price : Number(price).toFixed(2)
             )}
           </p>
