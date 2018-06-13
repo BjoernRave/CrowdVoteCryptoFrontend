@@ -7,9 +7,11 @@ export default class Tags extends Component {
     this.state = { input: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleVote = this.handleVote.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
+
     if (this.props.currentUser.isAuthenticated) {
       this.props.CreateTag(this.state.input, this.props.symbol);
       this.setState({ input: "" });
@@ -25,6 +27,12 @@ export default class Tags extends Component {
       this.setState({ input: e.target.value });
     }
   }
+  handleVote(val) {
+    setTimeout(() => {
+      this.props.getTags();
+    }, 800);
+    this.props.VoteTag(val._id);
+  }
 
   render() {
     let tagsArray = [];
@@ -34,11 +42,9 @@ export default class Tags extends Component {
         .map(val => {
           return (
             <li className="tag" key={val._id}>
-              <button
-                onClick={() => this.props.VoteTag(val._id, val.votes + 1)}
-              >
+              <button onClick={() => this.handleVote(val)}>
                 <i className="fas fa-caret-up" />
-                {val.votes}
+                {val.votes.length - 1}
               </button>
               <span> {val.text} </span>
               {val.user === this.props.currentUser.user.username && [

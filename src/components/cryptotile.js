@@ -52,7 +52,7 @@ export default class Cryptotile extends Component {
           </p>
           <p>
             {Intl.NumberFormat().format(
-              price < 1 ? price : Number(price).toFixed(2)
+              Number(price) < 10 ? price : Number(price).toFixed(2)
             )}
           </p>
           <p>

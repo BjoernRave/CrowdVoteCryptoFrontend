@@ -50,8 +50,11 @@ class Cryptotilebox extends Component {
 
   async handleVote(amount, symbol) {
     if (this.props.currentUser.isAuthenticated) {
-      let data = { symbol, amount };
-      apiCall("put", "/api/crypto/rating/edit", data);
+      await apiCall("post", "/api/crypto/rating/edit", {
+        symbol,
+        amount,
+        id: this.props.currentUser.user.id
+      });
       await this.props.fetchCryptoVotes();
     } else {
       document.querySelector("#flash").classList.add("flashactive");
@@ -90,13 +93,6 @@ class Cryptotilebox extends Component {
   renderTiles() {
     const { data } = this.props;
 
-    // if (
-    //   (data.length > 0 &&
-    //     this.state.tiles.length < 2 &&
-    //     Object.keys(this.props.votes).length > 1 &&
-    //     this.props.tags.length > 1) ||
-    //   fiat !== this.props.fiat
-    // ) {
     console.log("list rendered");
     let tiles = data.map((data, ind) => (
       <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
@@ -148,6 +144,7 @@ class Cryptotilebox extends Component {
       this.renderTiles();
     }
     fiatcurr = this.props.fiat.fiat;
+
     return (
       <div className="mainpage">
         <div id="namingbar">

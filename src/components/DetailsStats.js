@@ -4,7 +4,6 @@ export default class DetailStats extends Component {
   render() {
     const data = this.props.data;
     const marketdata = data.market_data;
-    console.log("fromStats " + this.props.currency);
 
     return (
       <div className="detailStats">
@@ -19,7 +18,7 @@ export default class DetailStats extends Component {
             <tr>
               <td className="text-left">Price in {this.props.currency}</td>
               <td className="text-left">
-                ${Intl.NumberFormat().format(
+                {Intl.NumberFormat().format(
                   marketdata.current_price[this.props.currency.toLowerCase()]
                 )}
               </td>
@@ -30,7 +29,7 @@ export default class DetailStats extends Component {
                 Market Cap in {this.props.currency}{" "}
               </td>
               <td className="text-left">
-                ${Intl.NumberFormat().format(
+                {Intl.NumberFormat().format(
                   Number(
                     marketdata.market_cap[this.props.currency.toLowerCase()]
                   ).toFixed(0)
@@ -40,7 +39,7 @@ export default class DetailStats extends Component {
             <tr>
               <td className="text-left"> Market Cap Change(24h) in USD </td>
               <td className="text-left">
-                ${Intl.NumberFormat().format(
+                {Intl.NumberFormat().format(
                   Number(marketdata.market_cap_change_24h).toFixed(0)
                 )}
                 ({Number(marketdata.market_cap_change_percentage_24h).toFixed(
@@ -54,7 +53,7 @@ export default class DetailStats extends Component {
                 Total Volume in {this.props.currency}
               </td>
               <td className="text-left">
-                ${Intl.NumberFormat().format(
+                {Intl.NumberFormat().format(
                   Number(
                     marketdata.total_volume[this.props.currency.toLowerCase()]
                   ).toFixed(0)

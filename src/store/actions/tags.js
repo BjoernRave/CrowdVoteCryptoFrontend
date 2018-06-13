@@ -49,10 +49,12 @@ export const DeleteTag = id => {
   };
 };
 
-export const VoteTag = (id, vote) => {
-  return dispatch => {
-    return apiCall("put", `/api/tags/${id}`, { vote })
-      .then(dispatch(upvoteTag(id)))
-      .catch(err => addError(err.message));
+export const VoteTag = id => {
+  return (dispatch, getState) => {
+    let { currentUser } = getState();
+    const user = currentUser.user.id;
+    return apiCall("put", `/api/tags/${id}`, { user }).catch(err =>
+      addError(err.message)
+    );
   };
 };

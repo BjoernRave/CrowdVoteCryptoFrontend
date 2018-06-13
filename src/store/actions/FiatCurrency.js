@@ -1,5 +1,4 @@
 import { SET_FIAT } from "../actionTypes";
-import { addError } from "./errors";
 
 export const setfiat = fiat => ({
   type: SET_FIAT,

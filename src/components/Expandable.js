@@ -83,6 +83,7 @@ class Expandable extends PureComponent {
   }
 
   render() {
+    console.log("rendering expandable");
     let messsageArray = [];
     if (typeof this.props.messages[this.props.symbol] !== "undefined") {
       messsageArray = this.props.messages[this.props.symbol].map(val => {

@@ -13,6 +13,16 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
+  outline: none;
+}
+*:active {
+  outline: none;
+}
+*:focus {
+  outline: none;
+}
+*:link {
+  outline: none;
 }
 nav {
   display: flex;
@@ -259,6 +269,9 @@ i:focus {
 .Details .detailTags ul {
   width: 100%;
 }
+.Details .detailTags input {
+  width: 97em;
+}
 .fulltags input {
   position: absolute !important;
   width: 500px;
@@ -266,7 +279,7 @@ i:focus {
 .fulltags {
   position: relative;
   width: 100%;
-  margin-top: 85px;
+  margin-top: 65px;
   grid-column: 1/3;
   grid-row: 3/4;
 }
@@ -275,6 +288,7 @@ i:focus {
   margin: 0 auto;
   font-size: 1.6em;
   font-weight: 700;
+  padding-bottom: 30px;
 }
 
 .detailTags {
@@ -292,7 +306,7 @@ i:focus {
   font-size: 0.9em;
   width: 45%;
   float: left;
-  background-color: #f5ff59;
+  background-color: #5587ab;
   border-radius: 40px;
   padding-left: 17px;
   padding-right: 8px;
@@ -309,6 +323,10 @@ i:focus {
   box-shadow: none;
   border: none;
   cursor: pointer;
+  transition: all 0.2s linear;
+}
+.detailTags button:active {
+  transform: scale(0.75);
 }
 
 .CommentSection ul button {
@@ -588,6 +606,12 @@ i:focus {
   text-align: center;
   background-color: #5587ab;
   border-radius: 10px;
+  color: white;
+  transition: all 0.2s linear;
+}
+
+.detailGraph button:active {
+  transform: scale(0.85);
 }
 
 .detailTags p {
@@ -606,11 +630,10 @@ i:focus {
 
 .detailTags input {
   position: relative;
-  width: 380px;
+  width: 480px;
   height: 40px;
   border: none;
   padding-left: 10px;
-  margin-left: 15px;
 }
 .cryptoIcondetail {
   position: absolute;
@@ -748,7 +771,6 @@ tr {
   color: #666b85;
   font-size: 16px;
   font-weight: normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
 
 tr:hover td {
@@ -963,4 +985,8 @@ nav button:hover {
 }
 .select {
   height: 2em;
+}
+.rv-crosshair__line {
+  background: black;
+  width: 1px;
 }

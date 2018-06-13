@@ -50,10 +50,6 @@ class Expandable extends Component {
     }, 10000);
   }
 
-  componentDidUpdate() {
-    // document.querySelector("#comments").scrollTop = 10000;
-  }
-
   handleChangeComment(e) {
     this.setState({ comment: e.target.value });
   }
@@ -106,15 +102,9 @@ class Expandable extends Component {
   componentDidMount() {}
 
   render() {
-    let messages = {};
     const specificData = this.props.cryptodata.filter(
       val => val.symbol === this.props.symbol
     );
-    if (this.props.messages[this.props.symbol] !== undefined) {
-      messages = this.props.messages[this.props.symbol].map(val => {
-        return <li key={val._id}>{val.text}</li>;
-      });
-    }
 
     let messsageArray = [];
     if (typeof this.props.messages[this.props.symbol] !== "undefined") {
@@ -150,7 +140,6 @@ class Expandable extends Component {
     }
 
     const data = specificData[0];
-    const marketdata = data.market_data;
 
     return (
       <div className="detailpage">

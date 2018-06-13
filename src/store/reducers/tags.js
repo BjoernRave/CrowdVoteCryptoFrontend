@@ -11,7 +11,7 @@ export default (state = [], action) => {
     case VOTE_TAG:
       state.forEach(tag => {
         if (tag._id === action.id) {
-          tag.votes = tag.votes + 1;
+          tag.votes = tag.votes;
         }
       });
       return [...state];

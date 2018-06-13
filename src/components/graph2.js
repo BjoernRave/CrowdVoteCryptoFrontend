@@ -9,7 +9,6 @@ import {
   LineSeries,
   Crosshair
 } from "react-vis";
-import crosshair from "react-vis/dist/plot/crosshair";
 
 export default class DynamicCrosshair extends React.Component {
   constructor(props) {
@@ -71,14 +70,14 @@ export default class DynamicCrosshair extends React.Component {
           />
           <YAxis title="Price" />
           <LineSeries
-            color="red"
+            color="#555E5D"
             className="graphLine"
             onNearestX={this._onNearestX}
             data={this.props.data}
           />
 
           <Crosshair values={myValues}>
-            <div style={{ background: "black" }} className="crosshair">
+            <div style={{ background: "black" }}>
               <p>
                 <span> Date: </span>
                 {this.state.dataX}
