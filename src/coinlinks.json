@@ -1,0 +1,2804 @@
+{
+ "coins": [
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://bitcoin.org/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://blockchain.info/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://live.blockcypher.com/btc/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://blockchair.com/bitcoin/blocks"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://bitcointalk.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bitcoin/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.ethereum.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=428589.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://etherchain.org/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.ethereum.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://gitter.im/orgs/ethereum/rooms"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/ethereum"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://ripple.com/xrp/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://xrpcharts.ripple.com/#/graph/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://bithomp.com/explorer/"
+    },
+    {
+     "name": "Message Board",
+     "url": "http://www.xrpchat.com/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/Ripple"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discord.gg/N4x7kPb"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/ripple"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.bitcoincash.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2040221.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://blockchair.com/bitcoin-cash/blocks"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://blockdozer.com/insight/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://www.blocktrail.com/BCC"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bitcoincashorg/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://eos.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1904415.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/EOS"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/AAAAAEQbOeucnaMWN0A9dQ"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/eosio"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://litecoin.com/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://litecoin.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=47417.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explorer.litecoin.net/chain/Litecoin"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://chainz.cryptoid.info/ltc/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://live.blockcypher.com/ltc/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://litecointalk.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/litecoin"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/litecoin-project/litecoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.stellar.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1428573.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://dashboard.stellar.org/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://stellar.expert/explorer/public/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://steexp.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://stellarcommunity.org/"
+    },
+    {
+     "name": "Message Board 2",
+     "url": "https://galactictalk.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "http://slack.stellar.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/stellar"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.cardano.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://cardanodocs.com/cardano/monetary-policy/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://cardanoexplorer.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.cardano.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/CardanoAnnouncements"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/input-output-hk/cardano-sl/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.iota.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1216479.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://thetangle.org/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://iotasear.ch/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.iota.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/7Gu2mG5"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/iotaledger"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://tron.network/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xf230b790e05390fc8295f4d3f60332c93bed42e2"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xf230b790e05390fc8295f4d3f60332c93bed42e2"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@Tronfoundation"
+    },
+    {
+     "name": "Chat",
+     "url": "https://tronfoundation.slack.com/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/tronprotocol"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://tether.to/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://www.omniexplorer.info/asset/31"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://neo.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2057932.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://neotracker.io/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://antcha.in/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://neoexplorer.co/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/neo-project"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.dash.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=421615.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.dash.org/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://insight.dash.org/insight/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://chainz.cryptoid.info/dash/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://www.dash.org/forum/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/9z8zX5j"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/dashpay/dash"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.monero.cc/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=583449.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://moneroblocks.info/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://chainradar.com/xmr/blocks"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.getmonero.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/bitmonero"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/monero-project/monero"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.binance.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://binance.zendesk.com/hc/en-us/articles/115000497111-Binance-Coin-BNB-"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://nem.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=654845.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://nembex.nem.ninja/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://explorer.ournem.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.nem.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/nemred"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/NemProject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.vechain.org/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://www.vechain.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xd850942ef8811f2a866692a623011bde52a462c1"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xd850942ef8811f2a866692a623011bde52a462c1"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/vechain_official_english"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/joinchat/GG4BlQwm19czcBGOewv40Q"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://ethereumclassic.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1559630.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://gastracker.io/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://etherhub.io/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.ethereumclassic.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/HW4GckH"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/ethereumproject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://ont.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://neotracker.io/asset/ceab719b8baa2310f232ee0d277c061704541cfb"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/ontologynetwork"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/OntologyNetwork"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/OntologyNetworkCN"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://qtum.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1720632.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://qtum.info/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://qtumexplorer.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/qtumproject/qtum/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://omg.omise.co/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/OmiseGo"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/omisego"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://omg.omise.co/slack"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/omise/omise-go"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://z.cash/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.zcha.in/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://zchain.online/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.z.cash/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/zcash/zcash"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.icon.foundation/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2115503.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xb5a5f22694352c15b00323844ad545abb2b11028"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xb5a5f22694352c15b00323844ad545abb2b11028"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/Fqw4igkkVmYtj--ZVi-QcA"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/theloopkr/loopchain"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://bytecoin.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=512747.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://chainradar.com/bcn/blocks"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://democats.org/pool/?name=bytecoin"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://bytecointalk.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/bytecoinchat"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bcndev"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://lisk.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1346646"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.lisk.io/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.lisk.io/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/LiskHQ/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.decred.org/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://docs.decred.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1290358.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://mainnet.decred.org/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://explorer.dcrdata.org/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://stats.decred.org/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/decred"
+    },
+    {
+     "name": "Message Board 2",
+     "url": "https://forum.decred.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://slack.decred.org/"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discord.gg/GJ2GXfz"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/decred"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.zilliqa.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/zilliqachat"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/Zilliqa/Zilliqa"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.aeternity.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1733140.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/aeternity"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/aeternity"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://bitcoingold.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2284289.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.bitcoingold.org/insight/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://btgexp.com/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://btgexplorer.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.bitcoingold.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/BitcoinGoldHQ"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discord.gg/HmVUU6S"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/BTCGPU/BTCGPU"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://bytom.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1975390.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xcb97e65f07da24d46bcdd078ebebd7c6e6e3d750"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xcb97e65f07da24d46bcdd078ebebd7c6e6e3d750"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/BytomInternational"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/bytomchinese"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/Bytom/bytom"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://0xproject.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/ZRX"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xe41d2489571d322189246dafa5ebde1f4699f498"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/0xProject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://sia.tech/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1060294.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explore.sia.tech/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/sia"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/NebulousLabs/Sia"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://bitshares.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1949828"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://cryptofresh.com/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://open-explorer.io/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "http://bts.ai/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://bitsharestalk.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/BitSharesDEX"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bitshares"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://vergecurrency.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1365894.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://verge-blockchain.info/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/VERGExvg"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discord.gg/vergecurrency"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/vergecurrency"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://steem.io/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://steemit.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1466593.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://steemd.com/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://steemdb.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://steemit.com/@steemitblog"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/steemit/steem"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://btcd.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explorer.btcd.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/BCDcommunity"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://bitcoindiamonds.slack.com/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/eveybcd/BitcoinDiamond"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.augur.net/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/REP"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/AugurProject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.rchain.coop/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1747033.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x168296bb09e24a88805cb9c33356536b980d3fc5"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x168296bb09e24a88805cb9c33356536b980d3fc5"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/rchain-cooperative"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/rchain/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://wavesplatform.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=3223136.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://wavesgo.com/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://wavesexplorer.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://wavestalk.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/wavesnews"
+    },
+    {
+     "name": "Chat 2",
+     "url": "http://wavesplatform.herokuapp.com/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/wavesplatform/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://nano.org/en"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://raiblocks.net/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1381323.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://nano.org/en/explore/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://www.nanode.co/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.raiblocks.net/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/nanocurrency"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://dogecoin.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=361813.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://dogechain.info/chain/Dogecoin"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.me/dogecoin/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/dogecoin/dogecoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://makerdao.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/Maker"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://golem.network/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1655002.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/Golem"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xa74476443119A942dE498590Fe1f2454d7D4aC0d"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://blog.golemproject.net/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/golemfactory/golem"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://btcprivate.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2675257.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.btcprivate.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/eGuQQUR"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/BTCPrivate/BitcoinPrivate"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://wanchain.org/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.wanchain.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/WanchainANN"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/WanchainCHAT"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/wanchain"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://stratisplatform.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1512202.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://chainz.cryptoid.info/strat/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://cryptobe.com/chain/Stratis"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://www.stratistalk.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/StratisPlatform"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discordapp.com/invite/9tDyfZs"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/stratisproject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://populous.co/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1866936.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xd4fa1460f537bb9085d22c7bccb5dd450ef28e3a"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xd4fa1460f537bb9085d22c7bccb5dd450ef28e3a"
+    },
+    {
+     "name": "Chat",
+     "url": "https://bitpopulous.slack.com/"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/joinchat/HeQm1Ugjn32zhpJyBza8OA"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bitpopulous"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.digibyte.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=408268.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://digiexplorer.info/status"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://chainz.cryptoid.info/dgb/#@inflation"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/DigiByteCoin"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/digibyte"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.waltonchain.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2127069.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xb7cb1c96db6b22b0d3d9536e0108d062bd488f74"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xb7cb1c96db6b22b0d3d9536e0108d062bd488f74"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/waltonchain_en"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://status.im/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/StatusNetwork"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x744d70fdbe2ba4cf95131626614a1763df805b9e"
+    },
+    {
+     "name": "Chat",
+     "url": "https://chat.status.im/#/register"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/status-im"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://basicattentiontoken.org/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/Bat"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://h.cash/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://binance.zendesk.com/hc/en-us/articles/115001151191"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explorer.h.cash/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/HcashOrg/hcashd"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://nebulas.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x5d65d971895edc438f465c17db6992698a52318d"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x5d65d971895edc438f465c17db6992698a52318d"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/nebulasio"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/nebulasio"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/nebulasio"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://aion.network/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x4CEdA7906a5Ed2179785Cd3A40A69ee8bc99C466"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x4ceda7906a5ed2179785cd3a40a69ee8bc99c466"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://blog.aion.network/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/aion_blockchain"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discordapp.com/invite/srU4qbS"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/aionnetwork"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.kucoin.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x039b5649a59967e3e936d7471f9c3700100ee1ab"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x039b5649a59967e3e936d7471f9c3700100ee1ab"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://iost.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xfa1a856cfa3409cfa145fa4e20eb270df3eb21ab"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xfa1a856cfa3409cfa145fa4e20eb270df3eb21ab"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@iostoken"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/officialios"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://digix.global/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://digix.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://forum.bitcoin.com/alternative-cryptocurrencies-altcoins/digixdao-token-dgd-pre-launch-via-ccedk-acount-digixdao-t7120.html"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/dgd"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@digix"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/digixglobal"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.huobi.pro/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x6f259637dcd74c767781e37bc6133cd6a68aa161"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://ethplorer.io/address/0x6f259637dcd74c767781e37bc6133cd6a68aa161"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://loopring.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2069498"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xEF68e7C694F40c8202821eDF525dE3782458639f"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xef68e7c694f40c8202821edf525de3782458639f"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@loopring"
+    },
+    {
+     "name": "Chat",
+     "url": "https://loopring.rocket.chat/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/loopring"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://komodoplatform.com/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://komodoplatform.com/latest-news/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1605144.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://kmdexplorer.io/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://kmd.explorer.supernet.org/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://blog.komodoplatform.com/"
+    },
+    {
+     "name": "Message Board 2",
+     "url": "https://forum.komodoplatform.com/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discord.gg/ZSrn5sJ"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://telegram.me/KomodoPlatform_Official"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/KomodoPlatform"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://gxs.gxb.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1813679.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://block.gxb.io/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.gxb.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/GXB_International"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/gxchain"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.ardorplatform.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1518497.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://ardor.tools/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ardorportal.org/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://nxtforum.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://nxtplatform.org/slack/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://bitbucket.org/Jelurida/ardor/src"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://cryptonex.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2087904.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.cryptonex.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/Cryptonex"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://bancor.network/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1789222.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/Bancor"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://blog.bancor.network/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://telegram.me/bancor"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bancorprotocol/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://aelf.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xbf2179859fc6D5BEE9Bf9158632Dc51678a4100e"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xbf2179859fc6d5bee9bf9158632dc51678a4100e"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@aelfblockchain"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/aelfblockchain"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/aelfProject"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.reddcoin.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=423597.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://live.reddcoin.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://www.reddcointalk.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/reddcoin-project/reddcoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://ark.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1649695.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.ark.io/"
+    },
+    {
+     "name": "Message Board",
+     "url": "http://forum.ark.io/"
+    },
+    {
+     "name": "Message Board 2",
+     "url": "https://blog.ark.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://ark.io/slack"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/ArkEcosystem"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://monacoin.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=392436.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://mona.chainsight.info/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://mona.chainseeker.info/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/monacoinproject/monacoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://moac.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explorer.moac.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://moac-chain.slack.com/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/MOACChain/moac-core"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://maidsafe.net/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=579797.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://omniexplorer.info/asset/3"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://safenetforum.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/maidsafe"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.pivx.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1262920"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://chainz.cryptoid.info/pivx/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://www.presstab.pw/phpexplorer/PIVX/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "http://pivx.presstab.pw/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.pivx.org/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/PIVX-Project/PIVX/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.elastos.org/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://blockchain.elastos.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/elastosgroup"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://elastos.slack.com/"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/elastos"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://mith.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=3108554.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x3893b9422cd5d70a81edeffe3d5a1c6a978310bb"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x3893b9422cd5d70a81edeffe3d5a1c6a978310bb"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/mithriltoken"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/mithrilchat"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/mithio/mithril-smart-contract"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.cybermiles.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xf85feea2fdd81d51177f6b8f35f0e6734ce45f5f"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xf85feea2fdd81d51177f6b8f35f0e6734ce45f5f"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/cybermiles"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/cybermilestoken"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/cybermiles"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.dentacoin.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1944236.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x08d32b0da63e2C3bcF8019c9c5d849d7a9d791e6"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x08d32b0da63e2c3bcf8019c9c5d849d7a9d791e6"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/dentacoin"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/Dentacoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://waykichain.com/"
+    },
+    {
+     "name": "Website 2",
+     "url": "http://waykichain.net/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2667633"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x4f878c0852722b0976a955d68b376e4cd4ae99e5"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x4f878c0852722b0976a955d68b376e4cd4ae99e5"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/wiccofficial"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/waykichain"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.bibox.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bibox.zendesk.com/hc/en-us"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xb3104b4b9da82025e8b9f8fb28b3553ce2f67069"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xb3104b4b9da82025e8b9f8fb28b3553ce2f67069"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/GAi9vQ5BEjR0mAxK5cdHjA"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/bibox365/bixtoken"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://neo.org/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://neotracker.io/asset/602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://neoexplorer.co/assets/602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://antchain.xyz/asset/hash/602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://veritas.veritaseum.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1887061"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x8f3470A7388c05eE4e7AF3d01D8C722b0FF52374"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x8f3470A7388c05eE4e7AF3d01D8C722b0FF52374"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/veritaseum"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://kyber.network/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/KyberNetwork"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xdd974d5c2e2928dea5f71b9825b8b646686bd200"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/kybernetwork"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/kybernetwork"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://fusion.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2789984"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xd0352a019e9ab9d757776f532377aaebd36fd541"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://ethplorer.io/address/0xd0352a019e9ab9d757776f532377aaebd36fd541"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@fusionprotocol"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/FUSIONFoundation"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/FUSIONFoundation"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.ethos.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1964187.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x5af2be193a6abca9c8817001f45744777db30756"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x5af2be193a6abca9c8817001f45744777db30756"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://funfair.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1968383.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/FunFair"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x419d0d8bdd9af5e606ae2232ed285aff190e711b"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/FunFair_Official"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discordapp.com/invite/rwETqSP"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://loomx.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "http://ethplorer.io/address/0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/loom-network"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/loomnetwork"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/loomnetwork"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://dropil.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x4672bad527107471cb5067a887f4656d585a8a31"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x4672bad527107471cb5067a887f4656d585a8a31"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/DropilCoin"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://docademic.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2757588.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x905E337c6c8645263D3521205Aa37bf4d034e745"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x905e337c6c8645263d3521205aa37bf4d034e745"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://cryptomaa.com/coin/MTC/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/GWeOM0Nc_R_htbcpJha7mA"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/Docademic/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://www.cortexlabs.ai/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xea11755ae41d889ceec39a63e6ff75a02bc1c00d"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xea11755ae41d889ceec39a63e6ff75a02bc1c00d"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@CTXCBlockchain"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/CortexBlockchain"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/CortexFoundation"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://kinecosystem.org/"
+    },
+    {
+     "name": "Website 2",
+     "url": "https://kin.kik.com/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x818fc6c2ec5986bc6e2cbf00939d90556ab12ce5"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x818fc6c2ec5986bc6e2cbf00939d90556ab12ce5"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/kinfoundation"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/kincurrency"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://syscoin.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1466445.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://chainz.cryptoid.info/sys/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/joinchat/AAAAAEHzByog3h1qutnjhQ"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/syscoin/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://decentraland.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2065128.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/decentraland"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x0f5d2fb29fb7d3cfee444a200298f468908cc942"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://forum.decentraland.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://chat.decentraland.org/"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://t.me/dcl_market"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/decentraland"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://liquid.plus/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2256844.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://steemit.com/@quoineliquid"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/QUOINE"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://nxt.org/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=587007.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://www.mynxt.info/blockexplorer/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://nxtportal.org/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "http://www.peerexplorer.com/"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://nxtforum.org/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/NXTCommunity"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://bitbucket.org/JeanLucPicard/nxt/src"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "http://emercoin.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=362513.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://explorer.emercoin.com/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://www.coinexplorer.net/EMC"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/emercoin_official"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/emercoin/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://nuls.io/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xb91318f35bdb262e9423bc7c7c2a3a93dd93c92c"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xb91318f35bdb262e9423bc7c7c2a3a93dd93c92c"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://steemit.com/@nuls"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/Nulsio"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://join.slack.com/t/nuls/shared_invite/enQtMjQ4MTM4ODAyNTI4LWJjNGMwYTE0YjRlYmFlZGUwM2JhOGE4MDIwZmE4MzA2MDg1YzUyMmVkN2RhZjkyNWMzZjY5ZDU5ZmViMjZjNGQ"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/nuls-io/nuls"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://home.scry.info/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x9F5F3CFD7a32700C93F971637407ff17b91c7342"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x9f5f3cfd7a32700c93f971637407ff17b91c7342"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://medium.com/@scryscry8"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/scryinfo1"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/scryInfo"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://www.polymath.network/"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec"
+    },
+    {
+     "name": "Message Board",
+     "url": "https://blog.polymath.network/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/PolymathNetwork"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/PolymathNetwork"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://enigma.co/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2052215.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0xf0ee6b27b759c9893ce4f094b49ad28fd15a23e4"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0xf0ee6b27b759c9893ce4f094b49ad28fd15a23e4"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/enigmacatalyst"
+    },
+    {
+     "name": "Chat 2",
+     "url": "https://discord.gg/SJK32GY"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/enigmampc"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://substratum.net/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2054963.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x12480e24eb5bec1a9d4369cab6a80cad3c0a377a"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x12480e24eb5bec1a9d4369cab6a80cad3c0a377a"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/SubstratumCommunity"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/SubstratumNetwork/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://zcoin.io/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=1638450"
+    },
+    {
+     "name": "Explorer",
+     "url": "http://explorer.zcoin.io/"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://chainz.cryptoid.info/xzc/"
+    },
+    {
+     "name": "Explorer 3",
+     "url": "https://insight.zcoin.io/"
+    },
+    {
+     "name": "Chat",
+     "url": "https://discordapp.com/invite/4FjnQ2q"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/zcoinofficial/zcoin/"
+    }
+   ]
+  },
+  {
+   "links": [
+    {
+     "name": "Website",
+     "url": "https://dragonchain.com/"
+    },
+    {
+     "name": "Announcement",
+     "url": "https://bitcointalk.org/index.php?topic=2096284.0"
+    },
+    {
+     "name": "Explorer",
+     "url": "https://etherscan.io/token/0x419c4db4b9e25d6db2ad9691ccb832c8d9fda05e"
+    },
+    {
+     "name": "Explorer 2",
+     "url": "https://ethplorer.io/address/0x419c4db4b9e25d6db2ad9691ccb832c8d9fda05e"
+    },
+    {
+     "name": "Chat",
+     "url": "https://t.me/dragontalk"
+    },
+    {
+     "name": "Source Code",
+     "url": "https://github.com/dragonchain/dragonchain"
+    }
+   ]
+  }
+ ]
+}

@@ -8,6 +8,8 @@ import {
 import { apiCall } from "../services/api";
 import Footer from "../components/footer";
 import { getTags } from "../store/actions/tags";
+import Popup from "react-popup";
+import Cookies from "universal-cookie";
 
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
@@ -15,6 +17,9 @@ import { getTags } from "../store/actions/tags";
 //   return images;
 // }, {});
 let fiatcurr = "USD";
+let coinlinks = {};
+const cookies = new Cookies();
+
 class Cryptotilebox extends Component {
   constructor(props) {
     super(props);
@@ -26,9 +31,67 @@ class Cryptotilebox extends Component {
     this.goTop = this.goTop.bind(this);
     this.state = { PagStart: 0, PagEnd: 50, tiles: [], order: false };
   }
+  componentWillMount() {
+    this.props.fetchCryptoStats();
+    this.props.fetchCryptoVotes();
+    this.props.getTags();
+    fetch("../../public/coinlinks.json")
+      .then(res => res.json())
+      .then(res => {
+        coinlinks = res;
+      });
+  }
 
   componentDidMount() {
-    this.props.fetchCryptoStats();
+    console.log(cookies.get("firsttime"));
+    if (cookies.get("firsttime") !== "true") {
+      Popup.create({
+        title: "Welcome on CrowdVoteCrypto!",
+        content: (
+          <div>
+            The place to understand how the future of your cryptocurrency will
+            look like
+          </div>
+        ),
+        className: "alert",
+        buttons: {
+          left: [
+            {
+              text: "Ok!",
+              className: "success",
+              action: function() {
+                Popup.close();
+                cookies.set("firsttime", true, {
+                  path: "/",
+                  expires: new Date(2048, 11, 24)
+                });
+              }
+            }
+          ]
+        }
+      });
+      Popup.create({
+        title: "Welcome on CrowdVoteCrypto!",
+        content: <div>Let me introduce you to the concept</div>,
+        className: "alert",
+        buttons: {
+          left: [
+            {
+              text: "Ok!",
+              className: "success",
+              action: function() {
+                Popup.close();
+                cookies.set("firsttime", true, {
+                  path: "/",
+                  expires: new Date(2048, 11, 24)
+                });
+              }
+            }
+          ]
+        }
+      });
+    }
+
     window.onscroll = function() {
       myFunction();
     };
@@ -41,8 +104,7 @@ class Cryptotilebox extends Component {
         header.classList.remove("sticky");
       }
     }
-    this.props.fetchCryptoVotes();
-    this.props.getTags();
+
     // setInterval(() => {
     //   this.props.fetchCryptoVotes();
     // }, 8000);

@@ -990,3 +990,7 @@ nav button:hover {
   background: black;
   width: 1px;
 }
+
+#uppertile img:nth-child(1) {
+  filter: contrast(0);
+}

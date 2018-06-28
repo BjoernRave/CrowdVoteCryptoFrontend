@@ -3,6 +3,7 @@ import Rating from "./rating";
 import Expandable from "./Expandable";
 import { CSSTransitionGroup } from "react-transition-group";
 import { Link } from "react-router-dom";
+// import Links from "../../public/coinlinks.json";
 
 export default class Cryptotile extends Component {
   constructor(props) {

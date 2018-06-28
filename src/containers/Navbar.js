@@ -52,7 +52,10 @@ class Navbar extends Component {
     this.props.SetFiatCurrency(e.target.value);
     this.setState({ fiat: e.target.value });
 
-    cookies.set("fiat", e.target.value, { path: "/" });
+    cookies.set("fiat", e.target.value, {
+      path: "/",
+      expires: new Date(2048, 11, 24)
+    });
     console.log(cookies.get("fiat")); // Pacman
   }
 
