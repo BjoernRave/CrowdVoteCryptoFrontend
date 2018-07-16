@@ -14,6 +14,13 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
   outline: none;
+
+  --mainColor: #135a8c;
+  --secondColor: #ffffff;
+  --thirdColor: #53c077;
+  --fourthColor: #e7cd90;
+  --fifthColor: #919290;
+  --attention: #fc4348;
 }
 *:active {
   outline: none;
@@ -24,26 +31,30 @@
 *:link {
   outline: none;
 }
+
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #85ded4;
-  padding-top: 5px;
-  color: white;
+  color: var(--secondColor);
 }
 nav:nth-child(1) {
   padding-top: 8px;
-  font-size: 2.2em;
+  font-size: 2em;
   font-weight: 800;
   padding-left: 18px;
   text-shadow: #22262e 8px 6px 10px;
+  line-height: 24px;
 }
+
+/* nav:nth-child(1) span {
+  margin-left: 50px;
+} */
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: var(--secondColor);
 }
 
 i {
@@ -56,8 +67,10 @@ i:focus {
   border: none;
 }
 
-.mainpage {
-  background-color: #85ded4;
+.onboarding {
+  background: url("./images/shattered-island.gif");
+  /* background-repeat: no-repeat; */
+  background-size: contain;
 }
 
 .btn {
@@ -68,8 +81,8 @@ i:focus {
   letter-spacing: 0.1em;
   font-size: 1.2rem;
   padding: 1em 1.5em;
-  background-color: #fc4348;
-  color: white;
+  background-color: var(--attention);
+  color: var(--secondColor);
   box-shadow: 0 4px 20px rgba(252, 67, 72, 0.5);
   transition: all 0.2s;
   border-radius: 50em;
@@ -85,16 +98,17 @@ i:focus {
   transform: scale(0.9);
 }
 .btn:hover {
-  background-color: #fc5c60;
+  background-color: var(--attention);
   box-shadow: 0 0 8px rgba(252, 67, 72, 0.5);
 }
 
 #uppertile {
+  border-radius: 5px;
   padding-left: 20px;
   position: relative;
   display: grid;
-  background-color: white;
-  margin: 6px 50px;
+  background-color: var(--secondColor);
+  margin: 8px 2%;
   font-size: 1em;
   padding-top: 25px;
   grid-template-columns: 11% 12% 13% 8% 10% 9% 10% 4% 6% 14% 6%;
@@ -111,12 +125,12 @@ i:focus {
   text-decoration: none;
 }
 #uppertile .red {
-  color: red;
+  color: var(--attention);
   font-size: 1.2em;
 }
 
 #uppertile a {
-  background-color: white;
+  background-color: var(--secondColor);
 }
 .bestTags {
   position: absolute;
@@ -127,29 +141,28 @@ i:focus {
   flex-direction: row;
 }
 .bestTags * {
-  background-color: #7cff7c;
-  border-radius: 50px;
+  background-color: var(--thirdColor);
+  border-radius: 10px;
   height: 1.3em !important;
   padding: 0 5px;
   margin: 0 3px !important;
 }
 
 .green {
-  color: green;
+  color: var(--thirdColor);
   font-size: 1.2em;
 }
 #namingbar {
-  background-color: #85ded4;
+  /* background-color: #85ded4; */
   display: grid;
   grid-template-columns: 11% 12% 13% 8% 10% 9% 10% 4% 6% 14% 6%;
   font-size: 1em;
   margin-left: 50px;
   margin-right: 50px;
-  padding-top: 10px;
   padding-left: 15px;
   font-weight: 600;
   z-index: 3;
-  color: rgb(80, 80, 80);
+  color: var(--secondColor);
   align-items: center;
 }
 #namingbar p {
@@ -172,7 +185,10 @@ i:focus {
 .sticky {
   position: fixed;
   top: 0;
-  width: 95%;
+  left: 0;
+  width: 100%;
+  background-color: #2b2c34;
+  transition: all linear 0.2s;
 }
 
 .sticky + .tilebox {
@@ -184,7 +200,7 @@ i:focus {
   margin-top: -30px;
 }
 #rating button {
-  color: red;
+  color: var(--attention);
   text-decoration: none;
   border: none;
   background: none;
@@ -197,7 +213,7 @@ i:focus {
 }
 
 #rating button:hover {
-  color: rgb(248, 52, 52);
+  color: var(--attention);
 }
 
 #rating button:active {
@@ -247,7 +263,7 @@ i:focus {
 .Expandable {
   margin-left: 70px;
   margin-right: 70px;
-  background-color: #b2fff6;
+  /* background-color: #b2fff6; */
   font-size: 1em;
   display: grid;
   grid-template-columns: 3fr 3fr 1fr;
@@ -257,7 +273,7 @@ i:focus {
   padding-top: 3px;
 }
 .detailpage {
-  background-color: #85ded4;
+  background-color: var(--secondColor);
 }
 .Details .detailTags button {
   font-size: 1.4em;
@@ -306,7 +322,7 @@ i:focus {
   font-size: 0.9em;
   width: 45%;
   float: left;
-  background-color: #5587ab;
+  background-color: var(--fourthColor);
   border-radius: 40px;
   padding-left: 17px;
   padding-right: 8px;
@@ -361,7 +377,7 @@ i:focus {
   text-align: center;
 }
 .bubble {
-  background-color: #5587ab;
+  background-color: var(--fourthColor);
   padding: 4px 9px;
   border-radius: 40px;
   padding-right: 11px;
@@ -391,7 +407,7 @@ i:focus {
   align-items: center;
   justify-content: space-between;
   background-color: #22262e;
-  color: white;
+  color: var(--secondColor);
   font-size: 1.3em;
 }
 .Details .header p {
@@ -510,7 +526,7 @@ i:focus {
   transition: linear 1s;
   font-size: 27px;
   z-index: 3;
-  background-color: red;
+  background-color: var(--attention);
   left: 30%;
   user-select: none;
   padding: 10px;
@@ -525,7 +541,7 @@ i:focus {
 .suggestions {
   list-style: none;
   position: absolute;
-  background-color: white;
+  background-color: var(--secondColor);
   z-index: 3;
   border: 1px solid black;
 }
@@ -574,12 +590,11 @@ i:focus {
   grid-row: 1/2;
   width: fit-content;
   margin: 0 auto;
-  font-size: 3em;
-  padding: 30px;
+  font-size: 2.7em;
 }
 
 .detailStats {
-  margin-top: 50px;
+  margin-top: 60px;
   margin-left: 30px;
   grid-column: 2/3;
   grid-row: 1/4;
@@ -589,8 +604,9 @@ i:focus {
   grid-area: graph;
   grid-row: 2/3;
   grid-column: 1/2;
-  padding: 20px;
+  padding: 0px;
   padding-left: 0px;
+  margin-top: -48px;
 }
 .detailGraph button {
   color: inherit;
@@ -604,9 +620,9 @@ i:focus {
   position: relative;
   transition: all 0.3s;
   text-align: center;
-  background-color: #5587ab;
+  background-color: var(--fourthColor);
   border-radius: 10px;
-  color: white;
+  color: var(--secondColor);
   transition: all 0.2s linear;
 }
 
@@ -662,7 +678,7 @@ i:focus {
   margin-left: 0px;
   border: none;
 
-  color: white;
+  color: var(--secondColor);
 
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -674,7 +690,7 @@ i:focus {
   flex-direction: row;
   align-items: center; */
   margin-left: 390px;
-  color: white;
+  color: var(--secondColor);
   width: 280px;
 }
 #searchBar input {
@@ -857,7 +873,7 @@ nav button {
   position: relative;
   transition: all 0.3s;
   text-align: center;
-  background-color: #5587ab;
+  background-color: var(--fourthColor);
   border-radius: 10px;
 }
 
@@ -993,4 +1009,10 @@ nav button:hover {
 
 #uppertile img:nth-child(1) {
   filter: contrast(0);
+}
+
+.placeholder {
+  height: 75px;
+  background-color: gray;
+  margin: 10px 40px;
 }

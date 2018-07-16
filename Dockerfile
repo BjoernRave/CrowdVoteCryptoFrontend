@@ -1,15 +1,20 @@
-FROM node:8.9-alpine
 
-ADD package.json /package.json
+FROM node:latest
 
-ENV NODE_PATH=/node_modules
-ENV PATH=$PATH:/node_modules/.bin
-RUN npm install
+# Override the base log level (info).
 
-WORKDIR /app
-ADD . /app
 
+# Install and configure `serve`.
 EXPOSE 3000
 
-ENTRYPOINT [ "/app/run.sh"]
-CMD npm start
+# Install all dependencies of the current project.
+COPY package.json package.json
+COPY npm-shrinkwrap.json npm-shrinkwrap.json
+RUN npm install
+
+# Copy all local files into the image.
+COPY . .
+
+# Build for production.
+RUN npm run build --production
+CMD [ "npm", "start" ]

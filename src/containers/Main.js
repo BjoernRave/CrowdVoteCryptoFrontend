@@ -8,6 +8,7 @@ import { removeError } from "../store/actions/errors";
 import DetailsPage from "../containers/Details2";
 import { GetDetailRoutes } from "../store/actions/DetailRoutes";
 import { fetchCryptoStats } from "../store/actions/cryptostats";
+import { AnimatedRoute } from "react-router-transition";
 
 class Main extends Component {
   constructor(props) {
@@ -40,13 +41,21 @@ class Main extends Component {
       this.props.fetchCryptoStats().then(res => {
         let DetailRoutes = this.props.cryptos.map(val => {
           return (
-            <Route
-              key={val.id}
-              path={"/" + val.name.toLowerCase().replace(/\s/g, "-")}
-              render={props => (
-                <DetailsPage symbol={val.symbol} name={val.name} />
-              )}
-            />
+            <div key={val.id}>
+              <Route path={"/" + val.name.toLowerCase().replace(/\s/g, "-")} />
+              <AnimatedRoute
+                path={"/" + val.name.toLowerCase().replace(/\s/g, "-")}
+                component={props => (
+                  <DetailsPage symbol={val.symbol} name={val.name} />
+                )}
+                atEnter={{ offset: -100 }}
+                atLeave={{ offset: -100 }}
+                atActive={{ offset: 0 }}
+                mapStyles={styles => ({
+                  transform: `translateX(${styles.offset}%)`
+                })}
+              />
+            </div>
           );
         });
         this.setState({ DetailRoutes });
@@ -109,10 +118,13 @@ function mapStateToProps(state) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, {
-    authUser,
-    removeError,
-    GetDetailRoutes,
-    fetchCryptoStats
-  })(Main)
+  connect(
+    mapStateToProps,
+    {
+      authUser,
+      removeError,
+      GetDetailRoutes,
+      fetchCryptoStats
+    }
+  )(Main)
 );

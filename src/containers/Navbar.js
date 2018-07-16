@@ -64,7 +64,13 @@ class Navbar extends Component {
       <div>
         <nav>
           <div>
-            <Link to="/">CrowdVoteCrypto </Link>
+            <Link to="/">
+              Crowd. <br />{" "}
+              <span>
+                {" "}
+                Vote. <br /> Crypto.{" "}
+              </span>{" "}
+            </Link>
           </div>
           <select
             className="select"

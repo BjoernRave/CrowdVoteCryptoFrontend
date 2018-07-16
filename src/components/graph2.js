@@ -55,7 +55,11 @@ export default class DynamicCrosshair extends React.Component {
     let myValues = this.state.crosshairValues;
     return (
       <div className="detailGraph">
-        <XYPlot onMouseLeave={this._onMouseLeave} width={800} height={500}>
+        <XYPlot
+          onMouseLeave={this._onMouseLeave}
+          width={window.innerWidth * 0.55}
+          height={window.innerHeight * 0.7}
+        >
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis

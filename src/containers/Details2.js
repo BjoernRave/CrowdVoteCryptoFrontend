@@ -16,6 +16,7 @@ import Tags from "../components/tags";
 import Graph2 from "../components/graph2";
 import { fetchHistCryptoData } from "../store/actions/cryptostats";
 import DetailStats from "../components/DetailsStats";
+import Chart from "../components/Chart";
 
 class Expandable extends Component {
   constructor(props) {
@@ -167,6 +168,7 @@ class Expandable extends Component {
             fetchstats={this.props.fetchHistCryptoData}
             name={this.props.name}
           />
+
           <div className="fulltags">
             <p>Community Tags</p>
             <Tags

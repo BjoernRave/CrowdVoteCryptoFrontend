@@ -10,6 +10,8 @@ import Footer from "../components/footer";
 import { getTags } from "../store/actions/tags";
 import Popup from "react-popup";
 import Cookies from "universal-cookie";
+import LazyLoad from "react-lazyload";
+import DescriptionBar from "../components/descriptionBar";
 
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
@@ -17,7 +19,6 @@ import Cookies from "universal-cookie";
 //   return images;
 // }, {});
 let fiatcurr = "USD";
-let coinlinks = {};
 const cookies = new Cookies();
 
 class Cryptotilebox extends Component {
@@ -29,17 +30,18 @@ class Cryptotilebox extends Component {
     this.handleHover = this.handleHover.bind(this);
     this.renderTiles = this.renderTiles.bind(this);
     this.goTop = this.goTop.bind(this);
-    this.state = { PagStart: 0, PagEnd: 50, tiles: [], order: false };
+    this.state = {
+      PagStart: 0,
+      PagEnd: 50,
+      tiles: [],
+      order: false,
+      descriptionHover: false
+    };
   }
   componentWillMount() {
     this.props.fetchCryptoStats();
     this.props.fetchCryptoVotes();
     this.props.getTags();
-    fetch("../../public/coinlinks.json")
-      .then(res => res.json())
-      .then(res => {
-        coinlinks = res;
-      });
   }
 
   componentDidMount() {
@@ -97,13 +99,13 @@ class Cryptotilebox extends Component {
     };
     var header = document.getElementById("namingbar");
     var sticky = header.offsetTop;
-    function myFunction() {
+    const myFunction = () => {
       if (window.pageYOffset >= sticky) {
-        header.classList.add("sticky");
+        this.setState({ descriptionHover: true });
       } else {
-        header.classList.remove("sticky");
+        this.setState({ descriptionHover: false });
       }
-    }
+    };
 
     // setInterval(() => {
     //   this.props.fetchCryptoVotes();
@@ -157,36 +159,48 @@ class Cryptotilebox extends Component {
 
     console.log("list rendered");
     let tiles = data.map((data, ind) => (
-      <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
-        <Cryptotile
-          id={data.coinmarketid}
-          rank={ind + 1}
-          name={data.name}
-          price={
-            data.market_data.current_price[this.props.fiat.fiat.toLowerCase()]
-          }
-          symbol={data.symbol}
-          marketCap={
-            data.market_data.market_cap[this.props.fiat.fiat.toLowerCase()]
-          }
-          change24h={data.market_data.price_change_percentage_24h}
-          circulatingSupply={data.market_data.circulating_supply}
-          handleVote={this.handleVote}
-          voteCount={
-            this.props.votes[data.symbol] === undefined
-              ? 0
-              : this.props.votes[data.symbol].voteCount
-          }
-          voteResult={
-            this.props.votes[data.symbol] === undefined
-              ? 0
-              : this.props.votes[data.symbol].voteResult
-          }
-          icon={data.image.small}
-          tags={this.props.tags}
-          currency={this.props.fiat}
-        />
-      </div>
+      <LazyLoad
+        height={75}
+        unmountIfInvisible={true}
+        offset={[300, 300]}
+        placeholder={
+          <div
+            id={data.name.toLowerCase().replace(/ /g, "")}
+            className="placeholder"
+          />
+        }
+      >
+        <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
+          <Cryptotile
+            id={data.coinmarketid}
+            rank={ind + 1}
+            name={data.name}
+            price={
+              data.market_data.current_price[this.props.fiat.fiat.toLowerCase()]
+            }
+            symbol={data.symbol}
+            marketCap={
+              data.market_data.market_cap[this.props.fiat.fiat.toLowerCase()]
+            }
+            change24h={data.market_data.price_change_percentage_24h}
+            circulatingSupply={data.market_data.circulating_supply}
+            handleVote={this.handleVote}
+            voteCount={
+              this.props.votes[data.symbol] === undefined
+                ? 0
+                : this.props.votes[data.symbol].voteCount
+            }
+            voteResult={
+              this.props.votes[data.symbol] === undefined
+                ? 0
+                : this.props.votes[data.symbol].voteResult
+            }
+            icon={data.image.small}
+            tags={this.props.tags}
+            currency={this.props.fiat}
+          />
+        </div>
+      </LazyLoad>
     ));
     this.setState({ tiles });
   }
@@ -209,111 +223,27 @@ class Cryptotilebox extends Component {
 
     return (
       <div className="mainpage">
-        <div id="namingbar">
-          <p
-            onMouseOver={this.handleHover}
-            onClick={this.handleSorting.bind(this, "rank")}
-          >
-            #<span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-          <p>Name</p>
-          <p
-            onMouseOver={this.handleHover}
-            onClick={this.handleSorting.bind(this, "marketCap")}
-          >
-            Market Cap in {this.props.fiat.fiat}
-            <span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-
-          <p onClick={this.handleSorting.bind(this, "price")}>
-            Price in {this.props.fiat.fiat}
-            <span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-          <p onClick={this.handleSorting.bind(this, "circulatingSupply")}>
-            Circulating Supply<span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-          <p
-            onMouseOver={this.handleHover}
-            onClick={this.handleSorting.bind(this, "change24h")}
-          >
-            Change(24h)<span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-          <p onClick={this.handleSorting.bind(this, "voteResult")}>
-            Estimated Change(24h)<span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-          <p onClick={this.handleSorting.bind(this, "voteCount")}>
-            Number of Votes<span>
-              <i
-                className={
-                  !this.state.order
-                    ? "fas fa-sort-up rotated"
-                    : "fas fa-sort-up"
-                }
-              />
-            </span>
-          </p>
-
-          <div />
-          <p>Price Graph(7d)</p>
-
-          <div />
-        </div>
-        <div className="tilebox">
-          {this.state.tiles.slice(this.state.PagStart, this.state.PagEnd)}
-        </div>
-        <div className="pagbtn">
+        {/* {this.state.descriptionHover && (
+          <DescriptionBar
+            className="sticky"
+            handleSorting={this.handleSorting}
+            order={this.state.order}
+            handleHover={this.handleHover}
+            fiat={this.props.fiat}
+          />
+        )} */}
+        <DescriptionBar
+          handleSorting={this.handleSorting}
+          order={this.state.order}
+          handleHover={this.handleHover}
+          fiat={this.props.fiat}
+        />
+        <div className="tilebox">{this.state.tiles}</div>
+        {/* <div className="pagbtn">
           <button onClick={() => this.handlePag(0, 50)}>1</button>
           <button onClick={() => this.handlePag(50, 100)}>2</button>
           <button onClick={() => this.handlePag(100, 150)}>3</button>
-        </div>
+        </div> */}
         <a className="goTop" onClick={this.goTop}>
           <i className="fas fa-chevron-circle-up" />
         </a>
