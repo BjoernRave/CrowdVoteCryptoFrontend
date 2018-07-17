@@ -15,10 +15,10 @@
   font-family: "Source Sans Pro", sans-serif;
   outline: none;
 
-  --mainColor: #135a8c;
+  --firstColor: #272830;
   --secondColor: #ffffff;
-  --thirdColor: #53c077;
-  --fourthColor: #e7cd90;
+  --thirdColor: #00ad3a;
+  --fourthColor: #f5c148;
   --fifthColor: #919290;
   --attention: #fc4348;
 }
@@ -37,7 +37,9 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: var(--secondColor);
+
+  margin-left: 10px;
+  margin-right: 20px;
 }
 nav:nth-child(1) {
   padding-top: 8px;
@@ -46,6 +48,15 @@ nav:nth-child(1) {
   padding-left: 18px;
   text-shadow: #22262e 8px 6px 10px;
   line-height: 24px;
+}
+.rightNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+select {
+  margin-right: 20px;
+  transform: scale(1.17);
 }
 
 /* nav:nth-child(1) span {
@@ -81,9 +92,9 @@ i:focus {
   letter-spacing: 0.1em;
   font-size: 1.2rem;
   padding: 1em 1.5em;
-  background-color: var(--attention);
+  background-color: var(--thirdColor);
   color: var(--secondColor);
-  box-shadow: 0 4px 20px rgba(252, 67, 72, 0.5);
+  box-shadow: 0 4px 20px var(--thirdColor);
   transition: all 0.2s;
   border-radius: 50em;
   text-decoration: none;
@@ -98,7 +109,7 @@ i:focus {
   transform: scale(0.9);
 }
 .btn:hover {
-  background-color: var(--attention);
+  background-color: var(--thirdColor);
   box-shadow: 0 0 8px rgba(252, 67, 72, 0.5);
 }
 
@@ -224,10 +235,10 @@ i:focus {
   border: none;
 }
 #rating button:nth-child(1) {
-  color: green;
+  color: var(--thirdColor);
 }
 #rating button:nth-child(1):hover {
-  color: rgb(46, 148, 46);
+  color: var(--thirdColor);
 }
 
 #expand {
@@ -255,7 +266,6 @@ i:focus {
   position: absolute;
   top: -23%;
   left: 1.2%;
-  opacity: 0.6;
   transform: scale(1.4);
   /* clip-path: polygon(7% 10.5%, 100% 10.5%, 100% 90%, 7% 90%); */
   z-index: 0;
@@ -272,9 +282,7 @@ i:focus {
   grid-gap: 10px;
   padding-top: 3px;
 }
-.detailpage {
-  background-color: var(--secondColor);
-}
+
 .Details .detailTags button {
   font-size: 1.4em;
 }
@@ -305,6 +313,7 @@ i:focus {
   font-size: 1.6em;
   font-weight: 700;
   padding-bottom: 30px;
+  color: white;
 }
 
 .detailTags {
@@ -366,14 +375,14 @@ i:focus {
 .CommentSection input {
   position: relative;
   margin-top: 10px;
-  width: 100%;
+  width: 96%;
   height: 40px;
   border: none;
   padding-left: 10px;
 }
 .CommentSection li span:last-of-type {
   font-size: 0.7em;
-  color: #5c5f63;
+  color: var(--secondColor);
   text-align: center;
 }
 .bubble {
@@ -464,9 +473,10 @@ i:focus {
   box-shadow: none;
   border: none;
   text-align: center;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   background-color: inherit;
   margin-left: 20px;
+  color: white;
 }
 
 .advancedVotediv {
@@ -483,6 +493,7 @@ i:focus {
 
 .advancedVote span {
   font-size: 45px;
+  color: white;
 }
 
 .advancedVote button {
@@ -583,7 +594,7 @@ i:focus {
   margin-left: 2%;
   display: grid;
   grid-template-columns: 5fr 3fr;
-  grid-template-rows: 100px 2fr 1fr 3fr;
+  grid-template-rows: 100px 2fr 1fr;
 }
 .detailsname {
   grid-column: 1/2;
@@ -591,6 +602,7 @@ i:focus {
   width: fit-content;
   margin: 0 auto;
   font-size: 2.7em;
+  color: white;
 }
 
 .detailStats {
@@ -606,8 +618,20 @@ i:focus {
   grid-column: 1/2;
   padding: 0px;
   padding-left: 0px;
-  margin-top: -48px;
+  margin-top: -40px;
 }
+.graph {
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 70px;
+  padding: 20px;
+}
+.graphBtn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .detailGraph button {
   color: inherit;
   border: none;
@@ -622,7 +646,7 @@ i:focus {
   text-align: center;
   background-color: var(--fourthColor);
   border-radius: 10px;
-  color: var(--secondColor);
+  color: black;
   transition: all 0.2s linear;
 }
 
@@ -646,7 +670,7 @@ i:focus {
 
 .detailTags input {
   position: relative;
-  width: 480px;
+  width: 34vw;
   height: 40px;
   border: none;
   padding-left: 10px;
@@ -678,27 +702,20 @@ i:focus {
   margin-left: 0px;
   border: none;
 
-  color: var(--secondColor);
+  color: black;
+  border-radius: 0px;
+  /* border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  /* border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; */
+}
 
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-#searchBar {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
-  margin-left: 390px;
-  color: var(--secondColor);
-  width: 280px;
-}
 #searchBar input {
   font-size: 0.6em;
   background-color: white;
   border: none;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  /* border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
   padding-left: 10px;
   width: 180px;
   padding-top: 3px;
@@ -784,7 +801,7 @@ th:last-child {
 tr {
   border-top: 1px solid #c1c3d1;
   border-bottom: 1px solid #c1c3d1;
-  color: #666b85;
+  color: #000;
   font-size: 16px;
   font-weight: normal;
 }
@@ -804,11 +821,11 @@ tr:last-child {
 }
 
 tr:nth-child(odd) td {
-  background: #ebebeb;
+  background: var(--fourthColor);
 }
 
 tr:nth-child(odd):hover td {
-  background: #4e5066;
+  background: var(--fifthColor);
 }
 
 tr:last-child td:first-child {
@@ -820,7 +837,7 @@ tr:last-child td:last-child {
 }
 
 td {
-  background: #ffffff;
+  background: #fff;
   padding: 20px;
   text-align: left;
   vertical-align: middle;
@@ -877,19 +894,16 @@ nav button {
   border-radius: 10px;
 }
 
-nav button:hover {
-  background-color: #fca4a4;
-}
-
 .signinform {
   position: absolute;
   z-index: 3;
-  background-color: lightblue;
+  background-color: var(--fourthColor);
+  /* color: white; */
   right: 5.5%;
   padding: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
+  border-radius: 20px;
+  border: 6px solid black;
+  padding-bottom: 70px;
   right: 1%;
 }
 
@@ -931,14 +945,14 @@ nav button:hover {
   cursor: pointer;
   padding: 10px 35px;
   display: inline-block;
-  margin-left: 25%;
+  position: absolute;
+  left: 25%;
   margin-top: 10px;
   text-transform: uppercase;
   outline: none;
-  position: relative;
   transition: all 0.3s;
   text-align: center;
-  background-color: #5587ab;
+  background-color: var(--thirdColor);
   border-radius: 10px;
 }
 .signinform h2 {
@@ -1002,6 +1016,15 @@ nav button:hover {
 .select {
   height: 2em;
 }
+
+.select option {
+  background-color: #666;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border: none;
+}
 .rv-crosshair__line {
   background: black;
   width: 1px;
@@ -1015,4 +1038,11 @@ nav button:hover {
   height: 75px;
   background-color: gray;
   margin: 10px 40px;
+}
+.animated-page-wrapper {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

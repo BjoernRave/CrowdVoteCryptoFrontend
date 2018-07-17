@@ -6,12 +6,13 @@ import {
   fetchCryptoVotes
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
-import Footer from "../components/footer";
+
 import { getTags } from "../store/actions/tags";
 import Popup from "react-popup";
 import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
+import { Grid } from "react-virtualized";
 
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
@@ -160,6 +161,7 @@ class Cryptotilebox extends Component {
     console.log("list rendered");
     let tiles = data.map((data, ind) => (
       <LazyLoad
+        key={data.id}
         height={75}
         unmountIfInvisible={true}
         offset={[300, 300]}
@@ -170,7 +172,7 @@ class Cryptotilebox extends Component {
           />
         }
       >
-        <div key={data.id} id={data.name.toLowerCase().replace(/ /g, "")}>
+        <div id={data.name.toLowerCase().replace(/ /g, "")}>
           <Cryptotile
             id={data.coinmarketid}
             rank={ind + 1}
@@ -223,15 +225,15 @@ class Cryptotilebox extends Component {
 
     return (
       <div className="mainpage">
-        {/* {this.state.descriptionHover && (
+        {this.state.descriptionHover && (
           <DescriptionBar
-            className="sticky"
+            sticky
             handleSorting={this.handleSorting}
             order={this.state.order}
             handleHover={this.handleHover}
             fiat={this.props.fiat}
           />
-        )} */}
+        )}
         <DescriptionBar
           handleSorting={this.handleSorting}
           order={this.state.order}
@@ -247,7 +249,6 @@ class Cryptotilebox extends Component {
         <a className="goTop" onClick={this.goTop}>
           <i className="fas fa-chevron-circle-up" />
         </a>
-        <Footer />
       </div>
     );
   }

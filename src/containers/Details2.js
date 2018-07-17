@@ -17,6 +17,7 @@ import Graph2 from "../components/graph2";
 import { fetchHistCryptoData } from "../store/actions/cryptostats";
 import DetailStats from "../components/DetailsStats";
 import Chart from "../components/Chart";
+import AnimatedWrapper from "../hocs/AnimatedWrapper";
 
 class Expandable extends Component {
   constructor(props) {

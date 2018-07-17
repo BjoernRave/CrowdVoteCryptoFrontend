@@ -55,62 +55,66 @@ export default class DynamicCrosshair extends React.Component {
     let myValues = this.state.crosshairValues;
     return (
       <div className="detailGraph">
-        <XYPlot
-          onMouseLeave={this._onMouseLeave}
-          width={window.innerWidth * 0.55}
-          height={window.innerHeight * 0.7}
-        >
-          <VerticalGridLines />
-          <HorizontalGridLines />
-          <XAxis
-            title="Date"
-            tickTotal={10}
-            attr="x"
-            attrAxis="y"
-            orientation="bottom"
-            tickFormat={function tickFormat(d) {
-              return new Date(d).toLocaleDateString();
-            }}
-          />
-          <YAxis title="Price" />
-          <LineSeries
-            color="#555E5D"
-            className="graphLine"
-            onNearestX={this._onNearestX}
-            data={this.props.data}
-          />
+        <div className="graph">
+          <XYPlot
+            onMouseLeave={this._onMouseLeave}
+            width={window.innerWidth * 0.55}
+            height={window.innerHeight * 0.7}
+          >
+            <VerticalGridLines />
+            <HorizontalGridLines />
+            <XAxis
+              title="Date"
+              tickTotal={10}
+              attr="x"
+              attrAxis="y"
+              orientation="bottom"
+              tickFormat={function tickFormat(d) {
+                return new Date(d).toLocaleDateString();
+              }}
+            />
+            <YAxis title="Price" />
+            <LineSeries
+              color="#000"
+              className="graphLine"
+              onNearestX={this._onNearestX}
+              data={this.props.data}
+            />
 
-          <Crosshair values={myValues}>
-            <div style={{ background: "black" }}>
-              <p>
-                <span> Date: </span>
-                {this.state.dataX}
-              </p>
-              <p>
-                {" "}
-                <span> Price:</span> {this.state.dataY}$
-              </p>
-            </div>
-          </Crosshair>
-        </XYPlot>
-        <button onClick={() => this.props.fetchstats(this.props.name, 7)}>
-          7 days
-        </button>
-        <button onClick={() => this.props.fetchstats(this.props.name, 30)}>
-          30 days
-        </button>
-        <button onClick={() => this.props.fetchstats(this.props.name, 90)}>
-          90 days
-        </button>
-        <button onClick={() => this.props.fetchstats(this.props.name, 180)}>
-          180 days
-        </button>
-        <button onClick={() => this.props.fetchstats(this.props.name, 365)}>
-          1 Year
-        </button>
-        <button onClick={() => this.props.fetchstats(this.props.name, "max")}>
-          Since Release
-        </button>
+            <Crosshair values={myValues}>
+              <div style={{ background: "black" }}>
+                <p>
+                  <span> Date: </span>
+                  {this.state.dataX}
+                </p>
+                <p>
+                  {" "}
+                  <span> Price:</span> {this.state.dataY}$
+                </p>
+              </div>
+            </Crosshair>
+          </XYPlot>
+        </div>
+        <div className="graphBtn">
+          <button onClick={() => this.props.fetchstats(this.props.name, 7)}>
+            7 days
+          </button>
+          <button onClick={() => this.props.fetchstats(this.props.name, 30)}>
+            30 days
+          </button>
+          <button onClick={() => this.props.fetchstats(this.props.name, 90)}>
+            90 days
+          </button>
+          <button onClick={() => this.props.fetchstats(this.props.name, 180)}>
+            180 days
+          </button>
+          <button onClick={() => this.props.fetchstats(this.props.name, 365)}>
+            1 Year
+          </button>
+          <button onClick={() => this.props.fetchstats(this.props.name, "max")}>
+            Since Release
+          </button>
+        </div>
       </div>
     );
   }

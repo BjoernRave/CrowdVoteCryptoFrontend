@@ -7,7 +7,7 @@ import Main from "./Main";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 import Popup from "react-popup";
-
+import Footer from "../components/footer";
 const store = configureStore();
 
 if (localStorage.jwtToken) {
@@ -28,6 +28,7 @@ const App = () => (
 
         <p id="flash">You need to be logged in to do that!</p>
         <Main />
+        <Footer />
       </div>
     </Router>
   </Provider>

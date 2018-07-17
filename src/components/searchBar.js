@@ -82,7 +82,11 @@ class SearchBar extends Component {
               list="searchsuggestions"
               autoComplete="off"
             />
-            <datalist id="searchsuggestions" className="suggestions">
+            <datalist
+              onSubmit={() => console.log("test")}
+              id="searchsuggestions"
+              className="suggestions"
+            >
               {this.state.suggestionItems}
             </datalist>
             <button id="searchbtn">
@@ -100,4 +104,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(SearchBar);
+export default connect(
+  mapStateToProps,
+  null
+)(SearchBar);

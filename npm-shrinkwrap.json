@@ -164,6 +164,15 @@
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz",
       "integrity": "sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU="
     },
+    "animated": {
+      "version": "0.2.2",
+      "resolved": "https://registry.npmjs.org/animated/-/animated-0.2.2.tgz",
+      "integrity": "sha512-7pMzS0Sk2lA6/JT6he+apuy3GnDWUWVCurHMrpsbT9ugeLe80kpDQWjZQvkFiU9o7LsPGydPnoZpJsmt1HPPMA==",
+      "requires": {
+        "invariant": "^2.2.0",
+        "normalize-css-color": "^1.0.1"
+      }
+    },
     "ansi-align": {
       "version": "2.0.0",
       "resolved": "https://registry.npmjs.org/ansi-align/-/ansi-align-2.0.0.tgz",
@@ -7338,6 +7347,11 @@
         "which": "^1.3.0"
       }
     },
+    "normalize-css-color": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/normalize-css-color/-/normalize-css-color-1.0.2.tgz",
+      "integrity": "sha1-Apkel8zOxmI/5XOvu/Deah8+n40="
+    },
     "normalize-package-data": {
       "version": "2.4.0",
       "resolved": "https://registry.npmjs.org/normalize-package-data/-/normalize-package-data-2.4.0.tgz",
@@ -9407,6 +9421,16 @@
         "react-router-dom": "^4.1.1"
       }
     },
+    "react-router-transition-switch": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/react-router-transition-switch/-/react-router-transition-switch-1.1.0.tgz",
+      "integrity": "sha512-y2eX7DxGzf9DlGcm0eWrPbtIV5HAFIxwZEVAOsrYSzbSKF1bc5a5ktS2iMdnORdM4NSrJ9aP4uNVx9sIlbBB8g==",
+      "requires": {
+        "invariant": "^2.2.2",
+        "prop-types": "^15.6.0",
+        "warning": "^3.0.0"
+      }
+    },
     "react-smooth": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/react-smooth/-/react-smooth-1.0.0.tgz",
@@ -9452,6 +9476,19 @@
         "loose-envify": "^1.3.1",
         "prop-types": "^15.5.6",
         "warning": "^3.0.0"
+      }
+    },
+    "react-virtualized": {
+      "version": "9.20.1",
+      "resolved": "https://registry.npmjs.org/react-virtualized/-/react-virtualized-9.20.1.tgz",
+      "integrity": "sha512-xIWxBsyNAjceqD3hsE0nw5TcDVxKbIepsHhvS2XneHmNz0KlKxdLdGBmGZBM9ZesEmbZ5EO0Sw70TB1MeCmpbQ==",
+      "requires": {
+        "babel-runtime": "^6.26.0",
+        "classnames": "^2.2.3",
+        "dom-helpers": "^2.4.0 || ^3.0.0",
+        "loose-envify": "^1.3.0",
+        "prop-types": "^15.6.0",
+        "react-lifecycles-compat": "^3.0.4"
       }
     },
     "react-vis": {

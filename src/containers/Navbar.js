@@ -72,34 +72,36 @@ class Navbar extends Component {
               </span>{" "}
             </Link>
           </div>
-          <select
-            className="select"
-            onChange={this.handleSelectChange}
-            name="FiatCurrency"
-            value={this.state.fiat}
-          >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="BTC">BTC</option>
-            <option value="RUB">RUB</option>
-            <option value="GBP">GBP</option>
-            <option value="CNY">CNY</option>
-          </select>
-          <Searchbar />
-          {this.props.currentUser.isAuthenticated ? (
-            <button className="" onClick={this.logout}>
-              Log out
-            </button>
-          ) : (
-            <div>
-              <button className="" onClick={this.toggleSignup}>
-                Sign up
+          <div className="rightNav">
+            <select
+              className="select"
+              onChange={this.handleSelectChange}
+              name="FiatCurrency"
+              value={this.state.fiat}
+            >
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="BTC">BTC</option>
+              <option value="RUB">RUB</option>
+              <option value="GBP">GBP</option>
+              <option value="CNY">CNY</option>
+            </select>
+            <Searchbar />
+            {this.props.currentUser.isAuthenticated ? (
+              <button className="" onClick={this.logout}>
+                Log out
               </button>
-              <button key="3" className="" onClick={this.toggleSignin}>
-                Log in
-              </button>
-            </div>
-          )}
+            ) : (
+              <div>
+                <button className="" onClick={this.toggleSignup}>
+                  Sign up
+                </button>
+                <button key="3" className="" onClick={this.toggleSignin}>
+                  Log in
+                </button>
+              </div>
+            )}
+          </div>
         </nav>
         {this.state.signup &&
           !this.state.signin && (

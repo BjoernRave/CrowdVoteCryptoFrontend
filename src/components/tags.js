@@ -65,7 +65,7 @@ export default class Tags extends Component {
             onChange={this.handleChange}
             value={this.state.input}
             type="text"
-            placeholder="Add Tag"
+            placeholder="Add your own Tag"
           />
         </form>
       </div>
