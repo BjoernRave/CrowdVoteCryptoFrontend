@@ -155,32 +155,38 @@ class Expandable extends PureComponent {
           currentUser={this.props.currentUser}
         />
         <div className="advancedVote">
-          <form onSubmit={this.handleSubmitVote}>
-            <input
-              type="range"
-              min="-60"
-              max="60"
-              onChange={this.handleChangeVote}
-              value={this.state.vote}
-              name=""
-              id=""
-              step="0.2"
-            />
-            <div className="advancedVotediv">
-              <div>
-                <input
-                  onChange={this.handleChangeVote}
-                  type="text"
-                  value={this.state.vote}
-                  name=""
-                  id="vote"
-                  placeholder="0"
-                />
-                <span>%</span>
+          <p className="Explanation">
+            Click on the green or red arrow in the top bar to vote 3% for the
+            next 24h <br /> Specify your prediction here, it is capped at 60%
+          </p>
+          <div className="Detailvoteinput">
+            <form onSubmit={this.handleSubmitVote}>
+              <input
+                type="range"
+                min="-60"
+                max="60"
+                onChange={this.handleChangeVote}
+                value={this.state.vote}
+                name=""
+                id=""
+                step="0.2"
+              />
+              <div className="advancedVotediv">
+                <div>
+                  <input
+                    onChange={this.handleChangeVote}
+                    type="text"
+                    value={this.state.vote}
+                    name=""
+                    id="vote"
+                    placeholder="0"
+                  />
+                  <span>%</span>
+                </div>
+                <button className="btn">Submit Rating</button>
               </div>
-              <button className="btn">Submit Rating</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );

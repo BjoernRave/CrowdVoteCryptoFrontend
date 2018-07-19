@@ -13,7 +13,10 @@ export default class Footer extends Component {
           {" "}
           <p>Privacy Policy </p>
         </Link>
-
+        <Link to="/cookie-policy">
+          {" "}
+          <p>Cookie Policy </p>
+        </Link>
         <section>
           Cryptocurrency Data provided by :{" "}
           <a target="_blank" href="https://coinmarketcap.com/">

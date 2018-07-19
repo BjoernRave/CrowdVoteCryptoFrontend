@@ -9,7 +9,10 @@ import Searchbar from "../components/searchBar";
 import { SetFiatCurrency } from "../store/actions/FiatCurrency";
 import Cookies from "universal-cookie";
 import Logo from "../images/CWClogo.png";
+import { CSSTransitionGroup } from "react-transition-group";
+import CookieBanner from "../components/CookieBanner";
 const cookies = new Cookies();
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -17,11 +20,18 @@ class Navbar extends Component {
     this.state = {
       signup: false,
       signin: false,
-      fiat: cookies.get("fiat")
+      fiat: cookies.get("fiat"),
+      CookiePopup: true
     };
     this.toggleSignup = this.toggleSignup.bind(this);
     this.toggleSignin = this.toggleSignin.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleAgree = this.handleAgree.bind(this);
+  }
+  componentWillMount() {
+    if (cookies.get("Policy")) {
+      this.setState({ CookiePopup: false });
+    }
   }
 
   logout = e => {
@@ -34,6 +44,13 @@ class Navbar extends Component {
       signup: !this.state.signup,
       signin: false
     });
+  }
+  handleAgree() {
+    cookies.set("Policy", true, {
+      path: "/",
+      expires: new Date(2048, 11, 24)
+    });
+    this.setState({ CookiePopup: false });
   }
 
   toggleSignin() {
@@ -107,26 +124,41 @@ class Navbar extends Component {
         </nav>
         {this.state.signup &&
           !this.state.signin && (
-            <AuthForm
-              removeError={this.props.removeError}
-              errors={this.props.errors}
-              onAuth={this.props.authUser}
-              buttonText="Sign me up!"
-              heading="Register Now!"
-              signUp
-              onSignUp={this.toggleSignup}
-            />
+            <CSSTransitionGroup
+              transitionName={"fade"}
+              transitionEnterTimeout={700}
+              transitionLeaveTimeout={700}
+            >
+              <AuthForm
+                removeError={this.props.removeError}
+                errors={this.props.errors}
+                onAuth={this.props.authUser}
+                buttonText="Sign me up!"
+                heading="Register Now!"
+                signUp
+                onSignUp={this.toggleSignup}
+              />
+            </CSSTransitionGroup>
           )}
         {this.state.signin &&
           !this.state.signup && (
-            <AuthForm
-              removeError={this.props.removeError}
-              errors={this.props.errors}
-              onAuth={this.props.authUser}
-              buttonText="Log in!"
-              heading="Welcome Back."
-            />
+            <CSSTransitionGroup
+              transitionName={"fade"}
+              transitionEnterTimeout={700}
+              transitionLeaveTimeout={700}
+            >
+              <AuthForm
+                removeError={this.props.removeError}
+                errors={this.props.errors}
+                onAuth={this.props.authUser}
+                buttonText="Log in!"
+                heading="Welcome Back."
+              />
+            </CSSTransitionGroup>
           )}
+        {this.state.CookiePopup && (
+          <CookieBanner handleAgree={this.handleAgree} />
+        )}
       </div>
     );
   }

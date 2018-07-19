@@ -11,6 +11,7 @@ import { fetchCryptoStats } from "../store/actions/cryptostats";
 import PrivacyPolicy from "../components/PrivacyPolicy";
 import { TransitionGroup } from "react-transition-group";
 import Switch from "react-router-transition-switch";
+import cookiepolicy from "../components/CookieConsent";
 
 class Main extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class Main extends Component {
           <Switch key={location.key} location={location}>
             <Route exact path="/" component={CryptotileBox} />
             {this.state.DetailRoutes}
-
+            <Route path="/cookie-policy" component={cookiepolicy} />
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route component={NotFound} />
           </Switch>
