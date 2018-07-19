@@ -6,21 +6,22 @@ import {
   fetchCryptoVotes
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
-
 import { getTags } from "../store/actions/tags";
 import Popup from "react-popup";
 import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
 import { Grid } from "react-virtualized";
-
+import Rating from "../components/rating";
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
 //   images[key] = svgs(key);
 //   return images;
 // }, {});
+import { CSSTransitionGroup } from "react-transition-group";
 let fiatcurr = "USD";
 const cookies = new Cookies();
+let secondBar = false;
 
 class Cryptotilebox extends Component {
   constructor(props) {
@@ -46,60 +47,60 @@ class Cryptotilebox extends Component {
   }
 
   componentDidMount() {
-    console.log(cookies.get("firsttime"));
-    if (cookies.get("firsttime") !== "true") {
-      Popup.create({
-        title: "Welcome on CrowdVoteCrypto!",
-        content: (
-          <div>
-            The place to understand how the future of your cryptocurrency will
-            look like
-          </div>
-        ),
-        className: "alert",
-        buttons: {
-          left: [
-            {
-              text: "Ok!",
-              className: "success",
-              action: function() {
-                Popup.close();
-                cookies.set("firsttime", true, {
-                  path: "/",
-                  expires: new Date(2048, 11, 24)
-                });
-              }
-            }
-          ]
-        }
-      });
-      Popup.create({
-        title: "Welcome on CrowdVoteCrypto!",
-        content: <div>Let me introduce you to the concept</div>,
-        className: "alert",
-        buttons: {
-          left: [
-            {
-              text: "Ok!",
-              className: "success",
-              action: function() {
-                Popup.close();
-                cookies.set("firsttime", true, {
-                  path: "/",
-                  expires: new Date(2048, 11, 24)
-                });
-              }
-            }
-          ]
-        }
-      });
-    }
+    // console.log(cookies.get("firsttime"));
+    // if (cookies.get("firsttime") !== "true") {
+    // Popup.create({
+    //   title: "Welcome on CrowdVoteCrypto!",
+    //   content: (
+    //     <div>
+    //       The place to understand how the future of your cryptocurrency will
+    //       look like
+    //     </div>
+    //   ),
+    //   className: "alert",
+    //   buttons: {
+    //     left: [
+    //       {
+    //         text: "Ok!",
+    //         className: "success",
+    //         action: function() {
+    //           Popup.close();
+    //           // cookies.set("firsttime", true, {
+    //           //   path: "/",
+    //           //   expires: new Date(2048, 11, 24)
+    //           // });
+    //         }
+    //       }
+    //     ]
+    //   }
+    // });
+    // Popup.create({
+    //   title: "Welcome on CrowdVoteCrypto!",
+    //   content: <div>Let me introduce you to the concept</div>,
+    //   className: "alert",
+    //   buttons: {
+    //     left: [
+    //       {
+    //         text: "Ok!",
+    //         className: "success",
+    //         action: function() {
+    //           Popup.close();
+    //           // cookies.set("firsttime", true, {
+    //           //   path: "/",
+    //           //   expires: new Date(2048, 11, 24)
+    //           // });
+    //         }
+    //       }
+    //     ]
+    //   }
+    // });
 
     window.onscroll = function() {
       myFunction();
     };
     var header = document.getElementById("namingbar");
-    var sticky = header.offsetTop;
+
+    var sticky = header.offsetTop + 220;
     const myFunction = () => {
       if (window.pageYOffset >= sticky) {
         this.setState({ descriptionHover: true });
@@ -114,21 +115,37 @@ class Cryptotilebox extends Component {
   }
 
   async handleVote(amount, symbol) {
+    // const userIp = await apiCall("get", "/api/ip/" + symbol);
+    // console.log(userIp.ip);
+    let response;
     if (this.props.currentUser.isAuthenticated) {
-      await apiCall("post", "/api/crypto/rating/edit", {
+      response = await apiCall("post", "/api/crypto/rating/edit", {
         symbol,
         amount,
         id: this.props.currentUser.user.id
       });
       await this.props.fetchCryptoVotes();
     } else {
+      response = await apiCall("post", "/api/crypto/rating/edit", {
+        symbol,
+        amount,
+        id: "IP"
+      });
+
+      await this.props.fetchCryptoVotes();
+    }
+
+    if (response === "VoteFailed") {
       document.querySelector("#flash").classList.add("flashactive");
+      document.querySelector("#flash").textContent =
+        "You already voted for this specific currency in the last 12 hours.";
       setTimeout(() => {
         if (document.querySelector("#flash") !== null) {
           document.querySelector("#flash").classList.remove("flashactive");
         }
       }, 3000);
     }
+
     this.renderTiles();
   }
   handlePag(start, end) {
@@ -156,10 +173,9 @@ class Cryptotilebox extends Component {
     document.documentElement.scrollTop = 0;
   }
   renderTiles() {
-    const { data } = this.props;
-
     console.log("list rendered");
-    let tiles = data.map((data, ind) => (
+
+    let tiles = this.props.data.map((data, ind) => (
       <LazyLoad
         key={data.id}
         height={75}
@@ -167,12 +183,12 @@ class Cryptotilebox extends Component {
         offset={[300, 300]}
         placeholder={
           <div
-            id={data.name.toLowerCase().replace(/ /g, "")}
+            id={data.name.toLowerCase().replace(/ /g, "-")}
             className="placeholder"
           />
         }
       >
-        <div id={data.name.toLowerCase().replace(/ /g, "")}>
+        <div id={data.name.toLowerCase().replace(/ /g, "-")}>
           <Cryptotile
             id={data.coinmarketid}
             rank={ind + 1}
@@ -226,13 +242,19 @@ class Cryptotilebox extends Component {
     return (
       <div className="mainpage">
         {this.state.descriptionHover && (
-          <DescriptionBar
-            sticky
-            handleSorting={this.handleSorting}
-            order={this.state.order}
-            handleHover={this.handleHover}
-            fiat={this.props.fiat}
-          />
+          <CSSTransitionGroup
+            transitionName={"fade"}
+            transitionEnterTimeout={700}
+            transitionLeaveTimeout={700}
+          >
+            <DescriptionBar
+              sticky
+              handleSorting={this.handleSorting}
+              order={this.state.order}
+              handleHover={this.handleHover}
+              fiat={this.props.fiat}
+            />
+          </CSSTransitionGroup>
         )}
         <DescriptionBar
           handleSorting={this.handleSorting}

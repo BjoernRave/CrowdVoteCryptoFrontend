@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+let queryLength = 0;
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -13,14 +15,25 @@ class SearchBar extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.showSearch = this.showSearch.bind(this);
+    this.checkForEnter = this.checkForEnter.bind(this);
   }
+  componentDidMount() {}
 
   showSearch() {
     this.setState({ Expanded: !this.state.Expanded });
   }
 
   async handleInput(e) {
-    await this.setState({ searchquery: e.target.value });
+    const value = e.target.value.toLowerCase().replace(/ /g, "-");
+    if (value.length - queryLength > 1) {
+      const top = document.querySelector("#" + value).offsetTop;
+      window.scrollTo(0, top - 15);
+      this.setState({ searchquery: "" });
+    } else {
+      await this.setState({ searchquery: e.target.value });
+    }
+    queryLength = value.length;
+
     if (this.state.searchquery !== "") {
       let suggestions = this.props.crypto.filter(val => {
         return val.name
@@ -46,17 +59,25 @@ class SearchBar extends Component {
     if (this.state.searchquery !== "") {
       if (
         document.querySelector(
-          "#" + this.state.searchquery.toLowerCase().replace(/ /g, "")
+          "#" + this.state.searchquery.toLowerCase().replace(/ /g, "-")
         ) !== null
       ) {
         const top = document.querySelector(
-          "#" + this.state.searchquery.toLowerCase().replace(/ /g, "")
+          "#" + this.state.searchquery.toLowerCase().replace(/ /g, "-")
         ).offsetTop;
         window.scrollTo(0, top - 75);
         this.setState({ searchquery: "" });
       }
     }
   }
+
+  checkForEnter(e) {
+    // console.log(e.charCode);
+    if (e.charCode === 13) {
+      console.log("Enter pressed");
+    }
+  }
+
   render() {
     return (
       <div id="searchBar">
@@ -71,7 +92,7 @@ class SearchBar extends Component {
         </div>
 
         <div>
-          <form onSubmit={this.handleSearch}>
+          <form onKeyPress={this.checkForEnter} onSubmit={this.handleSearch}>
             <input
               type="text"
               name="search"

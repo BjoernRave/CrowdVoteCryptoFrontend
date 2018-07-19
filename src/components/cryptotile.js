@@ -86,6 +86,7 @@ export default class Cryptotile extends Component {
                 ".png"
               }
               alt="PriceGraph"
+              className="smallGraph"
             />
           </Link>
           <button onClick={this.expand} id="expand">
@@ -101,8 +102,8 @@ export default class Cryptotile extends Component {
         </div>
         <CSSTransitionGroup
           transitionName={"fade"}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
+          transitionEnterTimeout={700}
+          transitionLeaveTimeout={700}
         >
           {this.state.expanded && (
             <Expandable symbol={symbol} handleVote={this.props.handleVote} />

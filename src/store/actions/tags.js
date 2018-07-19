@@ -52,7 +52,11 @@ export const DeleteTag = id => {
 export const VoteTag = id => {
   return (dispatch, getState) => {
     let { currentUser } = getState();
-    const user = currentUser.user.id;
+
+    let user = currentUser.user.id;
+    if (user === undefined) {
+      user = "IP";
+    }
     return apiCall("put", `/api/tags/${id}`, { user }).catch(err =>
       addError(err.message)
     );

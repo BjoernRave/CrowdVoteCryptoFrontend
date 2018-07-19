@@ -8,11 +8,8 @@ import DetailsPage from "../containers/Details2";
 import NotFound from "../components/404NotFound";
 import { GetDetailRoutes } from "../store/actions/DetailRoutes";
 import { fetchCryptoStats } from "../store/actions/cryptostats";
-import {
-  TransitionGroup,
-  CSSTransition,
-  CSSTransitionGroup
-} from "react-transition-group";
+import PrivacyPolicy from "../components/PrivacyPolicy";
+import { TransitionGroup } from "react-transition-group";
 import Switch from "react-router-transition-switch";
 
 class Main extends Component {
@@ -43,7 +40,7 @@ class Main extends Component {
   }
 
   render() {
-    const { authUser, errors, removeError, location } = this.props;
+    const { location } = this.props;
 
     return (
       <div className="container">
@@ -51,6 +48,8 @@ class Main extends Component {
           <Switch key={location.key} location={location}>
             <Route exact path="/" component={CryptotileBox} />
             {this.state.DetailRoutes}
+
+            <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route component={NotFound} />
           </Switch>
         </TransitionGroup>
@@ -61,7 +60,6 @@ class Main extends Component {
 
 function mapStateToProps(state) {
   return {
-    errors: state.errors,
     cryptos: state.cryptodata
   };
 }
@@ -70,8 +68,6 @@ export default withRouter(
   connect(
     mapStateToProps,
     {
-      authUser,
-      removeError,
       GetDetailRoutes,
       fetchCryptoStats
     }

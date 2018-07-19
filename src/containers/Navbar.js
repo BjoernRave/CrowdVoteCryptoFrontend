@@ -8,7 +8,7 @@ import { removeError } from "../store/actions/errors";
 import Searchbar from "../components/searchBar";
 import { SetFiatCurrency } from "../store/actions/FiatCurrency";
 import Cookies from "universal-cookie";
-
+import Logo from "../images/CWClogo.png";
 const cookies = new Cookies();
 class Navbar extends Component {
   constructor(props) {
@@ -65,13 +65,15 @@ class Navbar extends Component {
         <nav>
           <div>
             <Link to="/">
-              Crowd. <br />{" "}
+              {/* Crowd. <br />{" "}
               <span>
                 {" "}
                 Vote. <br /> Crypto.{" "}
-              </span>{" "}
+              </span>{" "} */}
+              <img src={Logo} alt="" className="logo" />
             </Link>
           </div>
+
           <div className="rightNav">
             <select
               className="select"
@@ -112,6 +114,7 @@ class Navbar extends Component {
               buttonText="Sign me up!"
               heading="Register Now!"
               signUp
+              onSignUp={this.toggleSignup}
             />
           )}
         {this.state.signin &&

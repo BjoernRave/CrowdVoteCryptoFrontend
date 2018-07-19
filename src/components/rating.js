@@ -6,7 +6,7 @@ export default class RatingComponent extends PureComponent {
       <div id="rating">
         <button
           onClick={e => {
-            this.props.handleVote(2, this.props.symbol);
+            this.props.handleVote(3, this.props.symbol);
             e.stopPropagation();
           }}
         >
@@ -14,7 +14,7 @@ export default class RatingComponent extends PureComponent {
         </button>
         <button
           onClick={e => {
-            this.props.handleVote(-2, this.props.symbol);
+            this.props.handleVote(-3, this.props.symbol);
             e.stopPropagation();
           }}
         >

@@ -62,6 +62,7 @@ export default class Tags extends Component {
         <ul>{tagsArray}</ul>
         <form onSubmit={this.handleSubmit}>
           <input
+            className="fullInput"
             onChange={this.handleChange}
             value={this.state.input}
             type="text"

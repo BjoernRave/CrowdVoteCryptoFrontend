@@ -7,6 +7,9 @@
   #uppertile img:nth-child(1) {
     display: none;
   }
+  #cryptoIcon {
+    display: none;
+  }
 }
 * {
   padding: 0;
@@ -31,6 +34,11 @@
 *:link {
   outline: none;
 }
+.logo {
+  width: 140px;
+  height: 80px;
+  margin-bottom: -10px;
+}
 
 nav {
   display: flex;
@@ -38,7 +46,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  margin-left: 10px;
   margin-right: 20px;
 }
 nav:nth-child(1) {
@@ -46,7 +53,6 @@ nav:nth-child(1) {
   font-size: 2em;
   font-weight: 800;
   padding-left: 18px;
-  text-shadow: #22262e 8px 6px 10px;
   line-height: 24px;
 }
 .rightNav {
@@ -120,9 +126,10 @@ i:focus {
   display: grid;
   background-color: var(--secondColor);
   margin: 8px 2%;
-  font-size: 1em;
+  font-size: 1.3em;
   padding-top: 25px;
   grid-template-columns: 11% 12% 13% 8% 10% 9% 10% 4% 6% 14% 6%;
+  align-items: center;
   /* grid-template-columns: 0.2fr 2fr 2fr 1fr 2fr 1fr 1fr 2fr 0.2fr 2fr 1fr; */
 
   box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.212);
@@ -145,7 +152,7 @@ i:focus {
 }
 .bestTags {
   position: absolute;
-  font-size: 0.8em;
+  font-size: 12px;
   bottom: 7%;
   left: 7%;
   display: flex;
@@ -197,9 +204,10 @@ i:focus {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background-color: #2b2c34;
   transition: all linear 0.2s;
+  margin-left: 10px !important;
 }
 
 .sticky + .tilebox {
@@ -264,9 +272,9 @@ i:focus {
 #cryptoIcon {
   margin-top: 30px;
   position: absolute;
-  top: -23%;
-  left: 1.2%;
-  transform: scale(1.4);
+  top: -22.8%;
+  left: 0.9%;
+  transform: scale(1.5);
   /* clip-path: polygon(7% 10.5%, 100% 10.5%, 100% 90%, 7% 90%); */
   z-index: 0;
 }
@@ -296,16 +304,29 @@ i:focus {
 .Details .detailTags input {
   width: 97em;
 }
+
+.fullInput::placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
 .fulltags input {
   position: absolute !important;
-  width: 500px;
+  padding-left: 50px !important;
+  width: 31.3vw !important;
+  background-color: var(--fourthColor);
+  border: 1.8px solid black !important;
+  border-radius: 20px;
+  color: black;
+  font-size: 1em;
 }
 .fulltags {
   position: relative;
   width: 100%;
-  margin-top: 65px;
+  margin-top: 20px;
   grid-column: 1/3;
   grid-row: 3/4;
+  padding-bottom: 50px;
 }
 .fulltags p {
   width: fit-content;
@@ -433,7 +454,7 @@ i:focus {
   overflow-y: auto;
   height: unset;
   opacity: 0.85;
-  background-color: lightblue;
+  background-color: var(--fourthColor);
   height: 520px;
 }
 .Details .chat li:not(.ownmessage) {
@@ -510,23 +531,25 @@ i:focus {
 
 .fade-enter {
   height: 0px;
-
+  opacity: 0;
   transform-origin: top;
 }
 
 .fade-enter-active {
   height: 260px;
-
-  transition: 0.5s all linear;
+  opacity: 1;
+  transition: 0.7s all linear;
 }
 
 .fade-leave {
-  transition: 0.5s all linear;
+  transition: 0.7s all linear;
+  opacity: 1;
 }
 
 .fade-leave-active {
   height: 0px;
   transform-origin: top;
+  opacity: 0;
 }
 
 /* #endregion */
@@ -630,6 +653,7 @@ i:focus {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  width: 57vw;
 }
 
 .detailGraph button {
@@ -838,7 +862,7 @@ tr:last-child td:last-child {
 
 td {
   background: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: left;
   vertical-align: middle;
   font-weight: 300;
@@ -1001,18 +1025,22 @@ nav button {
 .footer {
   margin-top: 20px;
   background-color: #5b5e64;
-  height: 150px;
+  height: 190px;
   color: white;
+  line-height: 30px;
 }
 .footer p {
   margin: 0 auto;
   width: fit-content;
   padding-top: 10px;
 }
-.footer a {
+.footer section {
+  margin-left: 40vw;
+}
+/* .footer a {
   margin: 0 auto;
   width: fit-content;
-}
+} */
 .select {
   height: 2em;
 }
@@ -1036,8 +1064,9 @@ nav button {
 
 .placeholder {
   height: 75px;
-  background-color: gray;
-  margin: 10px 40px;
+  background-color: white;
+  margin: 8px 2vw;
+  border-radius: 5px;
 }
 .animated-page-wrapper {
   position: absolute;
@@ -1045,4 +1074,30 @@ nav button {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.socketChat {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: white;
+  height: 100%;
+  z-index: 3;
+}
+
+.smallGraph {
+  position: absolute;
+  top: 20%;
+  right: 6%;
+}
+
+.policy {
+  margin: 0px 25vw;
+  line-height: 27px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 24px;
+}
+.policy h1 {
+  margin: 0 20vw;
 }

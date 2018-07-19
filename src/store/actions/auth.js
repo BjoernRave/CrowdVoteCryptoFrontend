@@ -27,10 +27,11 @@ export function authUser(type, userData) {
     return new Promise((resolve, reject) => {
       return apiCall("post", `/api/auth/${type}`, userData)
         .then(({ token, ...user }) => {
+          console.log("Successfully made a " + type);
           localStorage.setItem("jwtToken", token);
           setAuthorizationToken(token);
           dispatch(setCurrentUser(user));
-          dispatch(removeError());
+          // dispatch(removeError());
           resolve(); // indicate that the API call succeeded
         })
         .catch(err => {

@@ -16,10 +16,12 @@ class AuthForm extends Component {
     const authType = this.props.signUp ? "signup" : "signin";
     this.props
       .onAuth(authType, this.state)
-      // .then(this.props.bool())
-      // .then(() => {
-      //   this.props.history.push("/");
-      // })
+      .then(() => {
+        this.props.onSignUp();
+      })
+      .then(() => {
+        this.props.history.push("/");
+      })
       .catch(() => {
         return;
       });
