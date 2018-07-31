@@ -9,6 +9,7 @@ import Searchbar from "../components/searchBar";
 import { SetFiatCurrency } from "../store/actions/FiatCurrency";
 import Cookies from "universal-cookie";
 import Logo from "../images/CWClogo.png";
+import Popup from "../components/popup";
 import { CSSTransitionGroup } from "react-transition-group";
 import CookieBanner from "../components/CookieBanner";
 const cookies = new Cookies();
@@ -21,12 +22,14 @@ class Navbar extends Component {
       signup: false,
       signin: false,
       fiat: cookies.get("fiat"),
-      CookiePopup: true
+      CookiePopup: true,
+      popup: false
     };
     this.toggleSignup = this.toggleSignup.bind(this);
     this.toggleSignin = this.toggleSignin.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleAgree = this.handleAgree.bind(this);
+    this.closepopup = this.closepopup.bind(this);
   }
   componentWillMount() {
     if (cookies.get("Policy")) {
@@ -38,6 +41,10 @@ class Navbar extends Component {
     e.preventDefault();
     this.props.logout();
   };
+
+  closepopup() {
+    this.setState({ closepopup: true });
+  }
 
   toggleSignup() {
     this.setState({
@@ -79,6 +86,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
+        {/* {!this.state.closepopup && <Popup closepopup={this.closepopup} />} */}
         <nav>
           <div>
             <Link to="/">

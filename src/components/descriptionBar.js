@@ -6,7 +6,7 @@ export default class DescriptionBar extends Component {
     const { handleSorting, handleHover, order } = this.props;
     return (
       <div id="namingbar" className={this.props.sticky ? "sticky" : null}>
-        <p onMouseOver={handleHover} onClick={handleSorting.bind(this, "rank")}>
+        <p onMouseOver={handleHover} onClick={() => handleSorting("rank")}>
           #<span>
             <i
               className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"}

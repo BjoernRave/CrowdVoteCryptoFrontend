@@ -78,10 +78,6 @@ export default class DetailStats extends Component {
               </td>
             </tr>
             <tr>
-              <td className="text-left"> CoinGecko Score </td>
-              <td className="text-left"> {data.coingecko_score}%</td>
-            </tr>
-            <tr>
               <td className="text-left"> Facebook Likes </td>
               <td className="text-left">
                 {" "}

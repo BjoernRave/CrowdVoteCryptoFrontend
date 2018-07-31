@@ -11,8 +11,8 @@ import Popup from "react-popup";
 import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
-import { Grid } from "react-virtualized";
-import Rating from "../components/rating";
+// import { Grid } from "react-virtualized";
+// import Rating from "../components/rating";
 // const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
 // const svgsObj = svgs.keys().reduce((images, key) => {
 //   images[key] = svgs(key);
@@ -21,7 +21,7 @@ import Rating from "../components/rating";
 import { CSSTransitionGroup } from "react-transition-group";
 let fiatcurr = "USD";
 const cookies = new Cookies();
-let secondBar = false;
+// let secondBar = false;
 
 class Cryptotilebox extends Component {
   constructor(props) {
@@ -155,10 +155,19 @@ class Cryptotilebox extends Component {
   }
   handleSorting(param) {
     let sorted = this.state.tiles.sort((a, b) => {
+      // console.log(a.props);
+      // console.log(a.props.children);
+      // console.log(a.props.children.props.children);
       if (this.state.order) {
-        return a.props.children.props[param] - b.props.children.props[param];
+        return (
+          a.props.children.props.children.props[param] -
+          b.props.children.props.children.props[param]
+        );
       } else {
-        return b.props.children.props[param] - a.props.children.props[param];
+        return (
+          b.props.children.props.children.props[param] -
+          a.props.children.props.children.props[param]
+        );
       }
     });
 
@@ -262,6 +271,9 @@ class Cryptotilebox extends Component {
           handleHover={this.handleHover}
           fiat={this.props.fiat}
         />
+        {/* <div className="tilebox">
+          {this.state.tiles.slice(this.state.PagStart, this.state.PagEnd)}
+        </div> */}
         <div className="tilebox">{this.state.tiles}</div>
         {/* <div className="pagbtn">
           <button onClick={() => this.handlePag(0, 50)}>1</button>
