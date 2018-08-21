@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import CryptotileBox from "./cryptotilesbox";
-import { authUser } from "../store/actions/auth";
-import { removeError } from "../store/actions/errors";
 import DetailsPage from "../containers/Details2";
 import NotFound from "../components/404NotFound";
 import { GetDetailRoutes } from "../store/actions/DetailRoutes";

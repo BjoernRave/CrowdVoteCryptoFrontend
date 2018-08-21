@@ -17,7 +17,7 @@ class AuthForm extends Component {
     this.props
       .onAuth(authType, this.state)
       .then(() => {
-        this.props.onSignUp();
+        authType === "signup" ? this.props.onSignUp() : this.props.onSignIn();
       })
       .then(() => {
         this.props.history.push("/");
@@ -42,14 +42,7 @@ class AuthForm extends Component {
 
   render() {
     const { email, username, password } = this.state;
-    const {
-      signUp,
-      heading,
-      buttonText,
-      errors,
-      history,
-      removeError
-    } = this.props;
+    const { signUp, heading, buttonText, errors } = this.props;
 
     // history.listen(() => {
     //   removeError();

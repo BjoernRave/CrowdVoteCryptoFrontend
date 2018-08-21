@@ -16,8 +16,7 @@ import Tags from "../components/tags";
 import Graph2 from "../components/graph2";
 import { fetchHistCryptoData } from "../store/actions/cryptostats";
 import DetailStats from "../components/DetailsStats";
-import Chart from "../components/Chart";
-import AnimatedWrapper from "../hocs/AnimatedWrapper";
+import { CSSTransitionGroup } from "react-transition-group";
 
 class Expandable extends Component {
   constructor(props) {
@@ -133,8 +132,7 @@ class Expandable extends Component {
             <span className="bubble"> {val.text} </span> <br />{" "}
             <span>
               {" "}
-              {val.user}-
-              <Moment format="HH:mm">{val.createdAt}</Moment>{" "}
+              {val.user}-<Moment format="HH:mm">{val.createdAt}</Moment>{" "}
             </span>{" "}
           </li>
         );
@@ -182,42 +180,41 @@ class Expandable extends Component {
               currentUser={this.props.currentUser}
             />
           </div>
+          <button className="toggleChat" onClick={this.toggleChat}>
+            Chat
+            <i class="far fa-comment-alt" />
+          </button>
 
           <div className="CommentSection">
-            <div onClick={this.toggleChat} className="header">
-              <p>{this.props.name} Chat</p>
-              <i
-                className={
-                  !this.state.chat
-                    ? "fas fa-angle-down rotated"
-                    : "fas fa-angle-down"
-                }
-              />
-            </div>
-
-            {this.state.chat && (
-              <div className="chat">
-                <ul id="DetailsComments">
-                  {/* <CSSTransitionGroup
+            <CSSTransitionGroup
+              transitionName={"swipe-left"}
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={300}
+            >
+              {this.state.chat && (
+                <div className="chat">
+                  <ul id="DetailsComments">
+                    {/* <CSSTransitionGroup
               transitionName="chatslide"
               transitionEnterTimeout={500}
               transitionLeaveTimeout={500}
             > */}
-                  {messsageArray}
-                  {/* </CSSTransitionGroup> */}
-                </ul>
-                <form onSubmit={this.handleSubmitComment}>
-                  <input
-                    onChange={this.handleChangeComment}
-                    type="text"
-                    value={this.state.comment}
-                    name="Comment"
-                    placeholder="Share your thoughts on this Coin"
-                    id="Detailscomment"
-                  />
-                </form>
-              </div>
-            )}
+                    {messsageArray}
+                    {/* </CSSTransitionGroup> */}
+                  </ul>
+                  <form onSubmit={this.handleSubmitComment}>
+                    <input
+                      onChange={this.handleChangeComment}
+                      type="text"
+                      value={this.state.comment}
+                      name="Comment"
+                      placeholder="Share your thoughts on this Coin"
+                      id="Detailscomment"
+                    />
+                  </form>
+                </div>
+              )}
+            </CSSTransitionGroup>
           </div>
         </div>
       </div>

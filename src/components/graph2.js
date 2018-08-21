@@ -96,7 +96,10 @@ export default class DynamicCrosshair extends React.Component {
           </XYPlot>
         </div>
         <div className="graphBtn">
-          <button onClick={() => this.props.fetchstats(this.props.name, 7)}>
+          <button
+            autoFocus
+            onClick={() => this.props.fetchstats(this.props.name, 7)}
+          >
             7 days
           </button>
           <button onClick={() => this.props.fetchstats(this.props.name, 30)}>

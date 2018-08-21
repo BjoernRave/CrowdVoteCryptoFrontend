@@ -3,7 +3,7 @@ import React from "react";
 export default props => {
   return (
     <div>
-      <div className="popup" />
+      {/* <div className="popup" />
       <div className="popuptextbox">
         <h3>Welcome to CrowdVoteCrypto</h3>
 
@@ -11,7 +11,7 @@ export default props => {
         <button onClick={props.closepopup} className="btn">
           Okay
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

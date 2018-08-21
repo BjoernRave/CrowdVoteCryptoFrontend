@@ -69,17 +69,8 @@ class Expandable extends PureComponent {
   }
   handleSubmitVote(e) {
     e.preventDefault();
-    if (this.props.currentUser.isAuthenticated) {
-      if (this.state.vote !== "-") {
-        this.props.handleVote(Number(this.state.vote), this.props.symbol);
-        this.setState({ vote: "" });
-      }
-    } else {
-      document.querySelector("#flash").classList.add("flashactive");
-      setTimeout(() => {
-        document.querySelector("#flash").classList.remove("flashactive");
-      }, 3000);
-    }
+    this.props.handleVote(Number(this.state.vote), this.props.symbol);
+    this.setState({ vote: "" });
   }
 
   render() {

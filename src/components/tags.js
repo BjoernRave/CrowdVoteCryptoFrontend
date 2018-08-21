@@ -23,7 +23,7 @@ export default class Tags extends Component {
     }
   }
   handleChange(e) {
-    if (this.state.input.length < 65) {
+    if (e.target.value.length < 65) {
       this.setState({ input: e.target.value });
     }
   }
@@ -39,6 +39,7 @@ export default class Tags extends Component {
     if (this.props.tags.length > 0) {
       tagsArray = this.props.tags
         .filter(val => val.symbol === this.props.symbol)
+        .sort((a, b) => b.votes.length - 1 - a.votes.length - 1)
         .map(val => {
           return (
             <li className="tag" key={val._id}>

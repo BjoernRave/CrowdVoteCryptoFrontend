@@ -44,7 +44,10 @@ export default class Cryptotile extends Component {
       <div id="tile">
         <div id="uppertile" onClick={this.expand}>
           <p>{rank}.</p>
-          <Link to={"/" + name.toLowerCase().replace(/\s/g, "-")}>
+          <Link
+            style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
+            to={"/" + name.toLowerCase().replace(/\s/g, "-")}
+          >
             {name}({symbol.toUpperCase()})
           </Link>
           <img src={this.props.icon} alt="" id="cryptoIcon" />
@@ -106,7 +109,11 @@ export default class Cryptotile extends Component {
           transitionLeaveTimeout={700}
         >
           {this.state.expanded && (
-            <Expandable symbol={symbol} handleVote={this.props.handleVote} />
+            <Expandable
+              handlevote={this.props.handleVote}
+              symbol={symbol}
+              handleVote={this.props.handleVote}
+            />
           )}
         </CSSTransitionGroup>
       </div>

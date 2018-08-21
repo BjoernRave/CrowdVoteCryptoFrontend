@@ -23,6 +23,17 @@ let fiatcurr = "USD";
 const cookies = new Cookies();
 // let secondBar = false;
 
+let tiles = [];
+
+for (let i = 0; i < 50; i++) {
+  tiles.push(
+    <div
+      // id={data.name.toLowerCase().replace(/ /g, "-")}
+      className="placeholder"
+    />
+  );
+}
+
 class Cryptotilebox extends Component {
   constructor(props) {
     super(props);
@@ -47,54 +58,6 @@ class Cryptotilebox extends Component {
   }
 
   componentDidMount() {
-    // console.log(cookies.get("firsttime"));
-    // if (cookies.get("firsttime") !== "true") {
-    // Popup.create({
-    //   title: "Welcome on CrowdVoteCrypto!",
-    //   content: (
-    //     <div>
-    //       The place to understand how the future of your cryptocurrency will
-    //       look like
-    //     </div>
-    //   ),
-    //   className: "alert",
-    //   buttons: {
-    //     left: [
-    //       {
-    //         text: "Ok!",
-    //         className: "success",
-    //         action: function() {
-    //           Popup.close();
-    //           // cookies.set("firsttime", true, {
-    //           //   path: "/",
-    //           //   expires: new Date(2048, 11, 24)
-    //           // });
-    //         }
-    //       }
-    //     ]
-    //   }
-    // });
-    // Popup.create({
-    //   title: "Welcome on CrowdVoteCrypto!",
-    //   content: <div>Let me introduce you to the concept</div>,
-    //   className: "alert",
-    //   buttons: {
-    //     left: [
-    //       {
-    //         text: "Ok!",
-    //         className: "success",
-    //         action: function() {
-    //           Popup.close();
-    //           // cookies.set("firsttime", true, {
-    //           //   path: "/",
-    //           //   expires: new Date(2048, 11, 24)
-    //           // });
-    //         }
-    //       }
-    //     ]
-    //   }
-    // });
-
     window.onscroll = function() {
       myFunction();
     };
@@ -115,8 +78,6 @@ class Cryptotilebox extends Component {
   }
 
   async handleVote(amount, symbol) {
-    // const userIp = await apiCall("get", "/api/ip/" + symbol);
-    // console.log(userIp.ip);
     let response;
     if (this.props.currentUser.isAuthenticated) {
       response = await apiCall("post", "/api/crypto/rating/edit", {
@@ -155,9 +116,6 @@ class Cryptotilebox extends Component {
   }
   handleSorting(param) {
     let sorted = this.state.tiles.sort((a, b) => {
-      // console.log(a.props);
-      // console.log(a.props.children);
-      // console.log(a.props.children.props.children);
       if (this.state.order) {
         return (
           a.props.children.props.children.props[param] -
@@ -171,7 +129,10 @@ class Cryptotilebox extends Component {
       }
     });
 
-    this.setState({ tiles: sorted, order: !this.state.order });
+    this.setState({ tiles: sorted, order: !this.state.order }, () => {
+      window.scrollBy(0, 1);
+      window.scrollBy(0, -1);
+    });
   }
 
   handleHover(e) {
@@ -184,10 +145,10 @@ class Cryptotilebox extends Component {
   renderTiles() {
     console.log("list rendered");
 
-    let tiles = this.props.data.map((data, ind) => (
+    tiles = this.props.data.map((data, ind) => (
       <LazyLoad
         key={data.id}
-        height={75}
+        height={70.7167}
         unmountIfInvisible={true}
         offset={[300, 300]}
         placeholder={
@@ -274,7 +235,9 @@ class Cryptotilebox extends Component {
         {/* <div className="tilebox">
           {this.state.tiles.slice(this.state.PagStart, this.state.PagEnd)}
         </div> */}
-        <div className="tilebox">{this.state.tiles}</div>
+        <div className="tilebox">
+          {this.state.tiles.length > 2 ? this.state.tiles : tiles}
+        </div>
         {/* <div className="pagbtn">
           <button onClick={() => this.handlePag(0, 50)}>1</button>
           <button onClick={() => this.handlePag(50, 100)}>2</button>

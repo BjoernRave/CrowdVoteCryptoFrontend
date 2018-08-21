@@ -19,11 +19,19 @@ export default class Footer extends Component {
         </Link>
         <section>
           Cryptocurrency Data provided by :{" "}
-          <a target="_blank" href="https://coinmarketcap.com/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://coinmarketcap.com/"
+          >
             CoinMarketCap
           </a>{" "}
           and{" "}
-          <a target="_blank" href="https://www.coingecko.com/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.coingecko.com/"
+          >
             Coin Gecko
           </a>
         </section>

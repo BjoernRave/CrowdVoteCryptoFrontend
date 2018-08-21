@@ -42,9 +42,9 @@ export default class DetailStats extends Component {
                 {Intl.NumberFormat().format(
                   Number(marketdata.market_cap_change_24h).toFixed(0)
                 )}
-                ({Number(marketdata.market_cap_change_percentage_24h).toFixed(
-                  2
-                )}%)
+                (
+                {Number(marketdata.market_cap_change_percentage_24h).toFixed(2)}
+                %)
               </td>
             </tr>
             <tr>
@@ -93,7 +93,7 @@ export default class DetailStats extends Component {
               </td>
             </tr>
           </tbody>
-          <tfoot>
+          {/* <tfoot>
             <tr>
               <td onClick={this.props.handleDeveloperExpand}>
                 Reddit Data
@@ -202,7 +202,7 @@ export default class DetailStats extends Component {
                 </tr>
               </div>
             )}
-          </tfoot>
+          </tfoot> */}
         </table>
       </div>
     );

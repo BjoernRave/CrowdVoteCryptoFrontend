@@ -86,7 +86,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        {/* {!this.state.closepopup && <Popup closepopup={this.closepopup} />} */}
+        {!this.state.closepopup && <Popup closepopup={this.closepopup} />}
         <nav>
           <div>
             <Link to="/">
@@ -130,13 +130,13 @@ class Navbar extends Component {
             )}
           </div>
         </nav>
-        {this.state.signup &&
-          !this.state.signin && (
-            <CSSTransitionGroup
-              transitionName={"fade"}
-              transitionEnterTimeout={700}
-              transitionLeaveTimeout={700}
-            >
+        <CSSTransitionGroup
+          transitionName={"swipe-left"}
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+        >
+          {this.state.signup &&
+            !this.state.signin && (
               <AuthForm
                 removeError={this.props.removeError}
                 errors={this.props.errors}
@@ -146,24 +146,20 @@ class Navbar extends Component {
                 signUp
                 onSignUp={this.toggleSignup}
               />
-            </CSSTransitionGroup>
-          )}
-        {this.state.signin &&
-          !this.state.signup && (
-            <CSSTransitionGroup
-              transitionName={"fade"}
-              transitionEnterTimeout={700}
-              transitionLeaveTimeout={700}
-            >
+            )}
+
+          {this.state.signin &&
+            !this.state.signup && (
               <AuthForm
                 removeError={this.props.removeError}
                 errors={this.props.errors}
                 onAuth={this.props.authUser}
                 buttonText="Log in!"
                 heading="Welcome Back."
+                onSignIn={this.toggleSignin}
               />
-            </CSSTransitionGroup>
-          )}
+            )}
+        </CSSTransitionGroup>
         {this.state.CookiePopup && (
           <CookieBanner handleAgree={this.handleAgree} />
         )}

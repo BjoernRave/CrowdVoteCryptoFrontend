@@ -1,11 +1,12 @@
 {
-  "name": "warbler-client",
+  "name": "crowdvotecryptoclient",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/react-fontawesome": "0.0.19",
+    "@pusher/chatkit": "^0.7.17",
     "@types/react": "^16.3.17",
     "ajv": "^6.5.0",
     "animated": "^0.2.2",
@@ -50,6 +51,8 @@
     "react-dom": "^16.4.0",
     "react-flip-move": "^3.0.2",
     "react-fontawesome": "^1.6.1",
+    "react-headroom": "^2.2.2",
+    "react-joyride": "^1.11.4",
     "react-lazy-render": "^0.3.0",
     "react-lazyload": "^2.3.0",
     "react-moment": "^0.7.0",

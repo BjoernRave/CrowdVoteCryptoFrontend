@@ -7,6 +7,7 @@ import Main from "./Main";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 import Footer from "../components/footer";
+import Walkthrough from "../components/walkthrough";
 const store = configureStore();
 
 if (localStorage.jwtToken) {
@@ -24,7 +25,7 @@ const App = () => (
     <Router>
       <div className="onboarding">
         <Navbar />
-
+        {/* <Walkthrough /> */}
         <p id="flash">You need to be logged in to do that!</p>
         <Main />
         {/* <SocketChat /> */}
