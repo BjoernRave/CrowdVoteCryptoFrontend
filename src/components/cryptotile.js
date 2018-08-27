@@ -1,122 +1,102 @@
-import React, { Component } from "react";
+import React from "react";
 import Rating from "./rating";
 import Expandable from "./Expandable";
-import { CSSTransitionGroup } from "react-transition-group";
 import { Link } from "react-router-dom";
-// import Links from "../../public/coinlinks.json";
+import Collapsible from "react-collapsible";
 
-export default class Cryptotile extends Component {
-  constructor(props) {
-    super(props);
-    this.expand = this.expand.bind(this);
-    this.state = {
-      expanded: false
-    };
-  }
-  expand() {
-    this.setState({ expanded: !this.state.expanded });
-  }
-  componentDidMount() {
-    const expandbtn = document.querySelector("#expand");
-    expandbtn.addEventListener("click", e =>
-      expandbtn.classList.toggle("rotated")
-    );
-  }
+export default ({
+  name,
+  price,
+  symbol,
+  marketCap,
+  change24h,
+  circulatingSupply,
+  rank,
+  id,
+  tags,
+  icon,
+  voteResult,
+  handleVote,
+  voteCount,
+  votes,
+  fiat
+}) => {
+  let tagsArray = tags
+    .filter(val => val.symbol === symbol)
+    .sort((a, b) => b.votes.length - a.votes.length)
+    .map((val, ind) => {
+      return <p key={ind}>{val.text}</p>;
+    });
+  console.log(fiat);
 
-  render() {
-    const {
-      name,
-      price,
-      symbol,
-      marketCap,
-      change24h,
-      circulatingSupply,
-      rank,
-      id
-    } = this.props;
-    let tagsArray = this.props.tags
-      .filter(val => val.symbol === this.props.symbol)
-      .sort((a, b) => b.votes - a.votes)
-      .map((val, ind) => {
-        return <p key={ind}>{val.text}</p>;
-      });
-    return (
-      <div id="tile">
-        <div id="uppertile" onClick={this.expand}>
-          <p>{rank}.</p>
-          <Link
-            style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
-            to={"/" + name.toLowerCase().replace(/\s/g, "-")}
-          >
-            {name}({symbol.toUpperCase()})
-          </Link>
-          <img src={this.props.icon} alt="" id="cryptoIcon" />
-          <p title="The total available Supply multiplied by the Price">
-            {Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
-          </p>
-          <p>
-            {Intl.NumberFormat().format(
-              Number(price) < 10 ? price : Number(price).toFixed(2)
+  return (
+    <div id="tile">
+      <Collapsible
+        lazyRender
+        trigger={
+          <div id="uppertile">
+            <img src={icon} alt="" id="cryptoIcon" />
+            <p>{rank}.</p>
+            <Link
+              style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
+              to={"/" + name.toLowerCase().replace(/\s/g, "-")}
+            >
+              {name}({symbol.toUpperCase()})
+            </Link>
+
+            <p title="The total available Supply multiplied by the Price">
+              {Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
+            </p>
+            <p>
+              {new Intl.NumberFormat("de-DE", {
+                currency: fiat,
+                maximumSignificantDigits: 7
+              }).format(price)}
+            </p>
+            <p>
+              {Intl.NumberFormat().format(Number(circulatingSupply).toFixed(0))}
+            </p>
+            {Number(change24h) < 0 ? (
+              <p className="red">{Number(change24h).toFixed(2)} %</p>
+            ) : (
+              <p className="green">{Number(change24h).toFixed(2)} %</p>
             )}
-          </p>
-          <p>
-            {Intl.NumberFormat().format(Number(circulatingSupply).toFixed(0))}
-          </p>
-          {Number(change24h) < 0 ? (
-            <p className="red">{Number(change24h).toFixed(2)} %</p>
-          ) : (
-            <p className="green">{Number(change24h).toFixed(2)} %</p>
-          )}
 
-          {Number(this.props.voteResult) < 0 ? (
-            <p className="red">{this.props.voteResult}%</p>
-          ) : (
-            <p className="green">{this.props.voteResult}%</p>
-          )}
+            {Number(voteResult) < 0 ? (
+              <p className="red">{voteResult}%</p>
+            ) : (
+              <p className="green">{voteResult}%</p>
+            )}
 
-          <p>{this.props.voteCount}</p>
+            <p>{voteCount}</p>
 
-          <Rating
-            handleVote={this.props.handleVote}
-            symbol={symbol}
-            votes={this.props.votes}
-          />
-          <Link to={"/" + name.toLowerCase().replace(/\s/g, "-")}>
-            <img
-              src={
-                "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/" +
-                id +
-                ".png"
-              }
-              alt="PriceGraph"
+            <Rating handleVote={handleVote} symbol={symbol} votes={votes} />
+            <Link
               className="smallGraph"
-            />
-          </Link>
-          <button onClick={this.expand} id="expand">
-            <i
-              className={
-                this.state.expanded
-                  ? "fas fa-angle-down rotated"
-                  : "fas fa-angle-down"
-              }
-            />
-          </button>
-          <div className="bestTags">{tagsArray.slice(0, 3)}</div>
-        </div>
-        <CSSTransitionGroup
-          transitionName={"fade"}
-          transitionEnterTimeout={700}
-          transitionLeaveTimeout={700}
-        >
-          {this.state.expanded && (
-            <Expandable
-              handlevote={this.props.handleVote}
-              symbol={symbol}
-              handleVote={this.props.handleVote}
-            />
-          )}
-        </CSSTransitionGroup>
-      </div>
-    );
-  }
-}
+              to={"/" + name.toLowerCase().replace(/\s/g, "-")}
+            >
+              <img
+                src={
+                  "https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/" +
+                  id +
+                  ".png"
+                }
+                alt="PriceGraph"
+              />
+            </Link>
+            <button onClick={this.expand} id="expand">
+              <i className="fas fa-angle-down" />
+            </button>
+            <div className="bestTags">{tagsArray.slice(0, 3)}</div>
+          </div>
+        }
+      >
+        <Expandable
+          parent={this.Cryptotile}
+          handlevote={handleVote}
+          symbol={symbol}
+        />
+      </Collapsible>
+    </div>
+  );
+};

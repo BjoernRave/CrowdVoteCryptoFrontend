@@ -11,34 +11,20 @@ import Popup from "react-popup";
 import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
-// import { Grid } from "react-virtualized";
-// import Rating from "../components/rating";
-// const svgs = require.context("../images/cryptoIcons", false, /\.svg$/);
-// const svgsObj = svgs.keys().reduce((images, key) => {
-//   images[key] = svgs(key);
-//   return images;
-// }, {});
 import { CSSTransitionGroup } from "react-transition-group";
+import { StickyContainer, Sticky } from "react-sticky";
 let fiatcurr = "USD";
 const cookies = new Cookies();
-// let secondBar = false;
-
 let tiles = [];
 
 for (let i = 0; i < 50; i++) {
-  tiles.push(
-    <div
-      // id={data.name.toLowerCase().replace(/ /g, "-")}
-      className="placeholder"
-    />
-  );
+  tiles.push(<div key={i} className="placeholder" />);
 }
 
 class Cryptotilebox extends Component {
   constructor(props) {
     super(props);
     this.handleVote = this.handleVote.bind(this);
-    this.handlePag = this.handlePag.bind(this);
     this.handleSorting = this.handleSorting.bind(this);
     this.handleHover = this.handleHover.bind(this);
     this.renderTiles = this.renderTiles.bind(this);
@@ -58,20 +44,6 @@ class Cryptotilebox extends Component {
   }
 
   componentDidMount() {
-    window.onscroll = function() {
-      myFunction();
-    };
-    var header = document.getElementById("namingbar");
-
-    var sticky = header.offsetTop + 220;
-    const myFunction = () => {
-      if (window.pageYOffset >= sticky) {
-        this.setState({ descriptionHover: true });
-      } else {
-        this.setState({ descriptionHover: false });
-      }
-    };
-
     // setInterval(() => {
     //   this.props.fetchCryptoVotes();
     // }, 8000);
@@ -109,11 +81,7 @@ class Cryptotilebox extends Component {
 
     this.renderTiles();
   }
-  handlePag(start, end) {
-    this.setState({ PagStart: start, PagEnd: end });
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+
   handleSorting(param) {
     let sorted = this.state.tiles.sort((a, b) => {
       if (this.state.order) {
@@ -166,6 +134,7 @@ class Cryptotilebox extends Component {
             price={
               data.market_data.current_price[this.props.fiat.fiat.toLowerCase()]
             }
+            fiat={this.props.fiat.fiat}
             symbol={data.symbol}
             marketCap={
               data.market_data.market_cap[this.props.fiat.fiat.toLowerCase()]
@@ -211,41 +180,35 @@ class Cryptotilebox extends Component {
 
     return (
       <div className="mainpage">
-        {this.state.descriptionHover && (
-          <CSSTransitionGroup
-            transitionName={"fade"}
-            transitionEnterTimeout={700}
-            transitionLeaveTimeout={700}
-          >
-            <DescriptionBar
-              sticky
-              handleSorting={this.handleSorting}
-              order={this.state.order}
-              handleHover={this.handleHover}
-              fiat={this.props.fiat}
-            />
-          </CSSTransitionGroup>
-        )}
-        <DescriptionBar
-          handleSorting={this.handleSorting}
-          order={this.state.order}
-          handleHover={this.handleHover}
-          fiat={this.props.fiat}
-        />
-        {/* <div className="tilebox">
-          {this.state.tiles.slice(this.state.PagStart, this.state.PagEnd)}
-        </div> */}
-        <div className="tilebox">
-          {this.state.tiles.length > 2 ? this.state.tiles : tiles}
-        </div>
-        {/* <div className="pagbtn">
-          <button onClick={() => this.handlePag(0, 50)}>1</button>
-          <button onClick={() => this.handlePag(50, 100)}>2</button>
-          <button onClick={() => this.handlePag(100, 150)}>3</button>
-        </div> */}
-        <a className="goTop" onClick={this.goTop}>
-          <i className="fas fa-chevron-circle-up" />
-        </a>
+        <StickyContainer>
+          <Sticky>
+            {({
+              style,
+
+              // the following are also available but unused in this example
+              isSticky,
+              wasSticky,
+              distanceFromTop,
+              distanceFromBottom,
+              calculatedHeight
+            }) => (
+              <header className="sticky" style={style}>
+                <DescriptionBar
+                  handleSorting={this.handleSorting}
+                  order={this.state.order}
+                  handleHover={this.handleHover}
+                  fiat={this.props.fiat}
+                />
+              </header>
+            )}
+          </Sticky>
+          <div className="tilebox">
+            {this.state.tiles.length > 2 ? this.state.tiles : tiles}
+          </div>
+          <a className="goTop" onClick={this.goTop}>
+            <i className="fas fa-chevron-circle-up" />
+          </a>
+        </StickyContainer>
       </div>
     );
   }

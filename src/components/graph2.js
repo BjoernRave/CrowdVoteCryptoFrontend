@@ -39,7 +39,7 @@ export default class DynamicCrosshair extends React.Component {
         hour: "numeric",
         minute: "numeric"
       }),
-      dataY: value.y.toFixed(4)
+      dataY: value.y.toFixed(6)
     });
   }
 
@@ -82,7 +82,7 @@ export default class DynamicCrosshair extends React.Component {
             />
 
             <Crosshair values={myValues}>
-              <div style={{ background: "black" }}>
+              <div className="crosshair">
                 <p>
                   <span> Date: </span>
                   {this.state.dataX}

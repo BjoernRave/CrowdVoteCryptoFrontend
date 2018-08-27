@@ -147,12 +147,7 @@ class Expandable extends Component {
           <div>
             <img className="cryptoIcondetail" src={data.image.small} alt="" />
 
-            <p className="detailsname">
-              {data.name}{" "}
-              {/* <a onClick={this.toggleChat}>
-                <i className="fas fa-comment-alt" />
-              </a> */}
-            </p>
+            <p className="detailsname">{data.name}</p>
           </div>
           <DetailStats
             data={specificData[0]}
@@ -182,7 +177,7 @@ class Expandable extends Component {
           </div>
           <button className="toggleChat" onClick={this.toggleChat}>
             Chat
-            <i class="far fa-comment-alt" />
+            <i className="far fa-comment-alt" />
           </button>
 
           <div className="CommentSection">
@@ -193,25 +188,23 @@ class Expandable extends Component {
             >
               {this.state.chat && (
                 <div className="chat">
-                  <ul id="DetailsComments">
-                    {/* <CSSTransitionGroup
-              transitionName="chatslide"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={500}
-            > */}
-                    {messsageArray}
-                    {/* </CSSTransitionGroup> */}
-                  </ul>
-                  <form onSubmit={this.handleSubmitComment}>
-                    <input
-                      onChange={this.handleChangeComment}
-                      type="text"
-                      value={this.state.comment}
-                      name="Comment"
-                      placeholder="Share your thoughts on this Coin"
-                      id="Detailscomment"
-                    />
-                  </form>
+                  <ul id="DetailsComments">{messsageArray}</ul>
+                  <div className="chatInput">
+                    <form onSubmit={this.handleSubmitComment}>
+                      <input
+                        onChange={this.handleChangeComment}
+                        type="text"
+                        value={this.state.comment}
+                        name="Comment"
+                        placeholder="Share your thoughts on this Coin"
+                        id="Detailscomment"
+                      />
+                      <button>
+                        {" "}
+                        <i class="material-icons">send</i>
+                      </button>
+                    </form>
+                  </div>
                 </div>
               )}
             </CSSTransitionGroup>

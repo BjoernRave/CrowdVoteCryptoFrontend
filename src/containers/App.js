@@ -25,10 +25,8 @@ const App = () => (
     <Router>
       <div className="onboarding">
         <Navbar />
-        {/* <Walkthrough /> */}
         <p id="flash">You need to be logged in to do that!</p>
         <Main />
-        {/* <SocketChat /> */}
         <Footer />
       </div>
     </Router>

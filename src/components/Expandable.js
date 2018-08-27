@@ -13,6 +13,8 @@ import {
   VoteTag
 } from "../store/actions/tags";
 import Tags from "../components/tags";
+import Collapsible from "react-collapsible";
+import Cryptotile from "./cryptotile";
 
 class Expandable extends PureComponent {
   constructor(props) {
@@ -99,8 +101,7 @@ class Expandable extends PureComponent {
             ]}
             <span className="bubble"> {val.text} </span> <br />
             <span>
-              {val.user}-
-              <Moment format="HH:mm">{val.createdAt}</Moment>
+              {val.user}-<Moment format="HH:mm">{val.createdAt}</Moment>
             </span>
           </li>
         );

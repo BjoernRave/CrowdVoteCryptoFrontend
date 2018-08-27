@@ -18,7 +18,9 @@ export default class DetailStats extends Component {
             <tr>
               <td className="text-left">Price in {this.props.currency}</td>
               <td className="text-left">
-                {Intl.NumberFormat().format(
+                {new Intl.NumberFormat("de-DE", {
+                  maximumSignificantDigits: 7
+                }).format(
                   marketdata.current_price[this.props.currency.toLowerCase()]
                 )}
               </td>
@@ -37,7 +39,10 @@ export default class DetailStats extends Component {
               </td>
             </tr>
             <tr>
-              <td className="text-left"> Market Cap Change(24h) in USD </td>
+              <td className="text-left">
+                {" "}
+                Market Cap Change(24h) in {this.props.currency}{" "}
+              </td>
               <td className="text-left">
                 {Intl.NumberFormat().format(
                   Number(marketdata.market_cap_change_24h).toFixed(0)
