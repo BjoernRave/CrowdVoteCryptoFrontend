@@ -7,7 +7,6 @@ import NotFound from "../components/404NotFound";
 import { GetDetailRoutes } from "../store/actions/DetailRoutes";
 import { fetchCryptoStats } from "../store/actions/cryptostats";
 import PrivacyPolicy from "../components/PrivacyPolicy";
-import { TransitionGroup } from "react-transition-group";
 import Switch from "react-router-transition-switch";
 import cookiepolicy from "../components/CookieConsent";
 
@@ -42,17 +41,13 @@ class Main extends Component {
     const { location } = this.props;
 
     return (
-      <div className="container">
-        <TransitionGroup>
-          <Switch key={location.key} location={location}>
-            <Route exact path="/" component={CryptotileBox} />
-            {this.state.DetailRoutes}
-            <Route path="/cookie-policy" component={cookiepolicy} />
-            <Route path="/privacy-policy" component={PrivacyPolicy} />
-            <Route component={NotFound} />
-          </Switch>
-        </TransitionGroup>
-      </div>
+      <Switch location={location}>
+        <Route exact path="/" component={CryptotileBox} />
+        {this.state.DetailRoutes}
+        <Route path="/cookie-policy" component={cookiepolicy} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route component={NotFound} />
+      </Switch>
     );
   }
 }

@@ -10,8 +10,8 @@ import { SetFiatCurrency } from "../store/actions/FiatCurrency";
 import Cookies from "universal-cookie";
 import Logo from "../images/CWClogo.png";
 import Popup from "../components/popup";
-import { CSSTransitionGroup } from "react-transition-group";
 import CookieBanner from "../components/CookieBanner";
+import { Animated } from "react-animated-css";
 const cookies = new Cookies();
 
 class Navbar extends Component {
@@ -90,11 +90,6 @@ class Navbar extends Component {
         <nav>
           <div>
             <Link to="/">
-              {/* Crowd. <br />{" "}
-              <span>
-                {" "}
-                Vote. <br /> Crypto.{" "}
-              </span>{" "} */}
               <img src={Logo} alt="" className="logo" />
             </Link>
           </div>
@@ -130,36 +125,37 @@ class Navbar extends Component {
             )}
           </div>
         </nav>
-        <CSSTransitionGroup
-          transitionName={"swipe-left"}
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        >
-          {this.state.signup &&
-            !this.state.signin && (
-              <AuthForm
-                removeError={this.props.removeError}
-                errors={this.props.errors}
-                onAuth={this.props.authUser}
-                buttonText="Sign me up!"
-                heading="Register Now!"
-                signUp
-                onSignUp={this.toggleSignup}
-              />
-            )}
 
-          {this.state.signin &&
-            !this.state.signup && (
-              <AuthForm
-                removeError={this.props.removeError}
-                errors={this.props.errors}
-                onAuth={this.props.authUser}
-                buttonText="Log in!"
-                heading="Welcome Back."
-                onSignIn={this.toggleSignin}
-              />
-            )}
-        </CSSTransitionGroup>
+        <Animated
+          animationIn="bounceInRight"
+          animationOut="bounceOutRight"
+          isVisible={this.state.signup}
+        >
+          <AuthForm
+            removeError={this.props.removeError}
+            errors={this.props.errors}
+            onAuth={this.props.authUser}
+            buttonText="Sign me up!"
+            heading="Register Now!"
+            signUp
+            onSignUp={this.toggleSignup}
+          />
+        </Animated>
+        <Animated
+          animationIn="bounceInRight"
+          animationOut="bounceOutRight"
+          isVisible={this.state.signin}
+        >
+          <AuthForm
+            removeError={this.props.removeError}
+            errors={this.props.errors}
+            onAuth={this.props.authUser}
+            buttonText="Log in!"
+            heading="Welcome Back."
+            onSignIn={this.toggleSignin}
+          />
+        </Animated>
+
         {this.state.CookiePopup && (
           <CookieBanner handleAgree={this.handleAgree} />
         )}

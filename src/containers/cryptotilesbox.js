@@ -7,11 +7,9 @@ import {
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
 import { getTags } from "../store/actions/tags";
-import Popup from "react-popup";
 import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
-import { CSSTransitionGroup } from "react-transition-group";
 import { StickyContainer, Sticky } from "react-sticky";
 let fiatcurr = "USD";
 const cookies = new Cookies();
@@ -163,6 +161,15 @@ class Cryptotilebox extends Component {
   }
 
   render() {
+    setTimeout(() => {
+      if (this.props.data.length < 1) {
+        let flash = document.querySelector("#flash");
+        flash.textContent =
+          "Sorry, for some reason we cannot fetch Cryptocurrency data at this point :(";
+        flash.classList.add("flashactive");
+      }
+    }, 8000);
+
     if (
       this.props.data.length > 0 &&
       this.state.tiles.length < 2 &&

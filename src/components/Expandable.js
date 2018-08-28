@@ -13,8 +13,6 @@ import {
   VoteTag
 } from "../store/actions/tags";
 import Tags from "../components/tags";
-import Collapsible from "react-collapsible";
-import Cryptotile from "./cryptotile";
 
 class Expandable extends PureComponent {
   constructor(props) {
@@ -57,9 +55,11 @@ class Expandable extends PureComponent {
         document.querySelector("#comments").scrollTop = 10000;
       }
     } else {
-      document.querySelector("#flash").classList.add("flashactive");
+      let flash = document.querySelector("#flash");
+      flash.textContent = "You need to be logged in to do that!";
+      flash.classList.add("flashactive");
       setTimeout(() => {
-        document.querySelector("#flash").classList.remove("flashactive");
+        flash.classList.remove("flashactive");
       }, 3000);
     }
   }
@@ -135,6 +135,10 @@ class Expandable extends PureComponent {
               placeholder="Share your thoughts on this Coin"
               id="comment"
             />
+            <button className="sendMessageDetails">
+              {" "}
+              <i class="material-icons">send</i>
+            </button>
           </form>
         </div>
         <Tags

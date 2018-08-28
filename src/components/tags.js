@@ -16,9 +16,11 @@ export default class Tags extends Component {
       this.props.CreateTag(this.state.input, this.props.symbol);
       this.setState({ input: "" });
     } else {
-      document.querySelector("#flash").classList.add("flashactive");
+      let flash = document.querySelector("#flash");
+      flash.textContent = "You need to be logged in to do that!";
+      flash.classList.add("flashactive");
       setTimeout(() => {
-        document.querySelector("#flash").classList.remove("flashactive");
+        flash.classList.remove("flashactive");
       }, 3000);
     }
   }

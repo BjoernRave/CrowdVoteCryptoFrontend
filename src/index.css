@@ -27,6 +27,10 @@ button {
   cursor: pointer;
   transition: all linear 0.2s;
 }
+
+body {
+  overflow-x: hidden;
+}
 * {
   padding: 0;
   margin: 0;
@@ -134,7 +138,7 @@ i:focus {
   position: relative;
   display: grid;
   background-color: var(--secondColor);
-  margin: 10px 2% 1px 2%;
+  margin: 10px 0 1px 0;
   font-size: 1.3em;
   grid-template-columns: 5.5% 2% 15% 14% 10% 12% 8% 8% 5% 3% 14% 5%;
   align-items: center;
@@ -155,7 +159,7 @@ i:focus {
 
 .bestTags {
   position: absolute;
-  font-size: 0.6em;
+  font-size: 0.8rem;
   bottom: 3%;
   left: 8%;
   display: flex;
@@ -198,6 +202,7 @@ i:focus {
 }
 #tile {
   will-change: height;
+  margin: 0 25px;
 }
 
 #rating {
@@ -288,6 +293,7 @@ i:focus {
 }
 .Details .detailTags input {
   width: 97em;
+  margin-left: 15px;
 }
 
 .fullInput::placeholder {
@@ -454,7 +460,7 @@ i:focus {
   position: fixed;
   font-size: 1.5em;
   bottom: 0%;
-  right: 40%;
+  right: 35%;
   letter-spacing: 2px;
   cursor: pointer;
   padding: 6px 12px;
@@ -472,6 +478,7 @@ i:focus {
 .Details .chat {
   border-top: none;
   height: 100vh;
+  box-shadow: -2px 0px 52px -2px rgba(0, 0, 0, 0.75);
 }
 .Details .chat ul {
   overflow-y: auto;
@@ -481,6 +488,9 @@ i:focus {
 }
 .Details .chat li:not(.ownmessage) {
   margin-left: 0px;
+}
+.Details .CommentSection li span:last-of-type {
+  color: black;
 }
 
 .Expandable li {
@@ -589,16 +599,19 @@ i:focus {
 
 #flash {
   position: fixed;
-  top: 10%;
+  width: 500px;
+  top: 20%;
+  left: 50%;
+  margin-left: -250px; /* Negative half of width. */
   transition: linear 1s;
   font-size: 27px;
   z-index: 3;
   background-color: var(--attention);
-  left: 30%;
   user-select: none;
   padding: 10px;
   border-radius: 20px;
   opacity: 0;
+  text-align: center;
 }
 
 .flashactive {
@@ -663,7 +676,6 @@ i:focus {
 
 .detailStats {
   margin-top: 60px;
-  margin-left: 30px;
   grid-column: 2/3;
   grid-row: 1/4;
 }
@@ -970,7 +982,7 @@ nav button:active {
   border: 6px solid black;
   padding-bottom: 70px;
   right: 0%;
-  top: 10%;
+  top: 17%;
   transition: all linear 0.2s;
   border-right: none;
 }
@@ -1116,20 +1128,7 @@ nav button:active {
   width: 100%;
   height: 100%;
 }
-.socketChat {
-  position: fixed;
-  right: 0;
-  top: 0;
-  background-color: white;
-  height: 100%;
-  z-index: 3;
-}
 
-/* .smallGraph {
-  position: absolute;
-  top: 20%;
-  right: 6%;
-} */
 .smallGraph {
   filter: contrast(0);
 }
@@ -1157,20 +1156,25 @@ nav button:active {
   margin-left: -10px;
 }
 .cookiebanner {
-  margin-left: 15px;
+  width: 60vw;
+  color: rgb(255, 255, 255);
   position: fixed;
-  bottom: 0;
-  background-color: white;
+  bottom: 1%;
+  left: 18%;
+  background-color: rgb(68, 66, 66);
   z-index: 5;
   padding: 8px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 8px solid var(--fourthColor);
+  border-radius: 5px;
+  box-shadow: 0 0 20px #000;
   border-bottom: 0px;
+  text-align: center;
 }
 .cookiebanner div {
+  color: black;
   display: flex;
   flex-direction: row;
+  margin-left: 170px;
+  padding-top: 5px;
 }
 .cookiebanner div * {
   padding: 4px 10px 4px 10px;
@@ -1181,7 +1185,7 @@ nav button:active {
   cursor: pointer;
   padding: 7px 28px;
   display: inline-block;
-  margin: 7px 15px;
+  margin: 2px 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
   outline: none;
@@ -1196,7 +1200,7 @@ nav button:active {
   border: none;
   cursor: pointer;
   display: inline-block;
-  /* margin: 7px 10px; */
+  margin: 7px 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   outline: none;
@@ -1261,7 +1265,7 @@ nav button:active {
 .chatInput {
   position: fixed;
   bottom: 0%;
-  width: 38%;
+  width: 100%;
   background-color: white;
   opacity: 1;
   box-shadow: 0px 2px 20px;
@@ -1275,14 +1279,27 @@ nav button:active {
   margin-bottom: 10px;
   margin-left: 50px;
 }
-.chatInput button {
-  margin-left: -20px;
+.sendMessage {
+  position: absolute;
+  bottom: 8%;
+  height: 50px;
+  margin-left: -25px;
 }
-.chatInput button:active {
+.sendMessageDetails {
+  position: absolute;
+  top: 63%;
+  left: 36%;
+}
+
+.sendMessage:active {
   transform: scale(0.9);
 }
 .sticky {
   z-index: 3;
   background-color: #272830;
   transform: scale(1);
+}
+
+.animated {
+  z-index: 5;
 }

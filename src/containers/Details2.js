@@ -16,7 +16,7 @@ import Tags from "../components/tags";
 import Graph2 from "../components/graph2";
 import { fetchHistCryptoData } from "../store/actions/cryptostats";
 import DetailStats from "../components/DetailsStats";
-import { CSSTransitionGroup } from "react-transition-group";
+import { Animated } from "react-animated-css";
 
 class Expandable extends Component {
   constructor(props) {
@@ -177,37 +177,42 @@ class Expandable extends Component {
           </div>
           <button className="toggleChat" onClick={this.toggleChat}>
             Chat
-            <i className="far fa-comment-alt" />
+            <i class="material-icons">chat</i>
           </button>
 
           <div className="CommentSection">
-            <CSSTransitionGroup
-              transitionName={"swipe-left"}
-              transitionEnterTimeout={300}
-              transitionLeaveTimeout={300}
+            <Animated
+              style={{
+                animationDuration: "0.3s",
+                msAnimationDuration: "0.3s",
+                WebkitAnimationDuration: "0.3s",
+                MozAnimationDuration: "0.3s",
+                OAnimationDuration: "0.3s"
+              }}
+              animationIn="fadeInRight"
+              animationOut="fadeOutRight"
+              isVisible={this.state.chat}
             >
-              {this.state.chat && (
-                <div className="chat">
-                  <ul id="DetailsComments">{messsageArray}</ul>
-                  <div className="chatInput">
-                    <form onSubmit={this.handleSubmitComment}>
-                      <input
-                        onChange={this.handleChangeComment}
-                        type="text"
-                        value={this.state.comment}
-                        name="Comment"
-                        placeholder="Share your thoughts on this Coin"
-                        id="Detailscomment"
-                      />
-                      <button>
-                        {" "}
-                        <i class="material-icons">send</i>
-                      </button>
-                    </form>
-                  </div>
+              <div className="chat">
+                <ul id="DetailsComments">{messsageArray}</ul>
+                <div className="chatInput">
+                  <form onSubmit={this.handleSubmitComment}>
+                    <input
+                      onChange={this.handleChangeComment}
+                      type="text"
+                      value={this.state.comment}
+                      name="Comment"
+                      placeholder="Share your thoughts on this Coin"
+                      id="Detailscomment"
+                    />
+                    <button className="sendMessage">
+                      {" "}
+                      <i class="material-icons">send</i>
+                    </button>
+                  </form>
                 </div>
-              )}
-            </CSSTransitionGroup>
+              </div>
+            </Animated>
           </div>
         </div>
       </div>

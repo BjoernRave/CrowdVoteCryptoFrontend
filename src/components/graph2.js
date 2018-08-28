@@ -59,7 +59,7 @@ export default class DynamicCrosshair extends React.Component {
           <XYPlot
             onMouseLeave={this._onMouseLeave}
             width={window.innerWidth * 0.55}
-            height={window.innerHeight * 0.7}
+            height={window.innerHeight * 0.6}
           >
             <VerticalGridLines />
             <HorizontalGridLines />

@@ -27,7 +27,6 @@ export default ({
     .map((val, ind) => {
       return <p key={ind}>{val.text}</p>;
     });
-  console.log(fiat);
 
   return (
     <div id="tile">
@@ -91,11 +90,7 @@ export default ({
           </div>
         }
       >
-        <Expandable
-          parent={this.Cryptotile}
-          handlevote={handleVote}
-          symbol={symbol}
-        />
+        <Expandable handleVote={handleVote} symbol={symbol} />
       </Collapsible>
     </div>
   );
