@@ -3,13 +3,14 @@ import React from "react";
 export default ({ handleSorting, handleHover, order, fiat }) => {
   return (
     <div id="namingbar">
-      <p onClick={() => handleSorting("rank")}>
+      <div />
+      <p className="descRank" onClick={() => handleSorting("rank")}>
         #
         <span>
           <i className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"} />
         </span>
       </p>
-      <p>Name</p>
+      <p className="descName">Name</p>
       <p
         // onMouseOver={handleHover}
         onClick={handleSorting.bind(this, "marketCap")}
@@ -32,22 +33,25 @@ export default ({ handleSorting, handleHover, order, fiat }) => {
           <i className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"} />
         </span>
       </p>
-      <p
-        // onMouseOver={handleHover}
-        onClick={handleSorting.bind(this, "change24h")}
-      >
+      <p className="descChg" onClick={handleSorting.bind(this, "change24h")}>
         Change(24h)
         <span>
           <i className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"} />
         </span>
       </p>
-      <p onClick={handleSorting.bind(this, "voteResult")}>
+      <p
+        className="descEstChg"
+        onClick={handleSorting.bind(this, "voteResult")}
+      >
         Estimated Change(24h)
         <span>
           <i className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"} />
         </span>
       </p>
-      <p onClick={handleSorting.bind(this, "voteCount")}>
+      <p
+        className="descNumVotes"
+        onClick={handleSorting.bind(this, "voteCount")}
+      >
         Number of Votes
         <span>
           <i className={!order ? "fas fa-sort-up rotated" : "fas fa-sort-up"} />
@@ -55,7 +59,7 @@ export default ({ handleSorting, handleHover, order, fiat }) => {
       </p>
 
       <div />
-      <p>Price Graph(7d)</p>
+      <p className="descGraph">Price Graph(7d)</p>
 
       <div />
     </div>

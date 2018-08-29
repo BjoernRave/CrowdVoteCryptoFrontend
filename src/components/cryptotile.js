@@ -27,7 +27,14 @@ export default ({
     .map((val, ind) => {
       return <p key={ind}>{val.text}</p>;
     });
-
+  if (window.innerWidth < 1000) {
+    console.log("window size smaller than 1000px");
+  }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 1000) {
+      console.log("window size smaller than 1000px");
+    }
+  });
   return (
     <div id="tile">
       <Collapsible
@@ -36,24 +43,31 @@ export default ({
           <div id="uppertile">
             <img src={icon} alt="" id="cryptoIcon" />
             <p>{rank}.</p>
-            <Link
-              style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
-              to={"/" + name.toLowerCase().replace(/\s/g, "-")}
-            >
-              {name}({symbol.toUpperCase()})
-            </Link>
-
+            <div>
+              <Link
+                style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
+                to={"/" + name.toLowerCase().replace(/\s/g, "-")}
+              >
+                {name}({symbol.toUpperCase()})
+              </Link>
+              <div className="bestTags">{tagsArray.slice(0, 3)}</div>
+            </div>
             <p title="The total available Supply multiplied by the Price">
-              {Intl.NumberFormat().format(Number(marketCap).toFixed(0))}
+              {Intl.NumberFormat("de-DE", { maximumFractionDigits: 0 }).format(
+                marketCap
+              )}
             </p>
             <p>
               {new Intl.NumberFormat("de-DE", {
                 currency: fiat,
-                maximumSignificantDigits: 7
+                maximumSignificantDigits: 5,
+                maximumFractionDigits: 4
               }).format(price)}
             </p>
-            <p>
-              {Intl.NumberFormat().format(Number(circulatingSupply).toFixed(0))}
+            <p className="circulatingSply">
+              {Intl.NumberFormat("de-DE", { maximumFractionDigits: 0 }).format(
+                circulatingSupply
+              )}
             </p>
             {Number(change24h) < 0 ? (
               <p className="red">{Number(change24h).toFixed(2)} %</p>
@@ -86,7 +100,6 @@ export default ({
             <button onClick={this.expand} id="expand">
               <i className="fas fa-angle-down" />
             </button>
-            <div className="bestTags">{tagsArray.slice(0, 3)}</div>
           </div>
         }
       >

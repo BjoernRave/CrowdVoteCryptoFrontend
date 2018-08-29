@@ -1,26 +1,80 @@
-@media screen and (max-width: 1200px) {
-  * {
-    /* font-size: 13px; */
+/* Large desktop */
+@media (max-width: 1220px) {
+  #cryptoIcon {
+    /* display: none; */
   }
   #expand {
-    display: none !important;
-  }
-}
-@media screen and (max-width: 990px) {
-  * {
-    font-size: 10px;
+    display: none;
   }
   #uppertile {
-    grid-template-columns: 2% 15% 14% 10% 12% 8% 8% 5% 3% 14% 5%;
+    grid-template-columns: 5.5% 4% 15% 14% 10% 12% 8% 8% 2% 3% 15% !important;
+  }
+}
+@media (max-width: 1100px) {
+  #cryptoIcon {
+    transform: scale(0.5) !important;
+    margin-left: -13px;
+  }
+  #uppertile {
+    grid-template-columns: 2.5% 5% 15% 14% 11% 15% 8% 7% 2% 3% 15% !important;
+  }
+  #uppertile .green {
+    font-size: 1em !important;
+  }
+  #uppertile .red {
+    font-size: 1em !important;
+  }
+  .bestTags {
+    transform: scale(0.8) !important;
+  }
+}
+@media (max-width: 1000px) {
+  #uppertile {
+    grid-template-columns: 2.5% 5% 13% 14% 11% 13% 8% 7% 2% 3% 15% !important;
+  }
+  body {
+    font-size: 12px;
+  }
+  .smallGraph {
+    transform: scale(0.8) !important;
+  }
+  #searchBar button {
+    height: 25px !important;
+  }
+  .select {
+    transform: scale(1) !important;
+  }
+}
+@media (max-width: 800px) {
+  #uppertile {
+    grid-template-columns: 3.5% 7% 17% 17% 12% 17% 9% 8% 4% 3% !important;
   }
 
-  #uppertile img:nth-child(1) {
-    display: none;
+  @media (max-width: 660px) {
+    .authbtn button {
+      transform: scale(0.75) !important;
+      margin: 0 !important;
+    }
+    .authbtn {
+      margin-right: -17px;
+    }
+    .select {
+      transform: scale(0.9) !important;
+      margin: 0 !important;
+    }
+    #searchBar input {
+      width: 100px !important;
+    }
+    #searchBar button {
+      margin: 0 !important;
+    }
   }
-  #cryptoIcon {
+
+  .smallGraph {
     display: none;
   }
 }
+
 button {
   background-color: inherit;
   border: none;
@@ -138,13 +192,13 @@ i:focus {
   position: relative;
   display: grid;
   background-color: var(--secondColor);
-  margin: 10px 0 1px 0;
+  margin: 10px 0 -2px 0;
   font-size: 1.3em;
-  grid-template-columns: 5.5% 2% 15% 14% 10% 12% 8% 8% 5% 3% 14% 5%;
+  grid-template-columns: 5.5% 3% 14% 14% 10% 12% 8% 8% 5% 3% 14% 5%;
   align-items: center;
-  height: 3.4em;
   box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.212);
-  z-index: 2;
+  height: 70px;
+  /* z-index: 1; */
 }
 #uppertile p,
 #uppertile a {
@@ -161,7 +215,7 @@ i:focus {
   position: absolute;
   font-size: 0.8rem;
   bottom: 3%;
-  left: 8%;
+  left: 6%;
   display: flex;
   flex-direction: row;
 }
@@ -180,8 +234,8 @@ i:focus {
 #namingbar {
   /* background-color: #85ded4; */
   display: grid;
-  grid-template-columns: 7% 4% 19% 10% 10% 12% 10% 7% 2% 14% 4%;
-  font-size: 1em;
+  grid-template-columns: 5.5% 2% 15% 14% 10% 12% 8% 8% 5% 3% 14% 5%;
+  font-size: 0.8em;
   margin-left: 50px;
   margin-right: 50px;
   padding-left: 25px;
@@ -190,6 +244,24 @@ i:focus {
   color: var(--secondColor);
   align-items: center;
   justify-content: end;
+}
+#namingbar .descNumVotes {
+  padding-left: 35px;
+}
+#namingbar .descGraph {
+  padding-left: 65px;
+}
+#namingbar .descEstChg {
+  padding-left: 30px;
+}
+#namingbar .descChg {
+  padding-left: 10px;
+}
+#namingbar .descRank {
+  margin-left: -20px;
+}
+#namingbar .descName {
+  padding-right: 40px;
 }
 #namingbar p {
   margin: 0 auto;
@@ -216,7 +288,6 @@ i:focus {
   border: none;
   background: none;
   font-size: 1.2em;
-  height: 40px;
   width: 40px;
   cursor: pointer;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548);
@@ -264,19 +335,17 @@ i:focus {
 #cryptoIcon {
   padding-left: 10px;
   padding-bottom: 2px;
-  transform: scale(1.3);
-  /* clip-path: polygon(7% 10.5%, 100% 10.5%, 100% 90%, 7% 90%); */
+  transform: scale(1.2);
   z-index: 0;
+  transition: all linear 0.3s;
 }
 .Expandable {
   margin-left: 70px;
   margin-right: 70px;
-  /* background-color: #b2fff6; */
   font-size: 1em;
   display: grid;
   grid-template-columns: 3fr 3fr 0.7fr;
   height: 260px;
-  margin-top: -6px;
   grid-gap: 10px;
   padding-top: 3px;
 }
@@ -612,10 +681,12 @@ i:focus {
   border-radius: 20px;
   opacity: 0;
   text-align: center;
+  display: none;
 }
 
 .flashactive {
   opacity: 1 !important;
+  display: block !important;
 }
 
 .suggestions {
@@ -778,7 +849,7 @@ i:focus {
   padding: 3px 5px 3px 5px;
   margin-left: 0px;
   border: none;
-
+  height: 30.1px;
   color: black;
   border-radius: 0px;
   /* border-top-right-radius: 10px;
@@ -1118,7 +1189,7 @@ nav button:active {
 .placeholder {
   height: 70.7167px;
   background-color: white;
-  margin: 10px 2% 6px 2%;
+  margin: 7px 2% 3px 2%;
   border-radius: 5px;
 }
 .animated-page-wrapper {

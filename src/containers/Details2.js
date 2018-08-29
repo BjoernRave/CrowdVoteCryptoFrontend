@@ -192,6 +192,7 @@ class Expandable extends Component {
               animationIn="fadeInRight"
               animationOut="fadeOutRight"
               isVisible={this.state.chat}
+              animateOnMount={false}
             >
               <div className="chat">
                 <ul id="DetailsComments">{messsageArray}</ul>

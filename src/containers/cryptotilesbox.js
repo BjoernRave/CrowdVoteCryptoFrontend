@@ -7,12 +7,10 @@ import {
 } from "../store/actions/cryptostats";
 import { apiCall } from "../services/api";
 import { getTags } from "../store/actions/tags";
-import Cookies from "universal-cookie";
 import LazyLoad from "react-lazyload";
 import DescriptionBar from "../components/descriptionBar";
 import { StickyContainer, Sticky } from "react-sticky";
 let fiatcurr = "USD";
-const cookies = new Cookies();
 let tiles = [];
 
 for (let i = 0; i < 50; i++) {
@@ -109,8 +107,6 @@ class Cryptotilebox extends Component {
     document.documentElement.scrollTop = 0;
   }
   renderTiles() {
-    console.log("list rendered");
-
     tiles = this.props.data.map((data, ind) => (
       <LazyLoad
         key={data.id}
@@ -161,15 +157,17 @@ class Cryptotilebox extends Component {
   }
 
   render() {
+    let flash = document.querySelector("#flash");
     setTimeout(() => {
       if (this.props.data.length < 1) {
-        let flash = document.querySelector("#flash");
         flash.textContent =
           "Sorry, for some reason we cannot fetch Cryptocurrency data at this point :(";
         flash.classList.add("flashactive");
       }
-    }, 8000);
-
+    }, 9000);
+    if (this.props.data.length > 1 && flash.classList.contains("flashactive")) {
+      flash.classList.remove("flashactive");
+    }
     if (
       this.props.data.length > 0 &&
       this.state.tiles.length < 2 &&

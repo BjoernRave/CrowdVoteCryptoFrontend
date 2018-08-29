@@ -76,7 +76,6 @@ class Expandable extends PureComponent {
   }
 
   render() {
-    console.log("rendering expandable");
     let messsageArray = [];
     if (typeof this.props.messages[this.props.symbol] !== "undefined") {
       messsageArray = this.props.messages[this.props.symbol].map(val => {
@@ -135,10 +134,10 @@ class Expandable extends PureComponent {
               placeholder="Share your thoughts on this Coin"
               id="comment"
             />
-            <button className="sendMessageDetails">
+            {/* <button className="sendMessageDetails">
               {" "}
               <i class="material-icons">send</i>
-            </button>
+            </button> */}
           </form>
         </div>
         <Tags

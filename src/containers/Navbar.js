@@ -114,7 +114,7 @@ class Navbar extends Component {
                 Log out
               </button>
             ) : (
-              <div>
+              <div className="authbtn">
                 <button className="" onClick={this.toggleSignup}>
                   Sign up
                 </button>
@@ -130,6 +130,7 @@ class Navbar extends Component {
           animationIn="bounceInRight"
           animationOut="bounceOutRight"
           isVisible={this.state.signup}
+          // animateOnMount={false}
         >
           <AuthForm
             removeError={this.props.removeError}
@@ -145,6 +146,7 @@ class Navbar extends Component {
           animationIn="bounceInRight"
           animationOut="bounceOutRight"
           isVisible={this.state.signin}
+          // animateOnMount={false}
         >
           <AuthForm
             removeError={this.props.removeError}
