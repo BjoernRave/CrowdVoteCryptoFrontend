@@ -125,42 +125,43 @@ class Navbar extends Component {
             )}
           </div>
         </nav>
+        <div className="authforms">
+          <Animated
+            animationIn="bounceInRight"
+            animationOut="bounceOutRight"
+            isVisible={this.state.signup}
+            // animateOnMount={false}
+          >
+            <AuthForm
+              removeError={this.props.removeError}
+              errors={this.props.errors}
+              onAuth={this.props.authUser}
+              buttonText="Sign me up!"
+              heading="Register Now!"
+              signUp
+              onSignUp={this.toggleSignup}
+            />
+          </Animated>
+          <Animated
+            animationIn="bounceInRight"
+            animationOut="bounceOutRight"
+            isVisible={this.state.signin}
+            // animateOnMount={false}
+          >
+            <AuthForm
+              removeError={this.props.removeError}
+              errors={this.props.errors}
+              onAuth={this.props.authUser}
+              buttonText="Log in!"
+              heading="Welcome Back."
+              onSignIn={this.toggleSignin}
+            />
+          </Animated>
 
-        <Animated
-          animationIn="bounceInRight"
-          animationOut="bounceOutRight"
-          isVisible={this.state.signup}
-          // animateOnMount={false}
-        >
-          <AuthForm
-            removeError={this.props.removeError}
-            errors={this.props.errors}
-            onAuth={this.props.authUser}
-            buttonText="Sign me up!"
-            heading="Register Now!"
-            signUp
-            onSignUp={this.toggleSignup}
-          />
-        </Animated>
-        <Animated
-          animationIn="bounceInRight"
-          animationOut="bounceOutRight"
-          isVisible={this.state.signin}
-          // animateOnMount={false}
-        >
-          <AuthForm
-            removeError={this.props.removeError}
-            errors={this.props.errors}
-            onAuth={this.props.authUser}
-            buttonText="Log in!"
-            heading="Welcome Back."
-            onSignIn={this.toggleSignin}
-          />
-        </Animated>
-
-        {this.state.CookiePopup && (
-          <CookieBanner handleAgree={this.handleAgree} />
-        )}
+          {this.state.CookiePopup && (
+            <CookieBanner handleAgree={this.handleAgree} />
+          )}
+        </div>
       </div>
     );
   }

@@ -1,8 +1,5 @@
 /* Large desktop */
 @media (max-width: 1220px) {
-  #cryptoIcon {
-    /* display: none; */
-  }
   #expand {
     display: none;
   }
@@ -68,10 +65,33 @@
     #searchBar button {
       margin: 0 !important;
     }
+    .logo {
+      transform: scale(0.7) !important;
+    }
+    nav {
+      padding-top: 0px !important;
+      padding-left: 0px !important;
+    }
   }
 
   .smallGraph {
     display: none;
+  }
+
+  @media (max-width: 640px) {
+    .mobileBanner {
+      display: block !important;
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      z-index: 50;
+      font-size: 2rem;
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: center;
+      padding-top: 100px;
+    }
   }
 }
 
@@ -111,7 +131,7 @@ body {
 .logo {
   width: 6rem;
   height: 3.5rem;
-  margin-bottom: -10px;
+  margin-top: -7px;
   z-index: 5;
   transform: translateZ(0px);
 }
@@ -1046,8 +1066,8 @@ nav button:active {
 }
 
 .signinform {
-  position: absolute;
-  z-index: 3;
+  position: fixed;
+  /* z-index: 3; */
   background-color: var(--fourthColor);
   padding: 20px;
   border: 6px solid black;
@@ -1373,4 +1393,14 @@ nav button:active {
 
 .animated {
   z-index: 5;
+}
+
+.authforms {
+  position: fixed;
+  z-index: 20;
+  right: 0%;
+}
+
+.mobileBanner {
+  display: none;
 }

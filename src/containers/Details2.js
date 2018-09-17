@@ -18,10 +18,9 @@ import { fetchHistCryptoData } from "../store/actions/cryptostats";
 import DetailStats from "../components/DetailsStats";
 import { Animated } from "react-animated-css";
 
-class Expandable extends Component {
+class DetailsPage extends Component {
   constructor(props) {
     super(props);
-
     this.handleSubmitComment = this.handleSubmitComment.bind(this);
     this.handleChangeComment = this.handleChangeComment.bind(this);
     this.handleChangeVote = this.handleChangeVote.bind(this);
@@ -244,4 +243,4 @@ export default connect(
     VoteTag,
     fetchHistCryptoData
   }
-)(Expandable);
+)(DetailsPage);

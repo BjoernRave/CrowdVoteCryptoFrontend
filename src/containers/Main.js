@@ -9,6 +9,10 @@ import { fetchCryptoStats } from "../store/actions/cryptostats";
 import PrivacyPolicy from "../components/PrivacyPolicy";
 import Switch from "react-router-transition-switch";
 import cookiepolicy from "../components/CookieConsent";
+import ReactGA from "react-ga";
+
+ReactGA.initialize("UA-120217538-1");
+ReactGA.pageview("/");
 
 class Main extends Component {
   constructor(props) {

@@ -7,6 +7,7 @@ import Main from "./Main";
 import { setAuthorizationToken, setCurrentUser } from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 import Footer from "../components/footer";
+import MobileBanner from "../components/NoMobile";
 const store = configureStore();
 
 if (localStorage.jwtToken) {
@@ -23,8 +24,10 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div className="onboarding">
+        <MobileBanner />
         <Navbar />
         <p id="flash">You need to be logged in to do that!</p>
+
         <Main />
         <Footer />
       </div>

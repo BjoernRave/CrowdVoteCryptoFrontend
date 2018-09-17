@@ -27,14 +27,14 @@ export default ({
     .map((val, ind) => {
       return <p key={ind}>{val.text}</p>;
     });
-  if (window.innerWidth < 1000) {
-    console.log("window size smaller than 1000px");
-  }
-  window.addEventListener("resize", () => {
-    if (window.innerWidth < 1000) {
-      console.log("window size smaller than 1000px");
-    }
-  });
+  // if (window.innerWidth < 1000) {
+  //   console.log("window size smaller than 1000px");
+  // }
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth < 1000) {
+  //     console.log("window size smaller than 1000px");
+  //   }
+  // });
   return (
     <div id="tile">
       <Collapsible
@@ -43,11 +43,8 @@ export default ({
           <div id="uppertile">
             <img src={icon} alt="" id="cryptoIcon" />
             <p>{rank}.</p>
-            <div>
-              <Link
-                style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}
-                to={"/" + name.toLowerCase().replace(/\s/g, "-")}
-              >
+            <div style={tagsArray.length > 0 ? { marginBottom: "20px" } : null}>
+              <Link to={"/" + name.toLowerCase().replace(/\s/g, "-")}>
                 {name}({symbol.toUpperCase()})
               </Link>
               <div className="bestTags">{tagsArray.slice(0, 3)}</div>
