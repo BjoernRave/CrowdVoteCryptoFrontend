@@ -41,7 +41,7 @@
     "react": "^16.4.0",
     "react-animated-css": "^1.0.4",
     "react-collapsible": "^2.3.0",
-    "react-dev-utils": "^5.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.4.0",
     "react-ga": "^2.5.3",
     "react-lazyload": "^2.3.0",
