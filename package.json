@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ajv": "^6.5.0",
+    "ajv": "^6.12.3",
     "animated": "^0.2.2",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
